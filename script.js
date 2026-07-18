@@ -1930,15 +1930,23 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Build dynamic modal title and tag
             let sectionTitle = btn.innerText;
+            const headerEl = btn.querySelector('h3') || btn.querySelector('h4');
+            if (headerEl) {
+                sectionTitle = headerEl.innerText;
+            }
             let tagText = 'DETALII';
             
-            const shortKey = sectionKey.substring(0, 3);
+            // Extract prefix (e.g. "mec", "prot", "arh", "rel", "sac") to load chapter tags dynamically
+            let prefixKey = sectionKey;
+            if (sectionKey.includes('-')) {
+                prefixKey = sectionKey.split('-')[0];
+            }
+            
             if (translations[currentLang][`nav-${sectionKey}`]) {
                 sectionTitle = translations[currentLang][`nav-${sectionKey}`];
                 tagText = sectionTitle;
-            } else if (translations[currentLang][`nav-${shortKey}`]) {
-                sectionTitle = translations[currentLang][`nav-${shortKey}`];
-                tagText = sectionTitle;
+            } else if (translations[currentLang][`nav-${prefixKey}`]) {
+                tagText = translations[currentLang][`nav-${prefixKey}`];
             } else {
                 // Parse child labels for cleaner title
                 const valEl = btn.querySelector('.tele-val');
