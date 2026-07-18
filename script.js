@@ -2436,6 +2436,45 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(updateTelemetry, 50);
         });
 
+        const simulatorContainer = document.querySelector('.simulator-container');
+
+        function startSimulatorAudio() {
+            if (isSimulatingAudio) return;
+            isSimulatingAudio = true;
+            initSimAudio();
+            
+            // Mute global ambient sound if it is playing
+            if (isPlaying && gainNode) {
+                gainNode.gain.setTargetAtTime(0, audioCtx.currentTime, 0.3);
+            }
+            
+            // Fade in simulator sound smoothly
+            if (simGainNode) {
+                simGainNode.gain.setTargetAtTime(0.12, audioCtx.currentTime, 0.4);
+            }
+        }
+
+        function stopSimulatorAudio() {
+            if (!isSimulatingAudio) return;
+            isSimulatingAudio = false;
+            
+            if (simGainNode) {
+                simGainNode.gain.setTargetAtTime(0, audioCtx.currentTime, 0.6);
+            }
+            
+            // Restore global ambient sound if it was active
+            setTimeout(() => {
+                if (!isSimulatingAudio && isPlaying && gainNode) {
+                    gainNode.gain.setTargetAtTime(0.08, audioCtx.currentTime, 0.5);
+                }
+            }, 600);
+        }
+
+        if (simulatorContainer) {
+            simulatorContainer.addEventListener('mouseenter', startSimulatorAudio);
+            simulatorContainer.addEventListener('mouseleave', stopSimulatorAudio);
+        }
+
         btnDescend.addEventListener('click', () => {
             isAlpha = !isAlpha;
             targetFreq = isAlpha ? 10.0 : 24.0;
@@ -2447,39 +2486,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // Play transition sound sweep
             playUISound(isAlpha ? 'open-modal' : 'close-modal');
 
-            // Handle Simulator specific Audio
-            if (isAlpha) {
-                isSimulatingAudio = true;
-                initSimAudio();
-                
-                // Mute global ambient sound if it is playing
-                if (isPlaying && gainNode) {
-                    gainNode.gain.setTargetAtTime(0, audioCtx.currentTime, 0.3);
-                }
-                
-                // Fade in simulator sound smoothly
-                if (simGainNode) {
-                    simGainNode.gain.setTargetAtTime(0.12, audioCtx.currentTime, 0.4);
-                }
-            } else {
-                // When returning to Beta, keep the sound playing as it slides up,
-                // then fade it out and restore the global ambient sound.
-                setTimeout(() => {
-                    if (!isAlpha) { // verify user hasn't toggled again
-                        if (simGainNode) {
-                            simGainNode.gain.setTargetAtTime(0, audioCtx.currentTime, 0.6);
-                        }
-                        isSimulatingAudio = false;
-                        
-                        // Restore global ambient sound if it was playing
-                        setTimeout(() => {
-                            if (!isSimulatingAudio && isPlaying && gainNode) {
-                                gainNode.gain.setTargetAtTime(0.08, audioCtx.currentTime, 0.5);
-                            }
-                        }, 600);
-                    }
-                }, 1800); // Wait for transition slide to finish
-            }
+            // Force start simulator audio (ensures mobile users get sound on click!)
+            startSimulatorAudio();
 
             // Set button text translated
             btnDescend.innerText = isAlpha ? 
