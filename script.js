@@ -1108,6 +1108,91 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 osc.start();
                 osc.stop(audioCtx.currentTime + 0.18);
+            } else if (type === 'breath-inhale') {
+                // Gentle rising chime
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(440, audioCtx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(660, audioCtx.currentTime + 0.2);
+                
+                gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.22);
+                
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.25);
+            } else if (type === 'breath-hold') {
+                // Stable dual chime
+                const osc2 = audioCtx.createOscillator();
+                osc.type = 'sine';
+                osc2.type = 'sine';
+                
+                osc.frequency.setValueAtTime(554.37, audioCtx.currentTime); // C#5 (warm third)
+                osc2.frequency.setValueAtTime(659.25, audioCtx.currentTime); // E5
+                
+                gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.25);
+                
+                osc.connect(gain);
+                osc2.connect(gain);
+                gain.connect(audioCtx.destination);
+                
+                osc.start();
+                osc2.start();
+                osc.stop(audioCtx.currentTime + 0.28);
+                osc2.stop(audioCtx.currentTime + 0.28);
+            } else if (type === 'breath-exhale') {
+                // Gentle falling chime
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(659.25, audioCtx.currentTime); // E5
+                osc.frequency.exponentialRampToValueAtTime(329.63, audioCtx.currentTime + 0.2); // E4
+                
+                gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.22);
+                
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.25);
+            } else if (type === 'breath-start') {
+                // Ascending major chord activation
+                const osc2 = audioCtx.createOscillator();
+                osc.type = 'sine';
+                osc2.type = 'sine';
+                
+                osc.frequency.setValueAtTime(261.63, audioCtx.currentTime); // C4
+                osc.frequency.exponentialRampToValueAtTime(523.25, audioCtx.currentTime + 0.4); // C5
+                
+                osc2.frequency.setValueAtTime(329.63, audioCtx.currentTime); // E4
+                osc2.frequency.exponentialRampToValueAtTime(659.25, audioCtx.currentTime + 0.4); // E5
+                
+                gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.45);
+                
+                osc.connect(gain);
+                osc2.connect(gain);
+                gain.connect(audioCtx.destination);
+                
+                osc.start();
+                osc2.start();
+                osc.stop(audioCtx.currentTime + 0.5);
+                osc2.stop(audioCtx.currentTime + 0.5);
+            } else if (type === 'breath-stop') {
+                // Calming grounding sweep
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(440, audioCtx.currentTime);
+                osc.frequency.linearRampToValueAtTime(220, audioCtx.currentTime + 0.35);
+                
+                gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.4);
+                
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.45);
             }
         } catch(e) {}
     }
@@ -1757,6 +1842,13 @@ document.addEventListener('DOMContentLoaded', () => {
         btnStartBreath.innerText = breathWords.btnStop[currentLang];
         btnStartBreath.style.background = 'var(--gradient-beta)';
         
+        // Visual button feedback
+        btnStartBreath.classList.add('btn-active-flash');
+        setTimeout(() => btnStartBreath.classList.remove('btn-active-flash'), 250);
+        
+        // Play start sound
+        playUISound('breath-start');
+
         // Disable tabs while breathing to prevent breaking cycles
         breathTabs.forEach(t => t.style.pointerEvents = 'none');
 
@@ -1773,6 +1865,19 @@ document.addEventListener('DOMContentLoaded', () => {
             breathInstruction.innerText = breathWords[action][currentLang];
             breathTimer.innerText = timeRemaining + 's';
             breathCircle.style.transform = `scale(${step.scale})`;
+
+            // Visual feedback on state change (circle glow and color transitions)
+            breathCircle.classList.remove('state-inhale', 'state-hold', 'state-exhale');
+            breathCircle.classList.add('state-' + action);
+            
+            // Circle flash ring effect
+            breathCircle.classList.add('flash-transition');
+            setTimeout(() => {
+                breathCircle.classList.remove('flash-transition');
+            }, 350);
+
+            // Play state transition sound guides
+            playUISound('breath-' + action);
 
             if (breathInterval) clearInterval(breathInterval);
             breathInterval = setInterval(() => {
@@ -1798,9 +1903,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         btnStartBreath.innerText = breathWords.btnStart[currentLang];
         btnStartBreath.style.background = '';
+        
+        // Visual button feedback
+        btnStartBreath.classList.add('btn-active-flash');
+        setTimeout(() => btnStartBreath.classList.remove('btn-active-flash'), 250);
+        
+        // Play stop sound
+        playUISound('breath-stop');
+
         breathInstruction.innerText = breathWords.start[currentLang];
         breathTimer.innerText = '';
+        
+        // Reset circle scale & colors
         breathCircle.style.transform = 'scale(1.0)';
+        breathCircle.classList.remove('state-inhale', 'state-hold', 'state-exhale');
 
         // Re-enable tabs
         breathTabs.forEach(t => t.style.pointerEvents = 'auto');
