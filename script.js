@@ -1037,12 +1037,87 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // --- 4. DETAILS MODALS LOGIC ---
+    // --- 4. DETAILS MODALS LOGIC & UI SOUNDS ---
     const detailModal = document.getElementById('detail-modal');
     const modalCloseBtn = document.getElementById('modal-close-btn');
     const modalTitle = document.getElementById('modal-title');
     const modalBodyContent = document.getElementById('modal-body-content');
     const modalTag = document.getElementById('modal-tag');
+
+    function playUISound(type) {
+        // Initialize Audio Context if not done yet
+        if (!audioCtx) {
+            try {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            } catch(e) {
+                return;
+            }
+        }
+        
+        // Resume context if suspended
+        if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+        }
+
+        try {
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+
+            if (type === 'click') {
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(700, audioCtx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(1100, audioCtx.currentTime + 0.04);
+                
+                gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.05);
+                
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.06);
+            } else if (type === 'open-modal') {
+                const filter = audioCtx.createBiquadFilter();
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(180, audioCtx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(320, audioCtx.currentTime + 0.35);
+                
+                filter.type = 'lowpass';
+                filter.frequency.setValueAtTime(800, audioCtx.currentTime);
+                
+                gain.gain.setValueAtTime(0, audioCtx.currentTime);
+                gain.gain.linearRampToValueAtTime(0.06, audioCtx.currentTime + 0.1);
+                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.4);
+                
+                osc.connect(filter);
+                filter.connect(gain);
+                gain.connect(audioCtx.destination);
+                
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.45);
+            } else if (type === 'close-modal') {
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(320, audioCtx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(140, audioCtx.currentTime + 0.15);
+                
+                gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.16);
+                
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.18);
+            }
+        } catch(e) {}
+    }
+
+    // Attach click sound to interactive items
+    document.querySelectorAll('.navbar a, .btn, .btn-play-sample, .btn-detail, .scroll-top-btn, .breath-tab, #lang-select').forEach(element => {
+        element.addEventListener('click', () => {
+            playUISound('click');
+        });
+    });
 
     document.querySelectorAll('.btn-detail').forEach(button => {
         button.addEventListener('click', (e) => {
@@ -1054,17 +1129,19 @@ document.addEventListener('DOMContentLoaded', () => {
             
             modalTitle.innerText = sectionTitle;
             modalBodyContent.innerHTML = contentHTML;
-            modalTag.innerText = translations[currentLang]['nav-arh'].toUpperCase();
+            modalTag.innerText = translations[currentLang][`nav-${sectionKey.substring(0,3)}`].toUpperCase();
             
             // Open modal and lock scroll
             detailModal.classList.add('open');
             document.body.style.overflow = 'hidden';
+            playUISound('open-modal');
         });
     });
 
     function closeModal() {
         detailModal.classList.remove('open');
         document.body.style.overflow = '';
+        playUISound('close-modal');
     }
 
     modalCloseBtn.addEventListener('click', closeModal);
@@ -1201,6 +1278,16 @@ document.addEventListener('DOMContentLoaded', () => {
             btnScrollTop.classList.add('visible');
         } else {
             btnScrollTop.classList.remove('visible');
+        }
+
+        // Update top scroll progress bar
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (scrollHeight > 0) {
+            const scrollPct = (window.scrollY / scrollHeight) * 100;
+            const scrollProgressBar = document.getElementById('scroll-progress-bar');
+            if (scrollProgressBar) {
+                scrollProgressBar.style.width = scrollPct + '%';
+            }
         }
     });
 
