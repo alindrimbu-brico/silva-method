@@ -1349,6 +1349,8 @@ h1, h2, h3, h4 {
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
+}
+
 .feature-item {
     display: flex;
     gap: 1.5rem;
@@ -1359,17 +1361,12 @@ h1, h2, h3, h4 {
     color: inherit;
     cursor: pointer;
     width: 100%;
-    padding: 1.2rem;
-    border-radius: 16px;
-    border: 1px solid transparent;
+    padding: 0; /* Align perfectly with other text components */
     transition: var(--transition-smooth);
 }
 
 .feature-item:hover {
-    background: rgba(99, 102, 241, 0.04);
-    border-color: rgba(99, 102, 241, 0.15);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateX(6px); /* Subtle shift to match the timeline items */
 }
 
 .feature-icon {
@@ -1388,9 +1385,9 @@ h1, h2, h3, h4 {
 }
 
 .feature-item:hover .feature-icon {
-    background: var(--color-accent);
-    color: white;
-    box-shadow: 0 0 15px var(--color-accent);
+    border-color: var(--color-accent);
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.35);
+    background: rgba(99, 102, 241, 0.15);
 }
 
 .feature-text h4 {
@@ -1459,15 +1456,17 @@ h1, h2, h3, h4 {
 }
 
 .connection-nodes.hover-a .node-a {
-    background: var(--color-accent);
     box-shadow: 0 0 35px var(--color-accent);
-    transform: translateY(-50%) scale(1.3);
+    border-color: var(--color-accent);
+    transform: translateY(-50%) scale(1.25);
+    background: var(--bg-primary); /* Keep hollow to match theme */
 }
 
 .connection-nodes.hover-b .node-b {
-    background: var(--color-purple);
     box-shadow: 0 0 35px var(--color-purple);
-    transform: translateY(-50%) scale(1.3);
+    border-color: var(--color-purple);
+    transform: translateY(-50%) scale(1.25);
+    background: var(--bg-primary); /* Keep hollow to match theme */
 }
 
 .line-svg {
@@ -1507,15 +1506,15 @@ h1, h2, h3, h4 {
 }
 
 .connection-nodes.coherent .node-a {
-    background: var(--color-accent);
     box-shadow: 0 0 30px var(--color-accent);
     transform: translateY(-50%) scale(1.15);
+    background: var(--bg-primary);
 }
 
 .connection-nodes.coherent .node-b {
-    background: var(--color-purple);
     box-shadow: 0 0 30px var(--color-purple);
     transform: translateY(-50%) scale(1.15);
+    background: var(--bg-primary);
 }
 
 .pulse-ring {
