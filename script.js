@@ -1712,6 +1712,112 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h3>第五阶段：阻断自我破坏，超然放手与潜意识自主</h3>
                 <p>逻辑心智试图控制过程的绝望尝试会破坏微妙的程序。询问“如何”或“何时”会激活前额叶的警报电路，触发皮质醇和肾上腺素释放，取消阿尔法状态。放手（默念“已成”并超然释怀）能让潜意识网络在无认知噪音的情况下高效自主工作。在灵性上，这对应禅宗的“放手定律”与绝对信任，种子必须埋在黑暗泥土里，频繁挖出查看只会使其枯萎。</p>
             `
+        },
+        "rel-feat1": {
+            ro: `
+                <h3>Neuropsihologia Ancorei Senzoriale: Neuroni Oglindă și Oxitocină</h3>
+                <p>Ancorarea senzorială a atingerii în starea Alpha activează circuite neurobiologice profunde asociate cu siguranța interpersonală:</p>
+                <ul>
+                    <li><strong>Activarea Neuronilor Oglindă:</strong> Când vizualizezi și simți textura unei mâini calde și ferme, cortexul somatosenzorial și cel parietal activează sistemul de neuroni oglindă. Creierul procesează această experiență ca pe o conexiune fizică reală.</li>
+                    <li><strong>Producția de Oxitocină și Endorfine:</strong> Această simulare tactilă în Alpha stimulează hipotalamusul să elibereze oxitocină (hormonul atașamentului și al încrederii) și reduce activitatea axei HPA (stres), scăzând nivelul de cortizol.</li>
+                    <li><strong>Rescrierea Tiparelor de Atașament:</strong> Antrenamentul sinaptic repetat ajută la slăbirea conexiunilor asociate cu atașamentul anxios sau evitant, înlocuindu-le cu o stare de siguranță reflexă (Atașament Securizat).</li>
+                </ul>
+
+                <h3>Semnificația Spirituală: Chakrele Palmelor și Puntea Energetică</h3>
+                <p>În corpul eteric, palmele găzduiesc centri energetici secundari extrem de puternici (Chakrele Palmelor), direct conectați la <strong>Anahata (Chakra Inimii)</strong>. O atingere vizualizată în Alpha fără tendințe posesive sau de control reprezintă un transfer pur de Prana. Acesta creează o punte de rezonanță aurică între tine și celălalt, permițând energiilor să curgă liber și să se armonizeze dincolo de cuvinte.</p>
+            `,
+            en: `
+                <h3>Neuropsychology of the Sensory Anchor: Mirror Neurons and Oxytocin</h3>
+                <p>Sensory anchoring of touch in the Alpha state activates deep neurobiological circuits associated with interpersonal safety:</p>
+                <ul>
+                    <li><strong>Mirror Neuron System Activation:</strong> When you visualize and feel the texture of a warm, firm hand, the somatosensory and parietal cortex activate the mirror neuron system. The brain processes this experience as a real physical connection.</li>
+                    <li><strong>Oxytocin and Endorphin Release:</strong> This tactile simulation in Alpha stimulates the hypothalamus to release oxytocin (the bonding and trust hormone) and downregulates the HPA axis, lowering cortisol levels.</li>
+                    <li><strong>Rewriting Attachment Styles:</strong> Repeated synaptic training helps weaken pathways associated with anxious or avoidant attachment, replacing them with a reflex state of safety (Secure Attachment).</li>
+                </ul>
+
+                <h3>Spiritual Significance: Palm Chakras and the Energetic Bridge</h3>
+                <p>In the etheric body, the palms house highly active secondary energy centers (Palm Chakras), directly connected to <strong>Anahata (the Heart Chakra)</strong>. A touch visualized in Alpha without possessiveness or control represents a pure transfer of Prana. It establishes an auric resonance bridge between you and the other, allowing energies to flow freely and harmonize beyond words.</p>
+            `,
+            pt: `
+                <h3>Faza 1: Âncora Sensorial Consciente</h3>
+                <p>A neurobiologia mostra că a sentir o toque no estado Alpha ativa os neurónios espelho e estimula a libertação de oxitocina, reduzindo o cortisol. Espiritualmente, ativa os chakras das palmas das mãos, ligados ao coração (Anahata), criando uma ponte áurica pura.</p>
+            `,
+            es: `
+                <h3>Fase 1: Ancla Sensorial Consciente</h3>
+                <p>La neurobiología demuestra que sentir el tacto en el estado Alpha activa las neuronas espejo y estimula la liberación de oxitocina, reduciendo el cortisol. Espiritualmente, activa los chakras de las palmas de las manos, conectados al corazón (Anahata), creando un puente áurico puro.</p>
+            `,
+            it: `
+                <h3>Fase 1: Ancora Sensoriale Cosciente</h3>
+                <p>La neurobiologia dimostra che percepire il contatto tattile in Alpha attiva i neuroni specchio e stimola il rilascio di ossitocina. Spiritualmente, attiva i chakra dei palmi delle mani collegati al cuore (Anahata), creando un ponte aurico di risonanza pura.</p>
+            `,
+            cs: `
+                <h3>Fáze 1: Vědomé Smyslové Ukotvení</h3>
+                <p>Neurobiologie ukazuje, že vnímání doteku v Alpha stavu aktivuje zrcadlové neurony a stimuluje uvolňování oxytocinu. Duchovně tento proces aktivuje čakry dlaní spojené se srdcem (Anahata).</p>
+            `,
+            pl: `
+                <h3>Faza 1: Świadoma Kotwica Sensoryczna</h3>
+                <p>Neurobiologia wykazuje, że odczuwanie dotyku w stanie Alpha aktywuje neurony zwierciadlane i stymuluje wydzielanie oksytocyny. Duchowo aktywuje to czakry dłoni połączone z sercem (Anahata), tworząc most energetyczny.</p>
+            `,
+            ru: `
+                <h3>Фаза 1: Сознательный Сенсорный Якорь</h3>
+                <p>Нейробиология доказывает, dass тактильное ощущение в Альфе активирует зеркальные нейроны и стимулирует выброс окситоцина. Духовно это активирует чакры ладоней, связанные со сердцем (Анахата).</p>
+            `,
+            zh: `
+                <h3>第一阶段：意识感官锚定，镜面神经元与催产素</h3>
+                <p>在阿尔法状态下对触觉进行感官锚定会激活与人际安全相关的深层神经生物学回路。当观想并感受一只温暖、坚定的手的质感时，躯体感觉和顶叶皮层会激活镜面神经元系统，大脑将此过程作为真实的物理连接进行处理，刺激下丘脑释放催产素（信任与连接激素）并降低皮质醇。在灵性上，手掌拥有与心轮（Anahata）直接相连的次级能量中心，无控制欲的观想接触能促进普拉纳的纯净传递，在光环间建立共鸣桥梁。</p>
+            `
+        },
+        "rel-feat2": {
+            ro: `
+                <h3>Neurobiologia Vulnerabilității: Inhibarea Amigdalelor și Coerența Cingulată</h3>
+                <p>Vulnerabilitatea asumată în stare de relaxare profundă nu este o slăbiciune, ci un indicator de înaltă coerență neuronală:</p>
+                <ul>
+                    <li><strong>Inhibarea Răspunsului Fight-or-Flight:</strong> Starea Alpha scade sensibilitatea amigdalei. Acest lucru îți permite să dezactivezi mecanismele defensive de auto-protecție (măștile sociale Beta) și să activezi lobul insular asociat cu empatia.</li>
+                    <li><strong>Coerența Cortexului Cingulat Anterior:</strong> Simțind siguranța de a fi vulnerabil, transmiți semnale de integrare cognitiv-emoțională. Ritmul cardiac se sincronizează, generând o stare de calm și deschidere socială reflexă.</li>
+                </ul>
+
+                <h3>Perspectiva Spirituală: Deschiderea Chakrei Inimii (Anahata)</h3>
+                <p>Vulnerabilitatea reprezintă topirea voluntară a zidurilor de separare construite de ego-ul Beta. În fizica cuantică a spiritului, doar o inimă complet deschisă (care nu se mai ascunde în spatele măștilor de frică) emite un câmp magnetic de înaltă frecvență. Această deschidere a **Chakrei Anahata** acționează ca o antenă ce atrage parteneri aflați pe aceeași lungime de undă, facilitând conexiunea la nivel de suflet.</p>
+            `,
+            en: `
+                <h3>Neurobiology of Vulnerability: Amygdala Inhibition and Cingulate Coherence</h3>
+                <p>Embracing vulnerability in a state of deep relaxation is not weakness, but a sign of high neural coherence:</p>
+                <ul>
+                    <li><strong>Fight-or-Flight Suppression:</strong> The Alpha state reduces amygdalar sensitivity. This allows you to deactivate defensive self-protection mechanisms (Beta social masks) and engage the insula associated with empathy.</li>
+                    <li><strong>Anterior Cingulate Cortex Coherence:</strong> Experiencing the safety of vulnerability sends signals of cognitive-emotional integration. Heart rate synchronizes, generating a state of calm and reflex social openness.</li>
+                </ul>
+
+                <h3>Spiritual Perspective: Activating the Heart Chakra (Anahata)</h3>
+                <p>Vulnerability is the voluntary dissolution of the walls of separation built by the Beta ego. In the quantum physics of the spirit, only a fully open heart (no longer hiding behind masks of fear) emits a high-frequency magnetic field. This opening of the **Anahata Chakra** acts as an antenna, attracting partners on the same wavelength and facilitating soul-level bonding.</p>
+            `,
+            pt: `
+                <h3>Faza 2: O Gatilho da Vulnerabilidade</h3>
+                <p>A vulnerabilidade desativa o modo de defesa da amígdala e promove a coerência no córtex cingulado anterior. Espiritualmente, abre o Chakra do Coração (Anahata), dissolvendo os muros do ego e emitindo um campo magnético que atrai conexões de alma para alma.</p>
+            `,
+            es: `
+                <h3>Fase 2: El Disparador de la Vulnerabilidad</h3>
+                <p>La vulnerabilidad desactiva el modo de defensa de la amígdala y promueve la coherencia en la corteza cingulada anterior. Espiritualmente, abre el Chakra del Corazón (Anahata), disolviendo los muros del ego y emitiendo un campo magnético que atrae conexiones de alma a alma.</p>
+            `,
+            it: `
+                <h3>Fase 2: L'Innesco della Vulnerabilità</h3>
+                <p>La vulnerabilità disattiva la risposta di attacco-o-fuga dell'amigdala e favorisce la coerenza cingolata. Spiritualmente, apre il Chakra del Cuore (Anahata), abbattendo le barriere dell'ego per irradiare risonanza magnetica pura.</p>
+            `,
+            cs: `
+                <h3>Fáze 2: Spouštěč Zranitelnosti</h3>
+                <p>Zranitelnost tlumí reakci amigdaly (bojuj, nebo uteč) a podporuje koherenci v přední cingulární kůře. Duchovně otevírá srdeční čakru (Anahata), což rozpouští hradby ega.</p>
+            `,
+            pl: `
+                <h3>Faza 2: Wyzwalacz Wrażliwości (Vulnerability)</h3>
+                <p>Wrażliwość wyłącza obronną reakcję ciała migdałowatego i wspiera koherencję zakrętu obręczy. Duchowo otwiera to Czakrę Serca (Anahata), rozpuszczając mury ego.</p>
+            `,
+            ru: `
+                <h3>Фаза 2: Триггер Уязвимости</h3>
+                <p>Уязвимость снижает активность миндалевидного тела (защитный режим) и повышает когерентность передней поясной коры. Духовно это открывает Сердечную Чакру (Анахата), растворяя стены эго.</p>
+            `,
+            zh: `
+                <h3>第二阶段：漏洞/脆弱性触发，杏仁核抑制与前扣带回相干性</h3>
+                <p>在深度放松状态下拥抱脆弱并非软弱 insula，而是高神经相干性的标志。阿尔法状态降低了杏仁核的敏感性，允许你停用防御性的自我保护机制（贝塔心智的社会面具），并激活与同理心相关的岛叶。体验安全脆弱会向大脑发送认知情感整合信号，促进前扣带回的相干性。在灵性上，脆弱是小我筑起的分离之墙的自愿溶解，心轮（Anahata）的完全敞开会发射高频磁场，吸引相同波长的灵魂连接。</p>
+            `
         }
     };
 
@@ -1965,13 +2071,47 @@ document.addEventListener('DOMContentLoaded', () => {
             detailModal.classList.add('open');
             document.body.style.overflow = 'hidden';
             playUISound('open-modal');
+            
+            // Trigger coherence resonance visual state
+            if (sectionKey.startsWith('rel')) {
+                const connArea = document.getElementById('rel-connection-area');
+                if (connArea) {
+                    connArea.classList.add('coherent');
+                }
+            }
         });
     });
+
+    // --- 4b. INTERACTIVE COHERENT RESONANCE VISUALS (Chapter IV) ---
+    const relConnArea = document.getElementById('rel-connection-area');
+    if (relConnArea) {
+        document.querySelectorAll('[data-section="rel-feat1"]').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                relConnArea.classList.add('hover-a');
+            });
+            el.addEventListener('mouseleave', () => {
+                relConnArea.classList.remove('hover-a');
+            });
+        });
+
+        document.querySelectorAll('[data-section="rel-feat2"]').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                relConnArea.classList.add('hover-b');
+            });
+            el.addEventListener('mouseleave', () => {
+                relConnArea.classList.remove('hover-b');
+            });
+        });
+    }
 
     function closeModal() {
         detailModal.classList.remove('open');
         document.body.style.overflow = '';
         playUISound('close-modal');
+        const connArea = document.getElementById('rel-connection-area');
+        if (connArea) {
+            connArea.classList.remove('coherent');
+        }
     }
 
     modalCloseBtn.addEventListener('click', closeModal);

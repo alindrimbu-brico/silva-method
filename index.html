@@ -364,32 +364,38 @@
                     </p>
 
                     <div class="relatii-features">
-                        <div class="feature-item">
+                        <button class="feature-item btn-detail" data-section="rel-feat1">
                             <div class="feature-icon"><i class="fa-solid fa-hands"></i></div>
                             <div class="feature-text">
                                 <h4 id="rel-feat-title-1">Ancora Senzorială Conștientă</h4>
                                 <p id="rel-feat-desc-1">În starea Alpha, vizualizează și simte textura unei mâini care o sprijină pe a ta — caldă, fermă, fără să te strângă posesiv. Ascultă tonul unei voci care îți oferă un spațiu complet non-judecativ.</p>
                             </div>
-                        </div>
-                        <div class="feature-item">
+                        </button>
+                        <button class="feature-item btn-detail" data-section="rel-feat2">
                             <div class="feature-icon"><i class="fa-solid fa-shield-heart"></i></div>
                             <div class="feature-text">
                                 <h4 id="rel-feat-title-2">Declanșatorul Vulnerabilității</h4>
                                 <p id="rel-feat-desc-2">Trăiește intens sentimentul de ușurare și bucuria profundă de a fi vulnerabil în perfectă siguranță. Subconștientul tău va activa percepția care atrage dinamici mature și conștiente.</p>
                             </div>
-                        </div>
+                        </button>
                     </div>
 
                     <button class="btn btn-secondary btn-detail" data-section="relatii" id="btn-detail-rel" style="margin-top: 3rem;">Psihologia Atașamentului Securizat</button>
                 </div>
                 <div class="relatii-visual scroll-reveal">
-                    <div class="connection-nodes">
-                        <div class="visual-node node-a"></div>
-                        <div class="visual-node node-b"></div>
+                    <div class="connection-nodes" id="rel-connection-area">
+                        <button class="visual-node node-a btn-detail" data-section="rel-feat1" aria-label="Ancora Senzorială Conștientă"></button>
+                        <button class="visual-node node-b btn-detail" data-section="rel-feat2" aria-label="Declanșatorul Vulnerabilității"></button>
                         <svg class="line-svg">
+                            <defs>
+                                <linearGradient id="coherence-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="var(--color-accent)"></stop>
+                                    <stop offset="100%" stop-color="var(--color-purple)"></stop>
+                                </linearGradient>
+                            </defs>
                             <path id="connection-path" d="M 50 150 C 125 75, 175 225, 250 150" fill="none" stroke="rgba(99, 102, 241, 0.2)" stroke-width="3" stroke-dasharray="8 6"/>
                         </svg>
-                        <div class="pulse-ring"></div>
+                        <div class="pulse-ring" id="rel-pulse-ring"></div>
                     </div>
                 </div>
             </div>
