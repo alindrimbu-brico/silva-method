@@ -1464,6 +1464,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        // Translate the return button inside the modal dynamically
+        const returnBtn = document.getElementById('modal-return-btn');
+        if (returnBtn) {
+            returnBtn.innerText = (lang === 'ro' ? 'Înapoi la Ghid' : (lang === 'pt' ? 'Voltar ao Guia' : (lang === 'es' ? 'Volver a la Guía' : (lang === 'it' ? 'Torna alla Guida' : (lang === 'cs' ? 'Zpět na Průvodce' : (lang === 'pl' ? 'Powrót do Przewodnika' : (lang === 'ru' ? 'Назад к Руководству' : (lang === 'zh' ? '返回指南' : 'Back to Guide'))))))));
+        }
+
         // Handle specific attribute translations if needed (like placeholders)
         document.documentElement.setAttribute('lang', lang);
     }
@@ -1476,6 +1482,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 4. DETAILS MODALS LOGIC & UI SOUNDS ---
     const detailModal = document.getElementById('detail-modal');
     const modalCloseBtn = document.getElementById('modal-close-btn');
+    const modalReturnBtn = document.getElementById('modal-return-btn');
     const modalTitle = document.getElementById('modal-title');
     const modalBodyContent = document.getElementById('modal-body-content');
     const modalTag = document.getElementById('modal-tag');
@@ -1688,6 +1695,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     modalCloseBtn.addEventListener('click', closeModal);
+    if (modalReturnBtn) {
+        modalReturnBtn.addEventListener('click', closeModal);
+    }
     detailModal.addEventListener('click', (e) => {
         if (e.target === detailModal) {
             closeModal();
