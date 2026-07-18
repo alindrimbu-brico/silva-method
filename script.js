@@ -2618,8 +2618,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 carrierFreq = 220; // Medium pitch for relaxed focus
                 lfoFreq = 10;      // Alpha 10 Hz (calm pulsation)
             } else if (sampleName === 'theta') {
-                carrierFreq = 180; // Deep low pitch for deep sleep/meditation
-                lfoFreq = 4;       // Theta/Delta 4 Hz (slow breathing pulse)
+                carrierFreq = 160; // Deep low pitch for meditation
+                lfoFreq = 5;       // Theta 5 Hz
+            } else if (sampleName === 'delta') {
+                carrierFreq = 120; // Very deep sleep frequency
+                lfoFreq = 1.5;     // Delta 1.5 Hz
             }
 
             sampleOscLeft.frequency.value = carrierFreq;
@@ -2686,6 +2689,90 @@ document.addEventListener('DOMContentLoaded', () => {
         sampleOscRight = null;
         sampleGainNode = null;
     }
+
+    // --- 10b. INTERACTIVE CHART HOVER EFFECTS ---
+    const chartItems = document.querySelectorAll('.chart-item');
+    chartItems.forEach(item => {
+        const btnPlay = item.querySelector('.btn-play-sample');
+        if (!btnPlay) return;
+        const sampleName = btnPlay.getAttribute('data-sample');
+        
+        item.addEventListener('mouseenter', () => {
+            item.classList.add('hovered');
+            
+            if (activeSampleName !== sampleName) {
+                if (!audioCtx) initAudio();
+                if (audioCtx.state === 'suspended') audioCtx.resume();
+
+                if (activeSampleName) stopActiveSample();
+
+                if (isPlaying && gainNode) {
+                    gainNode.gain.setTargetAtTime(0, audioCtx.currentTime, 0.1);
+                }
+
+                activeSampleName = sampleName;
+                btnPlay.classList.add('playing');
+                btnPlay.querySelector('i').className = 'fa-solid fa-pause';
+
+                sampleOscLeft = audioCtx.createOscillator(); 
+                sampleOscLeft.type = 'sine';
+                
+                sampleOscRight = audioCtx.createOscillator(); 
+                sampleOscRight.type = 'sine';
+
+                let carrierFreq = 220;
+                let lfoFreq = 10;
+
+                if (sampleName === 'beta') {
+                    carrierFreq = 260;
+                    lfoFreq = 20;
+                } else if (sampleName === 'alpha') {
+                    carrierFreq = 220;
+                    lfoFreq = 10;
+                } else if (sampleName === 'theta') {
+                    carrierFreq = 160;
+                    lfoFreq = 5;
+                } else if (sampleName === 'delta') {
+                    carrierFreq = 120;
+                    lfoFreq = 1.5;
+                }
+
+                sampleOscLeft.frequency.value = carrierFreq;
+                sampleOscRight.frequency.value = lfoFreq;
+
+                const lfoGain = audioCtx.createGain();
+                lfoGain.gain.value = 0.45;
+
+                const carrierGain = audioCtx.createGain();
+                carrierGain.gain.value = 0.55;
+
+                sampleOscRight.connect(lfoGain);
+                lfoGain.connect(carrierGain.gain);
+                sampleOscLeft.connect(carrierGain);
+
+                sampleGainNode = audioCtx.createGain();
+                sampleGainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+                
+                carrierGain.connect(sampleGainNode);
+                sampleGainNode.connect(audioCtx.destination);
+                sampleGainNode.gain.linearRampToValueAtTime(0.18, audioCtx.currentTime + 0.3);
+
+                sampleOscLeft.start(0);
+                sampleOscRight.start(0);
+            }
+        });
+
+        item.addEventListener('mouseleave', () => {
+            item.classList.remove('hovered');
+            
+            if (activeSampleName === sampleName) {
+                stopActiveSample();
+                if (isPlaying && gainNode) {
+                    gainNode.gain.setTargetAtTime(0.08, audioCtx.currentTime + 0.5, 0.3);
+                }
+            }
+        });
+    });
 
     // --- 11. INTERACTIVE GUIDED BREATHWORK PANEL ---
     const breathTabs = document.querySelectorAll('.breath-tab');
@@ -3195,4 +3282,397 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Run initial setup for breathing text
     updateBreathPanelLanguage();
+
+    // --- 4c. SINERGIA ALPHA: FAMILY GAME LOGIC ---
+    let gamePlayers = [];
+    let gameCurrentPlayerIndex = 0;
+    let gameIsCardActive = false;
+    let gameCurrentCard = null;
+
+    const gameSpaces = [
+        { name: { ro: "Start Beta", en: "Start Beta" }, type: "beta", color: "var(--gradient-beta)" },
+        { name: { ro: "Ecran Mental", en: "Mental Screen" }, type: "alpha", color: "var(--color-accent)" },
+        { name: { ro: "Stres Alert", en: "Stress Alert" }, type: "beta", color: "var(--gradient-beta)" },
+        { name: { ro: "Suflu Vagal", en: "Vagus Breath" }, type: "alpha", color: "var(--color-accent)" },
+        { name: { ro: "Zonă Theta", en: "Theta Zone" }, type: "theta", color: "var(--color-purple)" },
+        { name: { ro: "Ancorare Relații", en: "Relational Anchor" }, type: "alpha", color: "var(--color-accent)" },
+        { name: { ro: "Somn Delta", en: "Delta Sleep" }, type: "delta", color: "var(--color-teal)" },
+        { name: { ro: "Vizualizare", en: "Visualization" }, type: "alpha", color: "var(--color-accent)" },
+        { name: { ro: "Coerență HRV", en: "HRV Coherence" }, type: "alpha", color: "var(--color-accent)" },
+        { name: { ro: "Zid Critic Beta", en: "Beta Critical Wall" }, type: "beta", color: "var(--gradient-beta)" },
+        { name: { ro: "Secunde Sacre", en: "Sacred Seconds" }, type: "alpha", color: "var(--color-accent)" },
+        { name: { ro: "Unda Schumann", en: "Schumann Wave" }, type: "alpha", color: "var(--color-accent)" }
+    ];
+
+    const gameChallenges = [
+        // Quizzes
+        {
+            type: "quiz",
+            title: { ro: "Test Undă Alpha", en: "Alpha Wave Test" },
+            text: { 
+                ro: "Care este frecvența ideală a stării Alpha, unde manifestarea devine puternică?", 
+                en: "What is the ideal frequency of the Alpha state, where manifestation becomes powerful?" 
+            },
+            options: [
+                { text: "14 - 30 Hz (Beta)", correct: false },
+                { text: "8 - 12 Hz (Alpha)", correct: true },
+                { text: "0.5 - 3 Hz (Delta)", correct: false }
+            ]
+        },
+        {
+            type: "quiz",
+            title: { ro: "Neurobiologia Atingeri", en: "Neurobiology of Touch" },
+            text: { 
+                ro: "Ce hormon al conexiunii este secretat când vizualizezi o atingere caldă în Alpha?", 
+                en: "What bonding hormone is secreted when visualizing a warm touch in Alpha?" 
+            },
+            options: [
+                { text: "Adrenalină", correct: false },
+                { text: "Oxitocină", correct: true },
+                { text: "Cortizol", correct: false }
+            ]
+        },
+        {
+            type: "quiz",
+            title: { ro: "Cercetări José Silva", en: "José Silva Research" },
+            text: { 
+                ro: "Ce metodă utilizează somnul sau starea Alpha pentru a trimite mesaje subconștiente de iubire?", 
+                en: "Which method uses sleep or the Alpha state to send subconscious messages of love?" 
+            },
+            options: [
+                { text: "Comunicarea Subiectivă", correct: true },
+                { text: "Filtrarea Beta Critică", correct: false },
+                { text: "Decompresia Delta", correct: false }
+            ]
+        },
+        {
+            type: "quiz",
+            title: { ro: "Frecvența Theta", en: "Theta Frequency" },
+            text: { 
+                ro: "Cu ce stare este asociată frecvența Theta (4-7 Hz) în psihologie?", 
+                en: "What state is the Theta frequency (4-7 Hz) associated with in psychology?" 
+            },
+            options: [
+                { text: "Stare de alertă maximă", correct: false },
+                { text: "Meditație profundă și somn ușor", correct: true },
+                { text: "Activitate fizică intensă", correct: false }
+            ]
+        },
+        // Challenges
+        {
+            type: "challenge",
+            title: { ro: "Provocare Respiratorie", en: "Breathing Challenge" },
+            text: { 
+                ro: "Fă o expirație completă timp de 8 secunde, eliberând mental comanda 'A-L-P-H-A'. Dacă familia te vede calm, primești punctele!", 
+                en: "Do a full exhalation for 8 seconds, mentally releasing the command 'A-L-P-H-A'. If your family sees you calm, you get the points!" 
+            }
+        },
+        {
+            type: "challenge",
+            title: { ro: "Oglindire Empatică", en: "Empathetic Mirroring" },
+            text: { 
+                ro: "Privește persoana din dreapta ta în ochi timp de 10 secunde și zâmbește cald, fără să spui nimic. Trăiește starea de atașament securizat.", 
+                en: "Look the person to your right in the eyes for 10 seconds and smile warmly, without saying anything. Experience the secure attachment state." 
+            }
+        },
+        {
+            type: "challenge",
+            title: { ro: "Cele 10 Secunde Sacre", en: "10 Sacred Seconds" },
+            text: { 
+                ro: "Închide ochii, ridică privirea cu 20 de grade sub pleoape și rămâi în liniște totală (fără să vorbești sau să te miști) timp de 10 secunde.", 
+                en: "Close your eyes, look up by 20 degrees under your eyelids, and remain in total silence (no speaking or moving) for 10 seconds." 
+            }
+        },
+        {
+            type: "challenge",
+            title: { ro: "Dilatarea Realității", en: "Dilating Reality" },
+            text: { 
+                ro: "Explică întregii familii, în propriile cuvinte, de ce este util să luăm decizii din starea Alpha și nu din Beta (stres).", 
+                en: "Explain to the whole family, in your own words, why it is useful to make decisions from the Alpha state instead of Beta (stress)." 
+            }
+        }
+    ];
+
+    const btnAddPlayer = document.getElementById('btn-add-player');
+    const playerNameInput = document.getElementById('player-name-input');
+    const leaderboardList = document.getElementById('leaderboard-list');
+    const boardTrackElement = document.getElementById('board-track');
+    const btnRollDice = document.getElementById('btn-roll-dice');
+    const gameDice = document.getElementById('game-dice');
+    
+    const gameCardDisplay = document.getElementById('game-card-display');
+    const gameCardPlaceholder = document.getElementById('game-card-placeholder');
+    const gameCardContent = document.getElementById('game-card-content');
+    const gameCardBadge = document.getElementById('game-card-badge');
+    const gameCardTitle = document.getElementById('game-card-title');
+    const gameCardText = document.getElementById('game-card-text');
+    const gameCardOptions = document.getElementById('game-card-options');
+    const btnSuccessTask = document.getElementById('btn-success-task');
+    const noPlayersText = document.getElementById('no-players-text');
+
+    // Render Board Spaces
+    function renderBoard() {
+        if (!boardTrackElement) return;
+        boardTrackElement.innerHTML = '';
+        gameSpaces.forEach((space, idx) => {
+            const spaceDiv = document.createElement('div');
+            spaceDiv.className = `board-space space-${space.type}`;
+            spaceDiv.style.borderColor = space.color;
+            spaceDiv.id = `space-${idx}`;
+            
+            const numSpan = document.createElement('span');
+            numSpan.className = 'space-num';
+            numSpan.innerText = idx;
+            
+            const nameDiv = document.createElement('div');
+            nameDiv.className = 'space-name';
+            nameDiv.innerText = space.name[currentLang] || space.name.ro;
+            
+            const avatarsDiv = document.createElement('div');
+            avatarsDiv.className = 'space-avatars';
+            avatarsDiv.id = `space-avatars-${idx}`;
+            
+            spaceDiv.appendChild(numSpan);
+            spaceDiv.appendChild(nameDiv);
+            spaceDiv.appendChild(avatarsDiv);
+            boardTrackElement.appendChild(spaceDiv);
+        });
+    }
+
+    function updateLeaderboard() {
+        if (!leaderboardList) return;
+        
+        // Remove empty state text
+        if (gamePlayers.length > 0) {
+            if (noPlayersText) noPlayersText.style.display = 'none';
+        } else {
+            if (noPlayersText) noPlayersText.style.display = 'block';
+            leaderboardList.innerHTML = '';
+            leaderboardList.appendChild(noPlayersText);
+            return;
+        }
+
+        // Keep noPlayersText element but clear everything else
+        leaderboardList.innerHTML = '';
+        
+        // Sort players by score
+        const sortedPlayers = [...gamePlayers].sort((a, b) => b.score - a.score);
+        
+        sortedPlayers.forEach((player, idx) => {
+            const playerRow = document.createElement('div');
+            playerRow.className = 'player-leaderboard-row';
+            if (gamePlayers.indexOf(player) === gameCurrentPlayerIndex) {
+                playerRow.classList.add('active-player-row');
+            }
+            
+            const rankSpan = document.createElement('span');
+            rankSpan.className = 'player-rank';
+            rankSpan.innerText = `#${idx + 1}`;
+            
+            const nameSpan = document.createElement('span');
+            nameSpan.className = 'player-name';
+            nameSpan.innerText = `${player.name} (${currentLang === 'ro' ? 'Spațiu' : 'Space'} ${player.position})`;
+            
+            const scoreSpan = document.createElement('span');
+            scoreSpan.className = 'player-score';
+            scoreSpan.innerText = `${player.score} Pct`;
+            
+            playerRow.appendChild(rankSpan);
+            playerRow.appendChild(nameSpan);
+            playerRow.appendChild(scoreSpan);
+            leaderboardList.appendChild(playerRow);
+        });
+
+        // Re-render avatars on board
+        gameSpaces.forEach((_, idx) => {
+            const avatarsDiv = document.getElementById(`space-avatars-${idx}`);
+            if (avatarsDiv) avatarsDiv.innerHTML = '';
+        });
+
+        gamePlayers.forEach((player, idx) => {
+            const avatarsDiv = document.getElementById(`space-avatars-${player.position}`);
+            if (avatarsDiv) {
+                const avatar = document.createElement('div');
+                avatar.className = `player-avatar avatar-p${idx % 4}`;
+                avatar.innerText = player.name[0].toUpperCase();
+                avatar.title = player.name;
+                avatarsDiv.appendChild(avatar);
+            }
+        });
+    }
+
+    function addPlayer(name) {
+        const trimmedName = name.trim();
+        if (!trimmedName) return;
+        
+        // Prevent duplicate names
+        if (gamePlayers.some(p => p.name.toLowerCase() === trimmedName.toLowerCase())) {
+            return;
+        }
+
+        // Limit to max 4 players for design reasons
+        if (gamePlayers.length >= 4) {
+            alert(currentLang === 'ro' ? "Maxim 4 jucători!" : "Maximum 4 players!");
+            return;
+        }
+
+        gamePlayers.push({
+            name: trimmedName,
+            score: 0,
+            position: 0
+        });
+
+        playerNameInput.value = '';
+        btnRollDice.disabled = false;
+        
+        updateLeaderboard();
+        playUISound('click');
+    }
+
+    if (btnAddPlayer && playerNameInput) {
+        btnAddPlayer.addEventListener('click', () => {
+            addPlayer(playerNameInput.value);
+        });
+        playerNameInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') addPlayer(playerNameInput.value);
+        });
+    }
+
+    // Attach presets
+    document.querySelectorAll('.preset-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const name = btn.getAttribute('data-name');
+            addPlayer(name);
+        });
+    });
+
+    // Dice rolling
+    if (btnRollDice) {
+        btnRollDice.addEventListener('click', () => {
+            if (gamePlayers.length === 0 || gameIsCardActive) return;
+            
+            btnRollDice.disabled = true;
+            gameDice.classList.add('rolling');
+            playUISound('click');
+
+            let rollValue = 1;
+            let counter = 0;
+            const diceInterval = setInterval(() => {
+                rollValue = Math.floor(Math.random() * 6) + 1;
+                gameDice.innerText = rollValue;
+                counter++;
+                if (counter > 10) {
+                    clearInterval(diceInterval);
+                    gameDice.classList.remove('rolling');
+                    movePlayer(rollValue);
+                }
+            }, 80);
+        });
+    }
+
+    function movePlayer(steps) {
+        const player = gamePlayers[gameCurrentPlayerIndex];
+        
+        // Calculate new position
+        player.position = (player.position + steps) % gameSpaces.length;
+        playUISound('open-modal');
+        updateLeaderboard();
+        
+        // Draw card challenge based on space type
+        drawGameCard();
+    }
+
+    function drawGameCard() {
+        gameIsCardActive = true;
+        gameCardPlaceholder.style.display = 'none';
+        gameCardContent.style.display = 'block';
+        
+        // Choose a random challenge
+        const cardIndex = Math.floor(Math.random() * gameChallenges.length);
+        gameCurrentCard = gameChallenges[cardIndex];
+        
+        // Render card
+        gameCardTitle.innerText = gameCurrentCard.title[currentLang] || gameCurrentCard.title.ro;
+        gameCardText.innerText = gameCurrentCard.text[currentLang] || gameCurrentCard.text.ro;
+        
+        if (gameCurrentCard.type === 'quiz') {
+            gameCardBadge.innerText = 'QUIZ';
+            gameCardBadge.className = 'card-badge quiz';
+            btnSuccessTask.style.display = 'none';
+            gameCardOptions.style.display = 'flex';
+            gameCardOptions.innerHTML = '';
+            
+            gameCurrentCard.options.forEach(opt => {
+                const optBtn = document.createElement('button');
+                optBtn.className = 'option-btn';
+                optBtn.innerText = opt.text;
+                optBtn.addEventListener('click', () => {
+                    // Check answer
+                    document.querySelectorAll('.option-btn').forEach(b => b.style.pointerEvents = 'none');
+                    if (opt.correct) {
+                        optBtn.classList.add('correct');
+                        gamePlayers[gameCurrentPlayerIndex].score += 15;
+                        playUISound('breath-hold'); // success high chime
+                    } else {
+                        optBtn.classList.add('wrong');
+                        playUISound('breath-stop'); // failure grounding sound
+                        // Highlight correct answer
+                        document.querySelectorAll('.option-btn').forEach(b => {
+                            const matchingOpt = gameCurrentCard.options.find(o => o.text === b.innerText);
+                            if (matchingOpt && matchingOpt.correct) b.classList.add('correct');
+                        });
+                    }
+                    setTimeout(endTurn, 2500);
+                });
+                gameCardOptions.appendChild(optBtn);
+            });
+        } else {
+            gameCardBadge.innerText = (currentLang === 'ro' ? 'PROVOCARE' : 'CHALLENGE');
+            gameCardBadge.className = 'card-badge challenger';
+            gameCardOptions.style.display = 'none';
+            btnSuccessTask.style.display = 'block';
+            btnSuccessTask.innerText = (currentLang === 'ro' ? 'Provocare Îndeplinită (+10 Pct)' : 'Challenge Completed (+10 Pts)');
+        }
+    }
+
+    if (btnSuccessTask) {
+        btnSuccessTask.addEventListener('click', () => {
+            gamePlayers[gameCurrentPlayerIndex].score += 10;
+            playUISound('breath-hold');
+            endTurn();
+        });
+    }
+
+    function endTurn() {
+        gameIsCardActive = false;
+        
+        // Hide card content
+        gameCardContent.style.display = 'none';
+        gameCardPlaceholder.style.display = 'block';
+        gameDice.innerText = '?';
+        
+        // Move to next player
+        gameCurrentPlayerIndex = (gameCurrentPlayerIndex + 1) % gamePlayers.length;
+        
+        // Reset instructions prompt
+        const promptText = document.getElementById('game-prompt-text');
+        if (promptText) {
+            promptText.innerText = (currentLang === 'ro' ? 
+                `Tura lui ${gamePlayers[gameCurrentPlayerIndex].name}. Dă cu zarul!` : 
+                `${gamePlayers[gameCurrentPlayerIndex].name}'s turn. Roll the dice!`);
+        }
+        
+        btnRollDice.disabled = false;
+        updateLeaderboard();
+    }
+
+    // Initialize board track rendering
+    renderBoard();
+
+    // Re-render board on language change
+    langSelect.addEventListener('change', () => {
+        setTimeout(renderBoard, 50);
+        setTimeout(updateLeaderboard, 50);
+    });
 });
+

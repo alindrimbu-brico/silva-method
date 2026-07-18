@@ -12,7 +12,7 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=1.4">
+    <link rel="stylesheet" href="styles.css?v=1.5">
 </head>
 <body>
 
@@ -177,10 +177,17 @@
                         </div>
                         <div class="chart-item">
                             <div class="chart-header-row">
-                                <div class="chart-label" id="chart-label-theta">Theta/Delta (0.5 - 7 Hz) - Somn Profund</div>
+                                <div class="chart-label" id="chart-label-theta">Theta (4 - 7 Hz) - Meditație / Subconștient</div>
                                 <button class="btn-play-sample" data-sample="theta" aria-label="Listen Theta"><i class="fa-solid fa-volume-low"></i></button>
                             </div>
-                            <div class="chart-track"><div class="chart-fill theta-fill" style="width: 15%;"></div></div>
+                            <div class="chart-track"><div class="chart-fill theta-fill" style="width: 25%;"></div></div>
+                        </div>
+                        <div class="chart-item">
+                            <div class="chart-header-row">
+                                <div class="chart-label" id="chart-label-delta">Delta (0.5 - 3 Hz) - Somn Profund / Vindecare</div>
+                                <button class="btn-play-sample" data-sample="delta" aria-label="Listen Delta"><i class="fa-solid fa-volume-low"></i></button>
+                            </div>
+                            <div class="chart-track"><div class="chart-fill delta-fill" style="width: 10%;"></div></div>
                         </div>
                     </div>
                 </div>
@@ -452,6 +459,77 @@
         </div>
     </section>
 
+    <!-- Section: Sinergia Alpha - Joc de Familie -->
+    <section id="game-section" class="section game-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" id="game-tag">Activitate de Familie</span>
+                <h2 id="game-title">Sinergia Alpha: Jocul de Familie al Creierului Coerent</h2>
+                <p id="game-subtitle">Călătoriți împreună prin frecvențele cerebrale, răspundeți la întrebări și finalizați provocări de meditație pentru a atinge coerența totală!</p>
+            </div>
+
+            <div class="game-container scroll-reveal">
+                <!-- Left panel: Board Setup and Leaderboard -->
+                <div class="game-panel-left">
+                    <div class="game-setup">
+                        <h4 id="game-setup-title">Configurare Jucători</h4>
+                        <div class="setup-row">
+                            <input type="text" id="player-name-input" placeholder="Nume jucător..." maxlength="12">
+                            <button id="btn-add-player" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Adaugă</button>
+                        </div>
+                        <div class="setup-presets">
+                            <button class="preset-btn" data-name="Mama">Mama</button>
+                            <button class="preset-btn" data-name="Tata">Tata</button>
+                            <button class="preset-btn" data-name="Copil 1">Copil 1</button>
+                            <button class="preset-btn" data-name="Copil 2">Copil 2</button>
+                        </div>
+                    </div>
+
+                    <div class="game-leaderboard">
+                        <h4 id="game-score-title">Scor și Poziție</h4>
+                        <div id="leaderboard-list" class="leaderboard-list">
+                            <p class="empty-list" id="no-players-text">Niciun jucător activ. Adăugați membrii familiei!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right panel: Interactive Board Map & Action Deck -->
+                <div class="game-panel-right">
+                    <div class="game-board-display">
+                        <div class="board-track" id="board-track">
+                            <!-- Spaces will be rendered dynamically in JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="game-action-center">
+                        <div class="dice-area">
+                            <div class="dice" id="game-dice">?</div>
+                            <button id="btn-roll-dice" class="btn btn-secondary" disabled>Dă cu Zarul</button>
+                        </div>
+
+                        <div class="game-card-display" id="game-card-display">
+                            <div class="game-card-placeholder" id="game-card-placeholder">
+                                <i class="fa-solid fa-brain"></i>
+                                <p id="game-prompt-text">Așteptăm să înceapă jocul. Adaugă jucători și dă cu zarul!</p>
+                            </div>
+                            <div class="game-card-content" id="game-card-content" style="display: none;">
+                                <span id="game-card-badge" class="card-badge challenger">PROVOCARE</span>
+                                <h4 id="game-card-title">Titlu Cartonaș</h4>
+                                <p id="game-card-text">Descrierea provocării sau întrebarea...</p>
+                                <div class="game-card-options" id="game-card-options" style="display: none;">
+                                    <!-- Quiz options render here -->
+                                </div>
+                                <div class="game-card-actions" id="game-card-actions">
+                                    <button id="btn-success-task" class="btn btn-secondary" style="width: 100%; display: none;">Sarcina Îndeplinită (+10 Pct)</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -475,6 +553,6 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="script.js?v=1.4"></script>
+    <script src="script.js?v=1.5"></script>
 </body>
 </html>
