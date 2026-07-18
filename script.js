@@ -1004,6 +1004,90 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h3>通过 RAS（网状激活系统）过滤现实</h3>
                 <p>网状激活系统充当大脑的垃圾邮件过滤器。它从我们每天接收的数百万个刺激中决定哪些信息到达意识层面。这 10 秒的封印重新编程了这个过滤器。你的大脑将开始感知以前在你焦虑的贝塔心智中看不见的机遇、资源和共时性巧合。</p>
             `
+        },
+        simulator: {
+            ro: `
+                <h3>Neurofiziologia Clinică a Undelor Cerebrale</h3>
+                <p>Creierul uman este un organ electro-chimic de o complexitate extraordinară. Undele cerebrale reprezintă activitatea electrică oscilatorie sincronizată a rețelelor neuronale din neocortex, măsurabilă prin Electroencefalografie (EEG):</p>
+                <ul>
+                    <li><strong>Unde Beta (14 - 30 Hz):</strong> Asociate cu atenția focalizată extern, gândirea analitică, rezolvarea de probleme liniare și starea de veghe activă. Din punct de vedere psihiatric, starea Beta înaltă (peste 20 Hz) este strâns legată de eliberarea de cortizol și adrenalină, provocând anxietate, defensivă cognitivă și suprasolicitare sinaptică.</li>
+                    <li><strong>Unde Alpha (8 - 12 Hz):</strong> Ritmul natural de repaus al creierului, generat în principal în cortexul occipital și parietal în absența stimulilor vizuali activi. Alpha este starea de relaxare conștientă, unde talamusul acționează ca un stimulator de ritm, sincronizând descărcările neuronale. Neurochimic, această stare favorizează secreția de serotonină și GABA, neurotransmițătorul inhibitor care reduce anxietatea și stăpânește mintea critică.</li>
+                </ul>
+
+                <h3>Vibrație, Energie și Principiul Kybalionului</h3>
+                <p>Dincolo de modelul medical, simulatorul demonstrează fizic cel de-al treilea principiu hermetic: <strong>Principiul Vibrației</strong> (<em>„Nimic nu stă pe loc; totul se mișcă; totul vibrează”</em>). În plan energetic, materia fizică nu este altceva decât energie condensată care vibrează la o frecvență joasă, în timp ce gândurile și stările spirituale superioare vibrează la frecvențe extrem de înalte.</p>
+                <p>Când coborâm frecvența undelor cerebrale în Alpha, noi reducem „zgomotul” analitic al lumii materiale tridimensionale (Beta) și ne acordăm conștiința la lungimi de undă mai lungi, capabile să interacționeze cu câmpul electromagnetic universal (matricea energetică sau câmpul morfogenetic al realității). În Alpha, mintea nu mai este un receptor pasiv al realității fizice, ci devine un emițător coerent, capabil să modifice rezonanța subconștientă a corpului eteric.</p>
+
+                <h3>Ghidul Spiritual de Utilizare a Simulatorului</h3>
+                <p>Pentru a converti această cunoaștere în experiență directă:</p>
+                <ol>
+                    <li>Privește oscilația din simulator și ascultă sunetul de fundal.</li>
+                    <li>Apasă pe butonul de coborâre și inhalează adânc, urmărind unda cum se dilată și își încetinește ritmul.</li>
+                    <li>Permite-ți ca, pe măsură ce linia roșie și agitată (Beta) devine o undă violet fluidă (Alpha), să vizualizezi cum întreaga ta tensiune musculară și mentală se dizolvă în tăcere. Aceasta este poarta ta către manifestare.</li>
+                </ol>
+            `,
+            en: `
+                <h3>Clinical Neurophysiology of Brainwaves</h3>
+                <p>The human brain is an electro-chemical organ of extraordinary complexity. Brainwaves represent the synchronized oscillatory electrical activity of neuronal networks in the neocortex, measurable by Electroencephalography (EEG):</p>
+                <ul>
+                    <li><strong>Beta Waves (14 - 30 Hz):</strong> Associated with externally focused attention, analytical thinking, linear problem solving, and active wakefulness. From a psychiatric standpoint, high Beta state (above 20 Hz) is closely linked to the release of cortisol and adrenaline, causing anxiety, cognitive defense, and synaptic overload.</li>
+                    <li><strong>Alpha Waves (8 - 12 Hz):</strong> The brain's natural resting rhythm, generated mainly in the occipital and parietal cortex in the absence of active visual stimuli. Alpha is the state of conscious relaxation, where the thalamus acts as a pacemaker, synchronizing neuronal discharges. Neurochemically, this state promotes the secretion of serotonin and GABA, the inhibitory neurotransmitter that reduces anxiety and calms the critical mind.</li>
+                </ul>
+
+                <h3>Vibration, Energy and the Principle of the Kybalion</h3>
+                <p>Beyond the medical model, the simulator physically demonstrates the third Hermetic principle: <strong>The Principle of Vibration</strong> (<em>"Nothing rests; everything moves; everything vibrates"</em>). On an energetic level, physical matter is nothing but condensed energy vibrating at a low frequency, while thoughts and higher spiritual states vibrate at extremely high frequencies.</p>
+                <p>When we lower brainwave frequency into Alpha, we reduce the analytical "noise" of the three-dimensional physical world (Beta) and tune our consciousness to longer wavelengths, capable of interacting with the universal electromagnetic field (the energetic matrix or morphogenetic field of reality). In Alpha, the mind is no longer a passive receiver of physical reality, but becomes a coherent transmitter, capable of altering the subconscious resonance of the etheric blueprint.</p>
+
+                <h3>Spiritual Guide for Using the Simulator</h3>
+                <p>To convert this knowledge into direct experience:</p>
+                <ol>
+                    <li>Observe the oscillation in the simulator and listen to the background tone.</li>
+                    <li>Click the descent button and inhale deeply, watching the wave dilate and slow down its rhythm.</li>
+                    <li>As the red and agitated line (Beta) becomes a fluid purple wave (Alpha), allow all your physical and mental tension to dissolve into silence. This is your gateway to manifestation.</li>
+                </ol>
+            `,
+            pt: `
+                <h3>Neurofisiologia Clínica das Ondas Cerebrais</h3>
+                <p>O cérebro humano é um órgão eletroquímico de complexidade extraordinária. As ondas cerebrais representam a atividade elétrica oscilatória sincronizada das redes neuronais no neocórtex, mensurável por Eletroencefalografia (EEG).</p>
+                <h3>Vibração, Energia e o Princípio de Caibalion</h3>
+                <p>O simulador demonstra fisicamente o terceiro princípio hermético: o Princípio da Vibração ("Nada está parado; tudo se move; tudo vibra"). Na Alpha, a mente sintoniza com ondas eletromagnéticas universais.</p>
+            `,
+            es: `
+                <h3>Neurofisiología Clínica de las Ondas Cerebrales</h3>
+                <p>El cerebro humano es un órgano electroquímico de extraordinaria complejidad. Las ondas cerebrales representan la actividad eléctrica oscilatoria sincronizada de las redes neuronales en la neocorteza, medible por Electroencefalografía (EEG).</p>
+                <h3>Vibración, Energía y el Principio del Kybalión</h3>
+                <p>El simulador demuestra físicamente el tercer principio hermético: el Principio de la Vibración ("Nada está inmóvil; todo se mueve; todo vibra"). En Alpha, la mente se sintoniza con las ondas electromagnéticas universales.</p>
+            `,
+            it: `
+                <h3>Neurofisiologia Clinica delle Onde Cerebrali</h3>
+                <p>Il cervello umano è un organo elettrochimico di straordinaria complessità. Le onde cerebrali rappresentano l'attività elettrica oscillatorio sincronizzata delle reti neuronali nella neocorteccia, misurabile mediante Elettroencefalografia (EEG).</p>
+                <h3>Vibrazione, Energia e il Principio del Kybalion</h3>
+                <p>Il simulatore dimostra fisicamente il terzo principio ermetico: il Principio della Vibrazione ("Nulla è inerte; tutto si muove; tutto vibra"). In Alpha, la mente si sintonizza con le onde elettromagnetiche universali.</p>
+            `,
+            cs: `
+                <h3>Klinická Neurofyziologie Mozkových Vln</h3>
+                <p>Lidský mozek je elektrochemický orgán mimořádné složitosti. Mozkové vlny představují synchronizovanou oscilační elektrickou aktivitu neuronových sítí v neokortexu, měřitelnou elektroencefalografií (EEG).</p>
+                <h3>Vibrace, Energie a Princip Kybalionu</h3>
+                <p>Simulátor fyzicky demonstruje třetí hermetický princip: Princip Vibrace ("Nic nestojí; vše se pohybuje; vše vibruje"). V Alpha se mysl ladí na univerzální elektromagnetické vlny.</p>
+            `,
+            pl: `
+                <h3>Kliniczna Neurofizjologia Fal Mózgowych</h3>
+                <p>Ludzi mózg to organ elektrochemiczny o niezwykłej złożoności. Fale mózgowe reprezentują zsynchronizowaną oscylacyjną aktywność elektryczną sieci neuronowych w neokorze, mierzalną metodą elektroencefalografii (EEG).</p>
+                <h3>Wibracje, Energia i Zasada Kybalionu</h3>
+                <p>Symulator fizycznie demonstruje trzecią zasadę hermetyczną: Zasadę Wibracji ("Nic nie spoczywa; wszystko się porusza; wszystko wibruje"). W Alpha umysł dostraja się do uniwersalnych fal elektromagnetycznych.</p>
+            `,
+            ru: `
+                <h3>Клиническая Нейрофизиология Мозговых Волн</h3>
+                <p>Мозг человека — это электрохимический орган необычайной сложности. Мозговые волны представляют собой синхронизированную колебательную электрическую активность нейронных сетей в неокортексе, измеряемую с помощью электроэнцефалографии (EEG).</p>
+                <h3>Вибрация, Энергия и Принцип Кибалиона</h3>
+                <p>Симулятор физически демонстрирует третий герметический принцип: Принцип Вибрации ("Ничто не покоится; всё движется; всё вибрирует"). В Alpha разум настраивается на универсальные электромагнитные волны.</p>
+            `,
+            zh: `
+                <h3>脑电波的临床神经生理学</h3>
+                <p>人脑是一个极其复杂的电化学器官。脑电波代表新皮质中神经元网络同步的振荡电活动，可通过脑电图（EEG）进行测量。</p>
+                <h3>振动、能量和赫密士原理</h3>
+                <p>该模拟器物理上展示了静态与动态的第三个赫密士原理：振动原理（“没有任何事物是静止的；万事万物都在运动；万事万物都在振动”）。在阿尔法波状态下，心灵与宇宙电磁波同步。</p>
+            `
         }
     };
 
@@ -1414,56 +1498,175 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 150);
 
 
-    // --- 8. ALPHA SIMULATOR (Oscillator wave visual) ---
-    const btnDescend = document.getElementById('btn-descend');
-    const simulatorWave = document.getElementById('simulator-wave');
-    const waveText = document.getElementById('wave-text');
-    let inAlpha = false;
+    // --- 8. ALPHA SIMULATOR (Canvas-based Real-time Wave Visualizer) ---
+    const waveCanvas = document.getElementById('wave-canvas');
+    if (waveCanvas) {
+        const simCtx = waveCanvas.getContext('2d');
+        const btnDescend = document.getElementById('btn-descend');
+        const simStateBadge = document.getElementById('sim-state-badge');
+        const simFreqCounter = document.getElementById('sim-frequency-counter');
+        
+        const teleNeuro = document.getElementById('tele-val-neuro');
+        const teleFilter = document.getElementById('tele-val-filter');
+        const teleSpirit = document.getElementById('tele-val-spirit');
 
-    const wavePath = document.getElementById('wave-path');
-    const betaPath = "M 0 75 Q 10 30 20 75 T 40 75 T 60 75 T 80 75 T 100 75 T 120 75 T 140 75 T 160 75 T 180 75 T 200 75 T 220 75 T 240 75 T 260 75 T 280 75 T 300 75 T 320 75 T 340 75 T 360 75 T 380 75 T 400 75 T 420 75 T 440 75 T 460 75 T 480 75 T 500 75 T 520 75 T 540 75 T 560 75 T 580 75 T 600 75 T 620 75 T 640 75 T 660 75 T 680 75 T 700 75 T 720 75 T 740 75 T 760 75 T 780 75 T 800 75";
-    const alphaPath = "M 0 75 Q 40 10 80 75 T 160 75 T 240 75 T 320 75 T 400 75 T 480 75 T 560 75 T 640 75 T 720 75 T 800 75";
+        const telemetryData = {
+            beta: {
+                badge: { ro: "Starea Beta", en: "Beta State", pt: "Estado Beta", es: "Estado Beta", it: "Stato Beta", cs: "Stav Beta", pl: "Stan Beta", ru: "Бета-Состояние", zh: "贝塔状态" },
+                neuro: { ro: "Cortizol / Adrenalină", en: "Cortisol / Adrenaline", pt: "Cortisol / Adrenalina", es: "Cortisol / Adrenalina", it: "Cortisolo / Adrenalina", cs: "Kortizol / Adrenalin", pl: "Kortyzol / Adrenalina", ru: "Кортизол / Адреналин", zh: "皮质醇 / 肾上腺素" },
+                filter: { ro: "Minte Critică Activă", en: "Active Critical Mind", pt: "Mente Crítica Ativa", es: "Mente Crítica Activa", it: "Mente Critica Attiva", cs: "Aktivní Kritická Mysl", pl: "Aktywny Krytyczny Umysł", ru: "Активный Критический Разум", zh: "活跃批判思维" },
+                spirit: { ro: "Fizic / Dualitate", en: "Physical / Duality", pt: "Físico / Duality", es: "Físico / Dualidad", it: "Fisico / Dualità", cs: "Fyzický / Dualita", pl: "Fizyczny / Dualność", ru: "Физический / Дуальность", zh: "物理 / 双重性" }
+            },
+            alpha: {
+                badge: { ro: "Starea Alpha", en: "Alpha State", pt: "Estado Alpha", es: "Estado Alpha", it: "Stato Alpha", cs: "Stav Alpha", pl: "Stan Alpha", ru: "Альфа-Состояние", zh: "阿尔法状态" },
+                neuro: { ro: "GABA / Serotonină", en: "GABA / Serotonin", pt: "GABA / Serotonina", es: "GABA / Serotonina", it: "GABA / Serotonina", cs: "GABA / Serotonin", pl: "GABA / Serotonina", ru: "ГАМК / Серотонин", zh: "GABA / 5-羟色胺" },
+                filter: { ro: "Subconștient Receptiv", en: "Receptive Subconscious", pt: "Subconsciente Recetivo", es: "Subconsciente Receptivo", it: "Subconscio Ricettivo", cs: "Receptivní Podvědomí", pl: "Receptywna Podświadomość", ru: "Восприимчивое Подсознание", zh: "接收性潜意识" },
+                spirit: { ro: "Unitate / Energie Pură", en: "Unity / Pure Energy", pt: "Unidade / Energia Pura", es: "Unidad / Energía Pura", it: "Unità / Energía Pura", cs: "Jednota / Čistá Energie", pl: "Jedność / Czysta Energia", ru: "Единство / Чистая Энергия", zh: "统一 / 纯粹能量" }
+            }
+        };
 
-    btnDescend.addEventListener('click', () => {
-        if (!inAlpha) {
-            inAlpha = true;
-            btnDescend.innerText = translations[currentLang]['btn-ascend'];
-            btnDescend.classList.remove('btn-primary');
-            btnDescend.classList.add('btn-secondary');
+        let currentFreq = 24.0;
+        let targetFreq = 24.0;
+        let isAlpha = false;
+        
+        let wavePhase = 0;
+        
+        function resizeCanvas() {
+            waveCanvas.width = waveCanvas.parentElement.clientWidth;
+            waveCanvas.height = waveCanvas.parentElement.clientHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        function updateTelemetry() {
+            const state = isAlpha ? 'alpha' : 'beta';
             
-            simulatorWave.classList.remove('animate-beta');
-            simulatorWave.classList.add('animate-alpha');
-            wavePath.setAttribute('d', alphaPath);
-            
-            waveText.style.opacity = 0;
-            setTimeout(() => {
-                waveText.innerText = translations[currentLang]['sim-text-alpha'];
-                waveText.style.color = 'var(--color-purple)';
-                waveText.style.opacity = 1;
-            }, 300);
+            // Badge text & classes
+            simStateBadge.innerText = telemetryData[state].badge[currentLang];
+            if (isAlpha) {
+                simStateBadge.className = 'state-badge alpha';
+            } else {
+                simStateBadge.className = 'state-badge beta';
+            }
 
-            document.body.style.boxShadow = 'inset 0 0 120px rgba(139, 92, 246, 0.25)';
+            // Telemetry values
+            teleNeuro.innerText = telemetryData[state].neuro[currentLang];
+            teleFilter.innerText = telemetryData[state].filter[currentLang];
+            teleSpirit.innerText = telemetryData[state].spirit[currentLang];
+            
+            // Update static labels dynamically if they exist
+            const lblNeuro = document.getElementById('tele-lbl-neuro');
+            const lblFilter = document.getElementById('tele-lbl-filter');
+            const lblSpirit = document.getElementById('tele-lbl-spirit');
+            const btnDetailSim = document.getElementById('btn-detail-sim');
+            
+            if (lblNeuro) lblNeuro.innerText = (currentLang === 'ro' ? 'Neurochimie' : 'Neurochemistry');
+            if (lblFilter) lblFilter.innerText = (currentLang === 'ro' ? 'Filtru Conștient' : 'Conscious Filter');
+            if (lblSpirit) lblSpirit.innerText = (currentLang === 'ro' ? 'Plan Rezonanță' : 'Resonance Plane');
+            if (btnDetailSim) btnDetailSim.innerText = (currentLang === 'ro' ? 'Tratat Științific & Spiritual' : 'Scientific & Spiritual Treatise');
+        }
+
+        langSelect.addEventListener('change', () => {
+            setTimeout(updateTelemetry, 50);
+        });
+
+        btnDescend.addEventListener('click', () => {
+            isAlpha = !isAlpha;
+            targetFreq = isAlpha ? 10.0 : 24.0;
+            
+            // Button visual feedback flash
+            btnDescend.classList.add('btn-active-flash');
+            setTimeout(() => btnDescend.classList.remove('btn-active-flash'), 250);
+
+            // Play transition sound sweep
+            playUISound(isAlpha ? 'open-modal' : 'close-modal');
+
+            // Set button text translated
+            btnDescend.innerText = isAlpha ? 
+                (currentLang === 'ro' ? 'Revino în Beta (Veghe)' : 'Return to Beta') : 
+                (currentLang === 'ro' ? 'Inițiază Coborârea în Alpha' : 'Initiate Descent to Alpha');
+
+            // Quick glow effect on body background
+            document.body.style.boxShadow = isAlpha ? 'inset 0 0 120px rgba(139, 92, 246, 0.25)' : 'none';
             setTimeout(() => {
                 document.body.style.boxShadow = 'none';
             }, 1200);
-        } else {
-            inAlpha = false;
-            btnDescend.innerText = translations[currentLang]['btn-descend'];
-            btnDescend.classList.remove('btn-secondary');
-            btnDescend.classList.add('btn-primary');
+
+            updateTelemetry();
+        });
+
+        // Main Animation Loop for Wave
+        function animateWave() {
+            if (!waveCanvas.getContext) return;
+            simCtx.clearRect(0, 0, waveCanvas.width, waveCanvas.height);
             
-            simulatorWave.classList.remove('animate-alpha');
-            simulatorWave.classList.add('animate-beta');
-            wavePath.setAttribute('d', betaPath);
+            // Interpolate frequency smoothly
+            currentFreq = currentFreq + (targetFreq - currentFreq) * 0.035;
+            simFreqCounter.innerText = Math.round(currentFreq) + ' Hz';
             
-            waveText.style.opacity = 0;
-            setTimeout(() => {
-                waveText.innerText = translations[currentLang]['sim-text-beta'];
-                waveText.style.color = 'var(--text-secondary)';
-                waveText.style.opacity = 1;
-            }, 300);
+            const freqRatio = (currentFreq - 10) / 14; // 0 (Alpha) to 1 (Beta)
+            
+            const amplitude = 30 - (freqRatio * 10);
+            const wavelength = 0.01 + (freqRatio * 0.025);
+            const speed = 0.05 + (freqRatio * 0.09);
+            
+            // Color interpolation: Red (Beta) to Violet (Alpha)
+            const r = Math.round(139 + (freqRatio * 100)); // 139 to 239
+            const g = Math.round(92 - (freqRatio * 24));    // 92 to 68
+            const b = Math.round(246 - (freqRatio * 178));  // 246 to 68
+            const color = `rgba(${r}, ${g}, ${b}, 0.85)`;
+            const glowColor = `rgba(${r}, ${g}, ${b}, 0.45)`;
+
+            wavePhase += speed;
+            
+            // Draw Wave
+            simCtx.beginPath();
+            simCtx.strokeStyle = color;
+            simCtx.lineWidth = 3.5;
+            
+            // Shadow Glow
+            simCtx.shadowBlur = 15;
+            simCtx.shadowColor = glowColor;
+
+            const centerY = waveCanvas.height / 2;
+            
+            for (let x = 0; x < waveCanvas.width; x++) {
+                // Add noise/jaggedness for Beta state, zero noise for Alpha
+                const noiseScale = freqRatio * 6;
+                const noise = noiseScale > 0 ? (Math.sin(x * 0.15 + wavePhase * 3) * Math.cos(x * 0.05) * noiseScale) : 0;
+                
+                const y = centerY + Math.sin(x * wavelength + wavePhase) * amplitude + noise;
+                
+                if (x === 0) {
+                    simCtx.moveTo(x, y);
+                } else {
+                    simCtx.lineTo(x, y);
+                }
+            }
+            
+            simCtx.stroke();
+            simCtx.shadowBlur = 0; // reset shadow
+            
+            // Draw secondary faint wave for depth
+            simCtx.beginPath();
+            simCtx.strokeStyle = `rgba(${r}, ${g}, ${b}, 0.12)`;
+            simCtx.lineWidth = 1.5;
+            for (let x = 0; x < waveCanvas.width; x++) {
+                const y = centerY + Math.sin(x * (wavelength * 0.8) - wavePhase * 0.7) * (amplitude * 0.6);
+                if (x === 0) {
+                    simCtx.moveTo(x, y);
+                } else {
+                    simCtx.lineTo(x, y);
+                }
+            }
+            simCtx.stroke();
+
+            requestAnimationFrame(animateWave);
         }
-    });
+        
+        animateWave();
+        updateTelemetry();
+    }
 
 
     // --- 9. THE 10 SACRED SECONDS TIMER ---

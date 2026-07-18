@@ -238,14 +238,34 @@
                     <h3 id="sim-title">Simulator Interactiv de Frecvență</h3>
                     <p id="sim-desc">Urmărește oscilațiile și experimentează coborârea mentală ghidată. Inițiază trecerea de la Beta la Alpha.</p>
                 </div>
-                <div class="simulator-body">
-                    <div id="simulator-wave" class="sim-wave animate-beta">
-                        <svg viewBox="0 0 800 150" class="wave-svg">
-                            <path id="wave-path" d="M 0 75 Q 10 30 20 75 T 40 75 T 60 75 T 80 75 T 100 75 T 120 75 T 140 75 T 160 75 T 180 75 T 200 75 T 220 75 T 240 75 T 260 75 T 280 75 T 300 75 T 320 75 T 340 75 T 360 75 T 380 75 T 400 75 T 420 75 T 440 75 T 460 75 T 480 75 T 500 75 T 520 75 T 540 75 T 560 75 T 580 75 T 600 75 T 620 75 T 640 75 T 660 75 T 680 75 T 700 75 T 720 75 T 740 75 T 760 75 T 780 75 T 800 75" fill="none" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                        <span id="wave-text">Starea Beta (15 - 30 Hz) - Minte Agitată & Critică</span>
+                <div class="simulator-dashboard">
+                    <div class="sim-display">
+                        <canvas id="wave-canvas" width="800" height="180"></canvas>
+                        <div class="sim-overlay-text">
+                            <span id="sim-state-badge" class="state-badge beta">Beta State</span>
+                            <span id="sim-frequency-counter" class="freq-counter">24 Hz</span>
+                        </div>
                     </div>
-                    <button id="btn-descend" class="btn btn-primary">Inițiază Coborârea în Alpha</button>
+                    
+                    <div class="sim-telemetry">
+                        <div class="telemetry-card">
+                            <span class="tele-label" id="tele-lbl-neuro">Neurochimie</span>
+                            <span class="tele-val" id="tele-val-neuro">Cortizol / Adrenalină</span>
+                        </div>
+                        <div class="telemetry-card">
+                            <span class="tele-label" id="tele-lbl-filter">Filtru Conștient</span>
+                            <span class="tele-val" id="tele-val-filter">Minte Critică Activă</span>
+                        </div>
+                        <div class="telemetry-card">
+                            <span class="tele-label" id="tele-lbl-spirit">Plan Rezonanță</span>
+                            <span class="tele-val" id="tele-val-spirit">Fizic / Dualitate</span>
+                        </div>
+                    </div>
+
+                    <div class="sim-controls">
+                        <button id="btn-descend" class="btn btn-primary">Inițiază Coborârea în Alpha</button>
+                        <button class="btn btn-secondary btn-detail" data-section="simulator" id="btn-detail-sim">Tratat Științific & Spiritual</button>
+                    </div>
                 </div>
             </div>
         </div>
