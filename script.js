@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // Navigation
             "nav-arh": "Arhitectura Minții",
             "nav-mec": "Mecanica Mentală",
+            "nav-mec-step1": "Privirea Ridicată",
+            "nav-mec-step2": "Respirația Funcțională",
+            "nav-mec-step3": "Coborârea Interioară",
             "nav-prot": "Protocolul Creației",
             "nav-rel": "Relații Autentice",
             "nav-sac": "Cele 10 Secunde",
@@ -98,6 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
         en: {
             "nav-arh": "Mind Architecture",
             "nav-mec": "Mental Mechanics",
+            "nav-mec-step1": "The Upward Gaze",
+            "nav-mec-step2": "Functional Breathing",
+            "nav-mec-step3": "The Inner Descent",
             "nav-prot": "Creation Protocol",
             "nav-rel": "Authentic Relations",
             "nav-sac": "The 10 Seconds",
@@ -1271,6 +1277,168 @@ document.addEventListener('DOMContentLoaded', () => {
             zh: `
                 <h3>共振维度：双重物理性与统一场</h3>
                 <p>在贝塔（物理）层面上，我们体验到分离与双重性，感觉自己与外在世界及渴望的人事物是割裂的。在阿尔法（能量/量子）层面上，小我的物理边界溶解，心灵与宇宙统一能量场直接相连，实现共同共振。</p>
+            `
+        },
+        "mec-step1": {
+            ro: `
+                <h3>Mecanismul Neuropsihologic al Privirii Ridicate (20 de Grade)</h3>
+                <p>Ridicarea voluntară a ochilor cu aproximativ 20-30 de grade deasupra liniei orizontului nu este un simplu gest simbolic, ci declanșatorul unui reflex bio-mecanic neurologic fundamental:</p>
+                <ul>
+                    <li><strong>Blocarea stimulilor vizuali externi (Alpha Blocking):</strong> Când ochii sunt ridicați și pleoapele se închid ușor, creierul reduce fluxul de informație procesat în cortexul vizual occipital. Acest lucru forțează rețelele neuronale să înceteze procesarea stimulilor Beta și să treacă în ritmul natural de repaus (Alpha).</li>
+                    <li><strong>Activarea Talamocorticală:</strong> Gestația vizuală superioară stimulează nucleii din talamus să trimită impulsuri electrice pulsatile lente și sincronizate către întregul neocortex, generând unde Alpha stabile.</li>
+                    <li><strong>Dezactivarea Rețelei DMN (Default Mode Network):</strong> Se reduce activitatea în zonele prefrontale asociate cu dialogul interior anxios, ruminația și auto-critica.</li>
+                </ul>
+
+                <h3>Semnificația Spirituală: Activarea Centrilor Superiori</h3>
+                <p>În tradițiile ezoterice de meditație, ridicarea privirii focalizează atenția direct în zona dintre sprâncene — <strong>Ajna Chakra (al treilea ochi)</strong>. Acest gest reprezintă mutarea conștiinței de la lumea exterioară materială (Beta) către lumea interioară a imaginației pure (Alpha). Această poziție stimulează energetic glanda pineală și glanda pituitară, facilitând intuiția profundă și percepția extrasenzorială.</p>
+            `,
+            en: `
+                <h3>Neuropsychological Mechanism of the Upward Gaze (20 Degrees)</h3>
+                <p>Voluntarily raising the eyes approximately 20-30 degrees above the horizon is not a simple symbolic gesture, but the trigger for a fundamental bio-mechanical neurological reflex:</p>
+                <ul>
+                    <li><strong>Alpha Blocking Inhibition:</strong> When the eyes are elevated, the brain reduces the sensory information processed in the occipital visual cortex. This forces the neuronal networks to cease active Beta processing and shift into the natural resting rhythm (Alpha).</li>
+                    <li><strong>Thalamocortical Pacing:</strong> Upward ocular positioning stimulates nuclei in the thalamus to emit slow, synchronized electrical pulses across the neocortex, generating stable Alpha brainwaves.</li>
+                    <li><strong>DMN (Default Mode Network) Deactivation:</strong> It decreases activity in the prefrontal areas responsible for anxious self-talk, rumination, and logical criticism.</li>
+                </ul>
+
+                <h3>Spiritual Significance: Activating the Higher Centers</h3>
+                <p>In esoteric meditation traditions, raising the gaze focuses attention directly on the space between the eyebrows — the <strong>Ajna Chakra (the Third Eye)</strong>. This gesture represents shifting consciousness from the external physical world (Beta) to the internal world of pure imagination (Alpha). This position energetically stimulates the pineal and pituitary glands, facilitating deep intuition and extrasensory perception.</p>
+            `,
+            pt: `
+                <h3>O Olhar Elevado de 20 Graus</h3>
+                <p>Elevar os olhos cerca de 20 a 30 graus acima do horizonte desencadeia um reflexo neurológico que reduz o processamento no córtex visual, estimulando o tálamo a produzir ondas Alpha. Espiritualmente, ativa o terceiro olho (Ajna Chakra), movendo a consciência do plano físico para o plano intuitivo.</p>
+            `,
+            es: `
+                <h3>El Gesto del Olhar Elevado de 20 Grados</h3>
+                <p>Elevar los ojos unos 20 o 30 grados sobre el horizonte desencadena un reflejo neurológico que reduce el procesamiento en la corteza visual, estimulando el tálamo a producir ondas Alpha. Espiritualmente, activa el tercer ojo (Ajna Chakra), moviendo la conciencia del plano físico al plano intuitivo.</p>
+            `,
+            it: `
+                <h3>Lo Sguardo Rivolto Verso l'Alto (20 Gradi)</h3>
+                <p>Sollevare gli occhi di circa 20-30 gradi sopra la linea dell'orizzonte attiva un riflesso neurologico che riduce l'attività nel corteccia visiva, stimolando il talamo a sincronizzare le onde Alpha. Spiritualmente, attiva il terzo occhio (Ajna Chakra), spostando la coscienza sul piano intuitivo.</p>
+            `,
+            cs: `
+                <h3>Pohled Vzhůru (20 Stupňů)</h3>
+                <p>Zvednutí očí o 20 až 30 stupňů nad linii horizontu spouští neurologický reflex, který utlumuje aktivitu v zrakové kůře a stimuluje thalmus k synchronizaci mozkových vln Alpha. Duchovně tento proces aktivuje třetí oko (Ajna Chakra).</p>
+            `,
+            pl: `
+                <h3>Uniesienie Wzroku o 20 Stopni</h3>
+                <p>Uniesienie oczu o 20-30 stopni powyżej linii horyzontu wywołuje neurologiczny refleks hamujący aktywność kory wzrokowej, stymulując wzgórze do generowania fal Alpha. W sensie duchowym aktywuje to trzecie oko (Ajną).</p>
+            `,
+            ru: `
+                <h3>Взгляд Вверх под Углом 20 Градусов</h3>
+                <p>Подъем глаз на 20-30 градусов выше линии горизонта запускает неврологический рефлекс, снижающий активность зрительной коры и стимулирующий таламус для выработки Альфа-ритма. Духовно это активирует чакру третьего глаза (Аджна).</p>
+            `,
+            zh: `
+                <h3>20度向上凝视的神经心理机制</h3>
+                <p>将眼睛向上抬高约20-30度会触发一种神经反射，减少枕叶视觉皮层的信息处理。这会促使丘脑向整个新皮质发送慢速、同步的电脉冲，从而自然产生稳定的阿尔法波。在灵性上，此姿势对应第三眼（Ajna眉心轮）的激活，使意识从物理层面转移到内在直觉维度。</p>
+            `
+        },
+        "mec-step2": {
+            ro: `
+                <h3>Neuropsihologia Respirației Funcționale: Stimularea Vagală</h3>
+                <p>Respirația controlată utilizată în Metoda Silva utilizează un model specific care interacționează direct cu sistemul nervos parasimpatic:</p>
+                <ul>
+                    <li><strong>Activarea Nervului Vag:</strong> Expirația prelungită (mai lungă decât inspirația) stimulează direct nervul vag (nervul pneumogastric). Acesta eliberează acetilcolină, determinând scăderea ritmului cardiac și relaxarea tonusului muscular scheletic.</li>
+                    <li><strong>Optimizarea HRV (Variabilitatea Ritmului Cardiac):</strong> O respirație ritmică trimite semnale de siguranță către amigdală, dezactivând centrul fricii și reducând instantaneu secreția de hormoni de stres.</li>
+                    <li><strong>Ancora NLP (A-L-P-H-A):</strong> Repetarea mentală a cuvântului funcționează ca o asociere neuro-lingvistică. După repetiții suficiente, creierul asociază automat sunetul intern cu starea fizică de relaxare profundă.</li>
+                </ul>
+
+                <h3>Dimensiunea Spirituală: Prana și Controlul Energiei Vitale</h3>
+                <p>Respirația este puntea de legătură dintre corpul fizic și cel energetic. Prin respirație funcțională (Pranayama), liniștim fluctuațiile minții materiale. Rostirea mentală a cuvântului ca o mantră creează o vibrație subtilă în corpul eteric, purificând nadis-urile (canalele energetice) și facilitând coborârea conștiinței în centrul inimii.</p>
+            `,
+            en: `
+                <h3>Neuropsychology of Functional Breathing: Vagal Stimulation</h3>
+                <p>The controlled breathing used in the Silva Method utilizes a specific pattern that interacts directly with the parasympathetic nervous system:</p>
+                <ul>
+                    <li><strong>Vagus Nerve Activation:</strong> Prolonged exhalation (longer than inhalation) directly stimulates the vagus nerve. It releases acetylcholine, slowing the heart rate and relaxing skeletal muscle tension.</li>
+                    <li><strong>HRV (Heart Rate Variability) Optimization:</strong> Rhythmic breathing sends safety signals to the amygdala, deactivating the fear center and instantly lowering stress hormones.</li>
+                    <li><strong>NLP Anchor (A-L-P-H-A):</strong> Mentally repeating the word works as a neuro-linguistic association. After sufficient repetitions, the brain automatically pairs the internal sound with the physical state of deep relaxation.</li>
+                </ul>
+
+                <h3>Spiritual Dimension: Prana and Life Force Control</h3>
+                <p>Breathing is the bridge between the physical and energetic body. Through functional breathing (Pranayama), we quiet the fluctuations of the material mind. Mentally chanting the word as a mantra creates a subtle vibration in the etheric body, purifying the nadis (energy channels) and helping consciousness descend into the heart center.</p>
+            `,
+            pt: `
+                <h3>A Respiração Funcional e o Nervo Vago</h3>
+                <p>A expiração prolongada estimula o nervo vago, liberando acetilcolina e diminuindo os batimentos cardíacos. O uso da palavra "A-L-P-H-A" mentalmente serve como uma âncora de PNL, associando o som à resposta de relaxamento físico. Espiritualmente, controla o Prana (energia vital).</p>
+            `,
+            es: `
+                <h3>La Respiración Funcional y el Nervio Vago</h3>
+                <p>La exhalación prolongada estimula el nervio vago, liberando acetilcolina y disminuyendo los latidos cardíacos. El uso de la palabra "A-L-P-H-A" mentalmente sirve como una ancla de PNL, asociando el sonido a la respuesta de relajación física. Espiritualmente, controla el Prana (energía vital).</p>
+            `,
+            it: `
+                <h3>La Respirazione Funzionale e il Nervo Vago</h3>
+                <p>L'espirazione prolungata stimola il nervo vago, rilasciando acetilcolina e riducendo il battito cardiaco. Ripetere mentalmente "A-L-P-H-A" funge da ancora PNL. Spiritualmente, controlla il Prana (energia vitale) per calmare il corpo eterico.</p>
+            `,
+            cs: `
+                <h3>Funkční Dýchání a Nervus Vagus</h3>
+                <p>Prodloužený výdech stimuluje bloudivý nerv (nervus vagus), což uvolňuje acetylcholin a zpomaluje srdeční tep. Mentální opakování slova "A-L-P-H-A" slouží jako kotva NLP. Duchovně tento proces harmonizuje Pránu.</p>
+            `,
+            pl: `
+                <h3>Oddech Funkcjonalny i Stymulacja Wagalna</h3>
+                <p>Wydłużony wydech stymuluje nerw błędny, uwalniając acetylocholinę i obniżając tętno. Mentalne powtarzanie słowa "A-L-P-H-A" działa jak kotwica NLP. W sensie duchowym kontroluje to Pranę (energię życiową).</p>
+            `,
+            ru: `
+                <h3>Функциональное Дыхание и Блуждающий Нерв</h3>
+                <p>Удлиненный выдох стимулирует блуждающий нерв, высвобождая ацетилхолин и замедляя сердечный ритм. Мысленное повторение слова "A-L-P-H-A" служит якорем НЛП. Духовно это управляет Праной (жизненной силой).</p>
+            `,
+            zh: `
+                <h3>腹式呼吸与迷走神经刺激</h3>
+                <p>延长呼气会直接刺激迷走神经，释放乙酰胆碱以降低心率并放松肌肉。在心中默念“A-L-P-H-A”是一种神经语言学（NLP）锚定技术，训练大脑将此声音与身体的深度放松自动配对。在灵性上，这控制了普拉纳（生命能量）的流动，净化了以太体。</p>
+            `
+        },
+        "mec-step3": {
+            ro: `
+                <h3>Neuropsihologia Coborârii Interioare: Tranziția de Transă</h3>
+                <p>Coborârea mentală conștientă (prin vizualizarea scării sau numărătoarea inversă de la 3 la 1 sau 10 la 1) activează o stare ușoară de transă hipnotică, caracterizată prin:</p>
+                <ul>
+                    <li><strong>Reducerea activității în Cortexul Prefrontal Stâng:</strong> Partea logică, analitică și temporală a creierului își reduce controlul. Aceasta determină o distorsiune pozitivă a percepției timpului.</li>
+                    <li><strong>Semne Somatice Specifice:</strong> Corpul experimentează o senzație plăcută de greutate (relaxare musculară profundă) și căldură (vasodilatație periferică). Ritmul cardiac devine stabil și lent.</li>
+                    <li><strong>Accesarea Memoriei Implicite:</strong> Poarta către depozitul de credințe, amintiri și automatisme subconștiente este deschisă, permițând restructurarea cognitivă.</li>
+                </ul>
+
+                <h3>Perspectiva Spirituală: Intrarea în Sanctuarul Creației</h3>
+                <p>Coborârea interioară reprezintă retragerea simțurilor (Pratyahara) în interiorul ființei. Trecem dincolo de dualitatea lumii fizice exterioare pentru a accesa „Sursa” sau spațiul de potențialitate pură al sufletului. În acest sanctuar intern, nu există limite fizice, distanță sau timp; este locul unde spiritul modelează energia pentru a crea forme-gând ce se vor materializa ulterior în planul fizic.</p>
+            `,
+            en: `
+                <h3>Neuropsychology of the Inner Descent: The Trance Transition</h3>
+                <p>Consciously descending mentally (through step visualization or counting down from 10 to 1) triggers a light state of hypnotic trance, characterized by:</p>
+                <ul>
+                    <li><strong>Decreased Left Prefrontal Cortex Activity:</strong> The logical, analytical, and temporal part of the brain reduces its dominant control, leading to a pleasant distortion of time perception.</li>
+                    <li><strong>Specific Somatic Markers:</strong> The body experiences a pleasant sensation of heaviness (deep muscle relaxation) and warmth (peripheral vasodilation). Heart rate becomes stable and slow.</li>
+                    <li><strong>Implicit Memory Access:</strong> The gateway to the subconscious warehouse of beliefs, memories, and habits is opened, allowing cognitive restructuring.</li>
+                </ul>
+
+                <h3>Spiritual Perspective: Entering the Sanctuary of Creation</h3>
+                <p>The inner descent represents the withdrawal of the senses (Pratyahara) into the core of one's being. We go beyond the duality of the outer physical world to access the "Source" or unified space of pure potentiality. In this internal sanctuary, there are no physical boundaries, distance, or time; it is the space where spirit shapes energy into thought-forms that will eventually crystallize in the physical plane.</p>
+            `,
+            pt: `
+                <h3>A Descida Interior e o Estado de Transe</h3>
+                <p>A descida mental (contagem regressiva) induz um transe hipnótico leve, desacelerando o córtex pré-frontal. O corpo sente peso e calor. Espiritualmente, representa o recolhimento dos sentidos (Pratyahara) para entrar no santuário da criação pura.</p>
+            `,
+            es: `
+                <h3>El Descenso Interior y el Estado de Trance</h3>
+                <p>El descenso mental (cuenta regresiva) induce un trance hipnótico leve, desacelerando la corteza prefrontal. El cuerpo siente peso y calor. Espiritualmente, representa el recogimiento de los sentidos (Pratyahara) para entrar en el santuario de la creación pura.</p>
+            `,
+            it: `
+                <h3>La Discesa Interiore e lo Stato di Trance</h3>
+                <p>La discesa mentale (conto alla rovescia) induce una leggera trance ipnotica, riducendo l'attività nella corteccia prefrontale. Il corpo avverte pesantezza e calore. Spiritualmente, rappresenta il ritiro dei sensi (Pratyahara) per accedere al santuario interiore.</p>
+            `,
+            cs: `
+                <h3>Vnitřní Sestup a Stav Transu</h3>
+                <p>Mentální sestup (odpočítávání) navozuje lehký stav hypnotického transu, čímž snižuje aktivitu v levé prefrontální kůře. Tělo zažívá pocit tíhy a tepla. Duchovně jde o stažení smyslů (Pratjáhára) do vnitřní svatyně.</p>
+            `,
+            pl: `
+                <h3>Wewnętrzne Zejście i Stan Transu</h3>
+                <p>Wizualizacja schodzenia (odliczanie wsteczne) wywołuje lekki stan transu hipnotycznego, zmniejszając aktywność lewego płata przedczołowego. Ciało odczuwa ciężar i ciepło. Duchowo oznacza to wycofanie zmysłów (Pratyahara).</p>
+            `,
+            ru: `
+                <h3>Внутренний Спуск и Состояние Транса</h3>
+                <p>Мысленный спуск (обратный отсчет) индуцирует легкое состояние гипнотического транса, снижая активность левой префронтальной коры. Тело ощущает тяжесть и тепло. Духовно это представляет собой уход чувств внутрь себя (Пратьяхара).</p>
+            `,
+            zh: `
+                <h3>内在下降与催眠恍惚状态</h3>
+                <p>通过倒数或走下楼梯的观想进行内在下降，会诱导一种轻度的催眠恍惚状态。此时左侧前额叶皮层的分析活动减少，产生时间拉伸感。身体会表现出明显的躯体指标：肌肉深层放松带来的沉重感和外周血管扩张带来的温暖感。在灵性上，这代表着感官收摄（Pratyahara），进入纯粹创造的内殿。</p>
             `
         }
     };
