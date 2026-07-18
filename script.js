@@ -1346,43 +1346,48 @@ document.addEventListener('DOMContentLoaded', () => {
     let sampleGainNode = null;
 
     function initAudio() {
-        // Create audio context
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        // Create audio context if it doesn't exist
+        if (!audioCtx) {
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
         
-        // Create oscillators
-        oscLeft = audioCtx.createOscillator();
-        oscRight = audioCtx.createOscillator();
-        
-        // Frequencies: Left ear gets 200 Hz carrier wave. Right ear gets 210 Hz.
-        // Difference is 10 Hz (Alpha frequency)
-        oscLeft.frequency.value = 200; 
-        oscRight.frequency.value = 210; 
-        
-        // Waveform: Sine waves for pure harmonics
-        oscLeft.type = 'sine';
-        oscRight.type = 'sine';
+        // Ensure background oscillators and gainNode are only created once
+        if (!gainNode) {
+            oscLeft = audioCtx.createOscillator();
+            oscRight = audioCtx.createOscillator();
+            
+            // Frequencies: Left ear gets 200 Hz carrier wave. Right ear gets 210 Hz.
+            // Difference is 10 Hz (Alpha frequency)
+            oscLeft.frequency.value = 200; 
+            oscRight.frequency.value = 210; 
+            
+            // Waveform: Sine waves for pure harmonics
+            oscLeft.type = 'sine';
+            oscRight.type = 'sine';
 
-        // Channel merger to split channels to left/right
-        const merger = audioCtx.createChannelMerger(2);
+            // Channel merger to split channels to left/right
+            const merger = audioCtx.createChannelMerger(2);
 
-        // Split oscillators to left and right channels
-        oscLeft.connect(merger, 0, 0); // oscLeft -> Channel 0 (Left)
-        oscRight.connect(merger, 0, 1); // oscRight -> Channel 1 (Right)
+            // Split oscillators to left and right channels
+            oscLeft.connect(merger, 0, 0); // oscLeft -> Channel 0 (Left)
+            oscRight.connect(merger, 0, 1); // oscRight -> Channel 1 (Right)
 
-        // Gain node for volume control and smooth fade-in
-        gainNode = audioCtx.createGain();
-        gainNode.gain.setValueAtTime(0, audioCtx.currentTime); // start silent
+            // Gain node for volume control and smooth fade-in
+            gainNode = audioCtx.createGain();
+            gainNode.gain.setValueAtTime(0, audioCtx.currentTime); // start silent
 
-        merger.connect(gainNode);
-        gainNode.connect(audioCtx.destination);
+            merger.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
 
-        // Start oscillators
-        oscLeft.start(0);
-        oscRight.start(0);
+            // Start oscillators
+            oscLeft.start(0);
+            oscRight.start(0);
+        }
     }
 
     btnAudioToggle.addEventListener('click', () => {
-        if (!audioCtx) {
+        // Initialize ambient sound components if they don't exist yet
+        if (!audioCtx || !gainNode) {
             initAudio();
         }
 
