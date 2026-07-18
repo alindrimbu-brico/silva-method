@@ -2965,6 +2965,234 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // --- 4c. RESONANCE GAME LOGIC (Chapter IV) ---
+    const btnDrawCard = document.getElementById('btn-draw-card');
+    const resonanceCard = document.getElementById('resonance-card');
+    const resCloseBtn = document.getElementById('res-close-btn');
+    const resCardTitle = document.getElementById('res-card-title');
+    const resCardDesc = document.getElementById('res-card-desc');
+
+    const resonanceCards = [
+        {
+            title: {
+                ro: "Sincronizarea Inimii (HRV)",
+                en: "Heart Synchronization (HRV)",
+                pt: "Sincronização Cardíaca (HRV)",
+                es: "Sincronización Cardíaca (HRV)",
+                it: "Sincronizzazione Cardiaca (HRV)",
+                cs: "Synchronizace Srdce (HRV)",
+                pl: "Synchronizacja Serca (HRV)",
+                ru: "Синхронизация Сердца (ВСР)",
+                zh: "心脏同步 (HRV)"
+            },
+            desc: {
+                ro: "În starea Alpha, ritmurile cardiace se cuplează. Coerența electromagnetică a inimii emite semnale de siguranță reciprocă, facilitând conectarea profundă.",
+                en: "In the Alpha state, heart rates couple. The heart's electromagnetic coherence emits signals of mutual safety, facilitating deep connection.",
+                pt: "No estado Alpha, os ritmos cardíacos acoplam-se. A coerência eletromagnética do coração emite sinais de segurança mútua.",
+                es: "En el estado Alpha, los ritmos cardíacos se acoplan. La coherencia electromagnética del corazón emite señales de seguridad mutua.",
+                it: "Nello stato Alpha, i ritmi cardiaci si accoppiano. La coerenza elettromagnetica del cuore emette segnali di reciproca sicurezza.",
+                cs: "V Alpha stavu se srdeční rytmy spojují. Elektromagnetická koherence srdce vysílá signály vzájemného bezpečí.",
+                pl: "W stanie Alpha rytmy serca synchronizują się. Elektromagnetyczna koherencja serca wysyła sygnały wzajemnego bezpieczeństwa.",
+                ru: "В Альфа-состоянии сердечные ритмы синхронизируются. Электромагнитная когерентность сердца излучает сигналы безопасности.",
+                zh: "在阿尔法状态下，心率会发生耦合。心脏的电磁相干性会发出相互安全的信号，有助于深层连接。"
+            }
+        },
+        {
+            title: {
+                ro: "Telepatia Subiectivă (José Silva)",
+                en: "Subjective Telepathy (José Silva)",
+                pt: "Telepatia Subjetiva (José Silva)",
+                es: "Telepatía Subjetiva (José Silva)",
+                it: "Telepatia Soggettiva (José Silva)",
+                cs: "Subjektivní Telepatie (José Silva)",
+                pl: "Telepatia Subiektywna (José Silva)",
+                ru: "Субъективная Телепатия (Хосе Сильва)",
+                zh: "主观传心 (西尔瓦)"
+            },
+            desc: {
+                ro: "Cercetările lui José Silva arată că transmisiile mentale efectuate în starea Alpha sunt interceptate de subconștientul receptorului la nivel extrasenzorial.",
+                en: "José Silva's research shows that mental transmissions made in the Alpha state are intercepted by the receiver's subconscious at an extrasensory level.",
+                pt: "As pesquisas de José Silva mostram que as transmissões mentais feitas no estado Alpha são interceptadas pelo subconsciente do receptor.",
+                es: "Las investigaciones de José Silva demuestran que las transmisiones mentales realizadas en el estado Alpha son interceptadas por el subconsciente del receptor.",
+                it: "Le ricerche di José Silva dimostrano che le trasmissioni mentali effettuate in stato Alpha vengono intercettate dal subconscio del ricevente.",
+                cs: "Výzkum José Silvy ukazuje, že mentální přenosy prováděné v Alpha stavu jsou zachyceny podvědomím příjemce na mimosmyslové úrovni.",
+                pl: "Badania José Silvy wskazują, że transmisje mentalne w stanie Alpha są odbierane przez podświadomość odbiorcy.",
+                ru: "Исследования Хосе Сильвы показывают, что ментальные передачи в Альфа-состоянии воспринимаются подсознанием получателя.",
+                zh: "何塞·西尔瓦的研究表明，在阿尔法状态下进行的心智传输会被接收者的潜意识在超感官层面上截获。"
+            }
+        },
+        {
+            title: {
+                ro: "Rezonanța Schumann (8 Hz)",
+                en: "Schumann Resonance (8 Hz)",
+                pt: "Ressonância Schumann (8 Hz)",
+                es: "Resonancia Schumann (8 Hz)",
+                it: "Risonanza di Schumann (8 Hz)",
+                cs: "Schumannova Rezonance (8 Hz)",
+                pl: "Rezonans Schumanna (8 Hz)",
+                ru: "Резонанс Шумана (8 Гц)",
+                zh: "舒曼共振 (8 Hz)"
+            },
+            desc: {
+                ro: "Undele Alpha (8-12 Hz) sunt aliniate cu pulsul electromagnetic al Pământului (7.83 Hz), integrându-ne biologic în rețeaua energetică a planetei.",
+                en: "Alpha waves (8-12 Hz) align with Earth's electromagnetic pulse (7.83 Hz), biologically integrating us into the planet's energetic grid.",
+                pt: "As ondas Alpha (8-12 Hz) alinham-se com o pulso eletromagnético da Terra (7.83 Hz), integrando-nos na rede do planeta.",
+                es: "Las ondas Alpha (8-12 Hz) se alinean con el pulso electromagnético de la Tierra (7.83 Hz), integrándonos en la red del planeta.",
+                it: "Le onde Alpha (8-12 Hz) si allineano con il battito elettromagnetico terrestre (7.83 Hz), integrandoci nella griglia energetica.",
+                cs: "Mozkové vlny Alpha (8-12 Hz) jsou v souladu s elektromagnetickým pulsem Země (7.83 Hz), což nás integruje do planetární sítě.",
+                pl: "Fale Alpha (8-12 Hz) są zsynchronizowane z pulsem elektromagnetycznym Ziemi (7,83 Hz), integrując nas z siatką energetyczną.",
+                ru: "Альфа-волны (8-12 Гц) совпадают с электромагнитным пульсом Земли (7.83 Гц), биологически интегрируя нас в энергетическую сеть планеты.",
+                zh: "阿尔法波 (8-12 Hz) 与地球电磁脉冲 (7.83 Hz) 一致，在生物学 on 将我们融入地球的能量网格中。"
+            }
+        },
+        {
+            title: {
+                ro: "Oglindirea Empatică (Ajna)",
+                en: "Empathetic Mirroring (Ajna)",
+                pt: "Espelhamento Empático (Ajna)",
+                es: "Espejo Empático (Ajna)",
+                it: "Specchio Empatico (Ajna)",
+                cs: "Empatické Zrcadlení (Adžna)",
+                pl: "Empatyczne Odzwierciedlenie (Adźna)",
+                ru: "Эмпатическое Зеркалирование (Аджна)",
+                zh: "同理心镜像 (眉心轮)"
+            },
+            desc: {
+                ro: "În Alpha, activitatea amigdalei scade, inhibând mecanismele defensive ale ego-ului. Neuronii oglindă permit atunci o empatie directă.",
+                en: "In Alpha, amygdalar activity decreases, inhibiting the ego's defensive mechanisms. Mirror neurons then allow direct empathy.",
+                pt: "No Alpha, a atividade da amígdala diminui, inibindo as defesas do ego. Os neurónios espelho permitem empatia direta.",
+                es: "En Alpha, la actividad de la amígdala disminuye, inhibiendo las defensas del ego. Las neuronas espejo permiten empatía directa.",
+                it: "In Alpha, l'attività dell'amigdala diminuisce, inibendo le difese dell'ego. I neuroni specchio consentono un'empatia diretta.",
+                cs: "V Alpha se aktivita amygdaly snižuje, což tlumí obranné mechanismy ega. Zrcadlové neurony pak umožňují přímou empatii.",
+                pl: "W stanie Alpha aktywność ciała migdałowatego spada, co wycisza ego. Neurony zwierciadlane umożliwiają bezpośrednią empatię.",
+                ru: "В Альфе активность миндалины снижается, подавляя защитные механизмы эго. Зеркальные нейроны позволяют проявлять прямую эмпатию.",
+                zh: "在阿尔法状态下，杏仁核活动减少，从而抑制小我的防御机制。镜面神经元随后允许直接的共情镜像。"
+            }
+        },
+        {
+            title: {
+                ro: "Coerența Creier-Inimă",
+                en: "Heart-Brain Coherence",
+                pt: "Coerência Cérebro-Coração",
+                es: "Coherencia Cerebro-Corazón",
+                it: "Coerenza Cervello-Cuore",
+                cs: "Koherence Srdce a Mozku",
+                pl: "Koherencja Serce-Mózg",
+                ru: "Когерентность Сердца и Мозга",
+                zh: "心脑相干性"
+            },
+            desc: {
+                ro: "Manifestarea începe prin legătura electrică a creierului (gândul) cu cea magnetică a inimii (emoția). În Alpha, cele două formează un câmp unitar.",
+                en: "Manifestation begins by linking the brain's electrical signals (thought) with the heart's magnetic signals (emotion). In Alpha, they form a unified field.",
+                pt: "A manifestação começa ligando a eletricidade cerebral (pensamento) ao magnetismo cardíaco (emoção). Em Alpha, formam um campo unido.",
+                es: "La manifestación comienza uniendo la electricidad cerebral (pensamiento) con el magnetismo cardíaco (emoción). En Alpha, forman un campo unido.",
+                it: "La manifestazione inizia unendo l'elettricità cerebrale (pensiero) al magnetismo cardiaco (emozione). In Alpha, formano un campo unificato.",
+                cs: "Manifestace začíná spojením elektrického signálu mozku (myšlenka) a magnetického signálu srdce (emoce). V Alpha tvoří jednotné pole.",
+                pl: "Kreacja zaczyna się od połączenia elektrycznego mózgu (myśl) z magnetycznym serca (emocje). W Alpha tworzą one jednolite pole.",
+                ru: "Манифестация начинается со связи электрических сигналов мозга (мысль) с магнитными сигналами сердца (эмоция). В Альфе они едины.",
+                zh: "显化始于将大脑的电信号（思想）与心脏的磁信号（情绪）联系起来。在阿尔法状态下，两者形成一个统一场。"
+            }
+        },
+        {
+            title: {
+                ro: "Detașarea și Vidul Cuantic",
+                en: "Detachment & Quantum Void",
+                pt: "Desapego e Vácuo Quântico",
+                es: "Desapego y Vacío Cuántico",
+                it: "Distacco e Vuoto Quantico",
+                cs: "Odpoutanost a Kvantové Prázdno",
+                pl: "Odczepienie i Próżnia Kwantowa",
+                ru: "Непривязанность и Квантовый Вакуум",
+                zh: "超然放手与量子真空"
+            },
+            desc: {
+                ro: "Ultimul pas din manifestare este detașarea totală. Eliberarea dorinței în Alpha permite podului cuantic să colapseze potențialele în realitate.",
+                en: "The last step in manifestation is total detachment. Releasing the desire in Alpha allows the quantum bridge to collapse potentials into reality.",
+                pt: "O último passo na manifestação é o desapego total. Libertar o desejo em Alpha permite colapsar potenciais na realidade.",
+                es: "El último paso en la manifestación es el desapego total. Liberar el deseo en Alpha permite colapsar potenciais en la realidad.",
+                it: "L'ultimo passo nella manifestazione è il distacco totale. Rilasciare il desiderio in Alpha consente di far collassare i potenziali.",
+                cs: "Posledním krokem manifestace je úplná odpoutanost. Uvolnění touhy v Alpha stavu umožňuje kvantovému mostu zhmotnit potenciál.",
+                pl: "Ostatnim krokiem jest całkowite odpuszczenie. Uwolnienie pragnienia w stanie Alpha pozwala zamanifestować potencjał w rzeczywistości.",
+                ru: "Последний шаг манифестации — полное освобождение. Отпускание желания в Альфе позволяет квантовому мосту схлопнуть вероятности в реальность.",
+                zh: "显化的最后一步是完全超然放手。在阿尔法状态下释放欲望，能让量子桥将潜在可能性坍缩为现实。"
+            }
+        }
+    ];
+
+    let currentCardIndex = -1;
+
+    function drawResonanceCard() {
+        if (!relConnArea || !resonanceCard) return;
+
+        // Reset display states
+        resonanceCard.classList.remove('visible', 'flipped');
+        relConnArea.classList.remove('coherent', 'hover-a', 'hover-b');
+        
+        // Add spin/orbit animation class to connection nodes
+        relConnArea.classList.add('spinning');
+        playUISound('click');
+        
+        setTimeout(() => {
+            // Pick a random card that is different from the previous one
+            let newIndex;
+            do {
+                newIndex = Math.floor(Math.random() * resonanceCards.length);
+            } while (newIndex === currentCardIndex && resonanceCards.length > 1);
+            
+            currentCardIndex = newIndex;
+            const card = resonanceCards[currentCardIndex];
+            
+            // Update texts based on active language
+            resCardTitle.innerText = card.title[currentLang] || card.title.ro;
+            resCardDesc.innerText = card.desc[currentLang] || card.desc.ro;
+            
+            // Remove spin and show card with Flip animation
+            relConnArea.classList.remove('spinning');
+            resonanceCard.classList.add('visible');
+            
+            // Short delay to trigger flip after scaling into view
+            setTimeout(() => {
+                resonanceCard.classList.add('flipped');
+                relConnArea.classList.add('coherent'); // Make connection line glow in coherent gradient
+                playUISound('open-modal');
+            }, 300);
+            
+        }, 1800); // Duration matches spin animation
+    }
+
+    if (btnDrawCard) {
+        btnDrawCard.addEventListener('click', drawResonanceCard);
+        
+        // Synchronize button text translation
+        const drawBtnTranslations = {
+            ro: "Inițiază Sincronizarea",
+            en: "Initiate Synchronization",
+            pt: "Iniciar Sincronização",
+            es: "Iniciar Sincronización",
+            it: "Inizia Sincronizzazione",
+            cs: "Spustit Synchronizaci",
+            pl: "Uruchom Synchronizację",
+            ru: "Запустить Синхронизацию",
+            zh: "开启同步共鸣"
+        };
+        
+        langSelect.addEventListener('change', () => {
+            btnDrawCard.innerText = drawBtnTranslations[currentLang] || drawBtnTranslations.ro;
+        });
+        
+        // Run initial translation
+        btnDrawCard.innerText = drawBtnTranslations[currentLang] || drawBtnTranslations.ro;
+    }
+
+    if (resCloseBtn) {
+        resCloseBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            resonanceCard.classList.remove('visible', 'flipped');
+            relConnArea.classList.remove('coherent');
+            playUISound('close-modal');
+        });
+    }
+
     // Run initial setup for breathing text
     updateBreathPanelLanguage();
 });
