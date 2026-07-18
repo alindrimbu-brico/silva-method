@@ -26,27 +26,75 @@
         <div class="nav-container">
             <a href="#" class="logo">Silva<span>Alpha</span></a>
             <ul class="nav-links">
-                <li><a href="#arhitectura">Arhitectura Minții</a></li>
-                <li><a href="#mecanica">Mecanica Mentală</a></li>
-                <li><a href="#protocol">Protocolul Creației</a></li>
-                <li><a href="#relatii">Relații Autentice</a></li>
-                <li><a href="#sacre">Cele 10 Secunde</a></li>
+                <li><a href="#arhitectura" id="nav-arh">Arhitectura Minții</a></li>
+                <li><a href="#mecanica" id="nav-mec">Mecanica Mentală</a></li>
+                <li><a href="#protocol" id="nav-prot">Protocolul Creației</a></li>
+                <li><a href="#relatii" id="nav-rel">Relații Autentice</a></li>
+                <li><a href="#sacre" id="nav-sac">Cele 10 Secunde</a></li>
             </ul>
-            <a href="#mecanica" class="nav-btn">Inițiază Coborârea</a>
+            
+            <div class="nav-right">
+                <!-- Language Selector Dropdown -->
+                <div class="lang-selector">
+                    <i class="fa-solid fa-globe"></i>
+                    <select id="lang-select">
+                        <option value="ro">RO</option>
+                        <option value="en">EN</option>
+                        <option value="pt">PT</option>
+                        <option value="es">ES</option>
+                        <option value="it">IT</option>
+                        <option value="cs">CS</option>
+                        <option value="pl">PL</option>
+                        <option value="ru">RU</option>
+                        <option value="zh">ZH</option>
+                    </select>
+                </div>
+                <a href="#mecanica" class="nav-btn" id="nav-btn-text">Inițiază Coborârea</a>
+            </div>
         </div>
     </nav>
+
+    <!-- Floating Audio Control Panel -->
+    <div class="audio-control" id="audio-panel">
+        <button id="btn-audio-toggle" class="audio-btn" aria-label="Toggle Sound">
+            <i class="fa-solid fa-volume-xmark" id="audio-icon"></i>
+        </button>
+        <span class="audio-label" id="audio-label">Sunet Alpha: OFF</span>
+        <div class="audio-waves" id="audio-waves-visual">
+            <span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <!-- Floating Scroll-to-Top Button -->
+    <button id="btn-scroll-top" class="scroll-top-btn" aria-label="Scroll to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Detailed Section Modal -->
+    <div class="modal-overlay" id="detail-modal">
+        <div class="modal-box">
+            <button class="modal-close" id="modal-close-btn" aria-label="Close Modal">&times;</button>
+            <div class="modal-content-wrap">
+                <span class="modal-tag" id="modal-tag">Capitolul Detaliat</span>
+                <h2 id="modal-title">Titlu Secțiune</h2>
+                <div id="modal-body-content" class="modal-body">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <header class="hero">
         <div class="hero-content">
-            <span class="hero-tagline fade-in-up">Știința Subconștientului & Arta Manifestării</span>
-            <h1 class="hero-title fade-in-up">Enter Alpha <br><span class="gradient-text">This Way</span></h1>
-            <p class="hero-desc fade-in-up">
+            <span class="hero-tagline fade-in-up" id="hero-tagline">Știința Subconștientului & Arta Manifestării</span>
+            <h1 class="hero-title fade-in-up" id="hero-title">Enter Alpha <br><span class="gradient-text">This Way</span></h1>
+            <p class="hero-desc fade-in-up" id="hero-desc">
                 O metodologie riguroasă ce convertește misterul metafizic într-o știință aplicabilă a minții. Depășește barierele rațiunii critice și accesează frecvența cerebrală unde gândul capătă putere formatoare asupra realității fizice.
             </p>
             <div class="hero-actions fade-in-up">
-                <a href="#mecanica" class="btn btn-primary">Accesează Starea Alpha</a>
-                <a href="#arhitectura" class="btn btn-secondary">Citește Eseul Filosofic</a>
+                <a href="#mecanica" class="btn btn-primary" id="hero-btn-primary">Accesează Starea Alpha</a>
+                <a href="#arhitectura" class="btn btn-secondary" id="hero-btn-secondary">Citește Eseul Filosofic</a>
             </div>
         </div>
         <div class="hero-visual fade-in-up">
@@ -58,47 +106,42 @@
         </div>
     </header>
 
-    <!-- Section: Arhitectura Minții (Eseu Filosofic/Psihologic) -->
+    <!-- Section: Arhitectura Minții (Eseu) -->
     <section id="arhitectura" class="section arhitectura-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Capitolul I</span>
-                <h2>Arhitectura Minții: Dincolo de Iluzia Controlului</h2>
+                <span class="section-tag" id="arh-tag">Capitolul I</span>
+                <h2 id="arh-title">Arhitectura Minții: Dincolo de Iluzia Controlului</h2>
             </div>
 
             <div class="essay-grid">
                 <div class="essay-text scroll-reveal">
-                    <p class="dropcap">M</p>
-                    <p>
+                    <p class="dropcap" id="essay-dropcap">M</p>
+                    <p id="essay-p1">
                         intea umană funcționează într-o dualitate profundă, o diviziune ancestrală între rațiune și creație pe care Metoda Silva o transformă dintr-un mister intangibil într-o știință exactă și aplicabilă. Majoritatea existenței noastre diurne se desfășoară sub dictatura undelor <strong>Beta</strong>. Aceasta este starea de veghe, guvernată de o logică strict analitică. Rolul ei evolutiv este supraviețuirea: ea compară, se îndoiește, judecă, măsoară pericolele și critică în mod constant.
                     </p>
-                    <p>
+                    <p id="essay-p2">
                         Însă, din perspectivă filosofică și psihologică, a încerca să îți schimbi realitatea profundă sau să atragi experiențe complet noi utilizând exclusiv această stare este echivalent cu a vorbi cuiva printr-un <em>geam gros de sticlă</em>. Lumea exterioară poate auzi ecoul efortului tău, zgomotul disperat al voinței, dar mesajul subtil, esența intenției, nu ajunge niciodată la destinație.
                     </p>
-                    <p>
-                        Adevăratul creator al existenței noastre este <strong>mintea profundă (subconștientul)</strong>. Subconștientul nu argumentează, nu polemizează și nu pune la îndoială validitatea comenzilor. El pur și simplu acceptă, execută, integrează și manifestă. Această inteligență tăcută, dar infinit de puternică, se deschide complet doar în frecvența <strong>undelor Alpha (8 - 12 Hz)</strong>. 
-                    </p>
-                    <p>
-                        Starea Alpha nu este o practică mistică, o evadare din realitate sau o simplă stare de reverie. Ea reprezintă un ritm cerebral specific, un nivel neuro-funcțional de conștiință unde frecvența gândirii încetinește, permițând creierului să opereze la parametri de eficiență și inteligență superioară. Când accesezi această frecvență, „geamul gros” se dizolvă instantaneu. Comunici direct cu instanța superioară care îți decide identitatea, tiparele de atracție și direcția vieții.
-                    </p>
+                    <button class="btn btn-secondary btn-detail" data-section="arhitectura" id="btn-detail-arh">Analiză Filosofică Detaliată</button>
                 </div>
                 <div class="essay-sidebar scroll-reveal">
                     <div class="quote-card">
                         <i class="fa-solid fa-quote-left"></i>
-                        <p>„Încercarea de a programa subconștientul din starea Beta este ca și cum ai scrie pe apă. În Alpha, scrii direct în structura intimă a realității tale.”</p>
+                        <p id="essay-quote">„Încercarea de a programa subconștientul din starea Beta este ca și cum ai scrie pe apă. În Alpha, scrii direct în structura intimă a realității tale.”</p>
                     </div>
                     <div class="comparison-bar-chart">
-                        <h4>Frecvențe Cerebrale & Stări de Conștiință</h4>
+                        <h4 id="chart-title">Frecvențe Cerebrale & Stări de Conștiință</h4>
                         <div class="chart-item">
-                            <div class="chart-label">Beta (14 - 30 Hz) - Mintea Critică</div>
+                            <div class="chart-label" id="chart-label-beta">Beta (14 - 30 Hz) - Mintea Critică</div>
                             <div class="chart-track"><div class="chart-fill beta-fill" style="width: 90%;"></div></div>
                         </div>
                         <div class="chart-item">
-                            <div class="chart-label">Alpha (8 - 12 Hz) - Mintea Creativă</div>
-                            <div class="chart-track"><div class="chart-fill alpha-fill" style="width: 40%;"></div></div>
+                            <div class="chart-label" id="chart-label-alpha">Alpha (8 - 12 Hz) - Mintea Creativă</div>
+                            <div class="chart-track"><div class="chart-fill alpha-fill" style="width: 45%;"></div></div>
                         </div>
                         <div class="chart-item">
-                            <div class="chart-label">Theta/Delta (0.5 - 7 Hz) - Somn Profund</div>
+                            <div class="chart-label" id="chart-label-theta">Theta/Delta (0.5 - 7 Hz) - Somn Profund</div>
                             <div class="chart-track"><div class="chart-fill theta-fill" style="width: 15%;"></div></div>
                         </div>
                     </div>
@@ -111,9 +154,9 @@
     <section id="mecanica" class="section mecanica-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Capitolul II</span>
-                <h2>Mecanica Mentală: Accesarea Subconștientului</h2>
-                <p>Intrarea în acest sanctuar interior nu este o chestiune de noroc sau de simplă intenție pasivă. Ea necesită o „mecanică mentală” precisă, bazată pe acțiuni neuro-fizice clare pentru a dezarma gardianul minții critice.</p>
+                <span class="section-tag" id="mec-tag">Capitolul II</span>
+                <h2 id="mec-title">Mecanica Mentală: Accesarea Subconștientului</h2>
+                <p id="mec-desc">Intrarea în acest sanctuar interior nu este o chestiune de noroc sau de simplă intenție pasivă. Ea necesită o „mecanică mentală” precisă, bazată pe acțiuni neuro-fizice clare pentru a dezarma gardianul minții critice.</p>
             </div>
 
             <div class="steps-grid">
@@ -121,10 +164,10 @@
                 <div class="step-card scroll-reveal" style="--delay: 1;">
                     <div class="step-icon"><i class="fa-solid fa-eye"></i></div>
                     <div class="step-num">I</div>
-                    <h3>Privirea Ridicată</h3>
-                    <p class="step-sub">Reflexul neurologic primar</p>
-                    <p>
-                        Ridicarea ochilor cu doar câteva grade în sus (aproximativ 20 de grade față de linia orizontului), fără a tensiona mușchii oculari, declanșează un reflex neurologic ancestral. Creierul interpretează automat acest gest ca pe o intrare în starea de imaginație controlată. Mintea critică primește un mesaj de relaxare, iar emisferele cerebrale încep să se sincronizeze.
+                    <h3 id="step-title-1">Privirea Ridicată</h3>
+                    <p class="step-sub" id="step-sub-1">Reflexul neurologic primar</p>
+                    <p id="step-desc-1">
+                        Ridicarea ochilor cu doar câteva grade în sus (aproximativ 20 de grade față de linia orizontului), fără a tensiona mușchii oculari, declanșează un reflex neurologic ancestral. Creierul interpretează automat acest gest ca pe o intrare în starea de imaginație controlată.
                     </p>
                 </div>
                 
@@ -132,10 +175,10 @@
                 <div class="step-card scroll-reveal" style="--delay: 2;">
                     <div class="step-icon"><i class="fa-solid fa-wind"></i></div>
                     <div class="step-num">II</div>
-                    <h3>Respirația Funcțională</h3>
-                    <p class="step-sub">Ancorarea frecvenței</p>
-                    <p>
-                        Printr-o expirație prelungită și eliberarea mentală conștientă a comenzii sacadate <strong>„A-L-P-H-A”</strong>, declanșezi sistemul nervos parasimpatic. Creierul începe să asocieze acest sunet intern cu scăderea ritmului cardiac și relaxarea musculară, facilitând tranziția bio-electrică.
+                    <h3 id="step-title-2">Respirația Funcțională</h3>
+                    <p class="step-sub" id="step-sub-2">Ancorarea frecvenței</p>
+                    <p id="step-desc-2">
+                        Printr-o expirație prelungită și eliberarea mentală conștientă a comenzii sacadate „A-L-P-H-A”, declanșezi sistemul nervos parasimpatic. Creierul începe să asocieze acest sunet intern cu scăderea ritmului cardiac și relaxarea musculară.
                     </p>
                 </div>
 
@@ -143,19 +186,23 @@
                 <div class="step-card scroll-reveal" style="--delay: 3;">
                     <div class="step-icon"><i class="fa-solid fa-arrow-down-long"></i></div>
                     <div class="step-num">III</div>
-                    <h3>Coborârea Interioară</h3>
-                    <p class="step-sub">Dilatarea realității</p>
-                    <p>
-                        Presupune o senzație subtilă și voluntară de a coborî mental o treaptă a conștientizării. Vei recunoaște atingerea stării Alpha prin indicatori bio-somatici preciși: corpul devine mai greu și perfect relaxat, respirația devine abdominală și lentă, volumul vocii interioare scade dramatic, iar percepția timpului se dilată.
+                    <h3 id="step-title-3">Coborârea Interioară</h3>
+                    <p class="step-sub" id="step-sub-3">Dilatarea realității</p>
+                    <p id="step-desc-3">
+                        Presupune o sensação subtilă și voluntară de a coborî mental o treaptă a conștientizării. Vei recunoaște atingerea stării Alpha prin indicatori bio-somatici preciși: corpul devine mai greu și perfect relaxat, iar volumul vocii interioare scade.
                     </p>
                 </div>
             </div>
 
-            <!-- Simulatorul Interactiv -->
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <button class="btn btn-secondary btn-detail" data-section="mecanica" id="btn-detail-mec">Neurofiziologia Coborârii</button>
+            </div>
+
+            <!-- Interactive Simulator -->
             <div class="simulator-container scroll-reveal">
                 <div class="simulator-header">
-                    <h3>Simulator Interactiv de Frecvență</h3>
-                    <p>Urmărește oscilațiile și experimentează coborârea mentală ghidată. Inițiază trecerea de la Beta la Alpha.</p>
+                    <h3 id="sim-title">Simulator Interactiv de Frecvență</h3>
+                    <p id="sim-desc">Urmărește oscilațiile și experimentează coborârea mentală ghidată. Inițiază trecerea de la Beta la Alpha.</p>
                 </div>
                 <div class="simulator-body">
                     <div id="simulator-wave" class="sim-wave animate-beta">
@@ -174,9 +221,9 @@
     <section id="protocol" class="section protocol-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Capitolul III</span>
-                <h2>Protocolul Creației: Cum Să Comanzi Universului Interior</h2>
-                <p>Odată ce ai stabilizat starea Alpha, subconștientul este receptiv. Însă el nu recunoaște dorințele abstracte sau propozițiile neterminate. Subconștientul comunică prin imagini holografice, intens încărcate emoțional.</p>
+                <span class="section-tag" id="prot-tag">Capitolul III</span>
+                <h2 id="prot-title">Protocolul Creației: Cum Să Comanzi Universului Interior</h2>
+                <p id="prot-desc">Odată ce ai stabilizat starea Alpha, subconștientul este receptiv. Însă el nu recunoaște dorințele abstracte. Subconștientul comunică prin imagini holografice, intens încărcate emoțional.</p>
             </div>
 
             <div class="protocol-timeline">
@@ -185,8 +232,8 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span class="step-badge">Faza 1</span>
-                        <h3>Vizualizarea finalului, nu a căii</h3>
-                        <p>
+                        <h3 id="proto-step-title-1">Vizualizarea finalului, nu a căii</h3>
+                        <p id="proto-step-desc-1">
                             Mintea profundă nu operează cu concepte legate de viitor; ea trăiește într-un etern prezent. Vizualizează rezultatul dorit ca și cum s-ar fi întâmplat deja. Dacă proiectezi vizualizarea ca pe un eveniment viitor, subconștientul o va menține permanent într-o stare de așteptare inactivă.
                         </p>
                     </div>
@@ -197,9 +244,9 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span class="step-badge">Faza 2</span>
-                        <h3>Ancorarea senzorială</h3>
-                        <p>
-                            Subconștientul are nevoie de ancore tangibile pentru a valida noua realitate. Adaugă elemente senzoriale extrem de clare: textura unui obiect pe care îl atingi, intensitatea luminii dintr-o încăpere sau un sunet specific. Acest lucru transformă vizualizarea dintr-o simplă iluzie într-o realitate palpabilă.
+                        <h3 id="proto-step-title-2">Ancorarea senzorială</h3>
+                        <p id="proto-step-desc-2">
+                            Subconștientul are nevoie de ancore tangibile pentru a valida noua realitate. Adaugă elemente senzoriale extrem de clare: textura unui obiect pe care îl atingi, intensitatea luminii dintr-o încăpere sau un sunet specific. Acest lucru transformă vizualizarea din fantezie în realitate.
                         </p>
                     </div>
                 </div>
@@ -209,9 +256,9 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span class="step-badge">Faza 3</span>
-                        <h3>Declanșatorul emoțional</h3>
-                        <p>
-                            Aceasta este adevărata forță formatoare a realității. Emoția reprezintă declanșatorul neuro-chimic care trimite un semnal clar subconștientului: <em>„acest eveniment este important, are valoare existențială și trebuie creat”</em>. Simte recunoștința, bucuria sau liniștea împlinirii.
+                        <h3 id="proto-step-title-3">Declanșatorul emoțional</h3>
+                        <p id="proto-step-desc-3">
+                            Aceasta este adevărata forță formatoare a realității. Emoția reprezintă declanșatorul neuro-chimic care trimite un semnal clar subconștientului: „acest eveniment este important, are valoare existențială și trebuie creat”. Simte recunoștința împlinirii.
                         </p>
                     </div>
                 </div>
@@ -221,9 +268,9 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span class="step-badge">Faza 4</span>
-                        <h3>Sigilarea prin Cuvânt</h3>
-                        <p>
-                            Utilizarea unei formule de autoritate mentală incontestabilă, cum ar fi <strong>„Așa este”</strong>, funcționează ca un decret clar și final. Acest lucru închide bucla logică și elimină complet orice dezbatere interioară, îndoială sau variantă alternativă.
+                        <h3 id="proto-step-title-4">Sigilarea prin Cuvânt</h3>
+                        <p id="proto-step-desc-4">
+                            Utilizarea unei formule de autoritate mentală incontestabilă, cum ar fi „Așa este”, funcționează ca un decret clar și final. Acest lucru închide bucla logică și înlătură orice îndoială internă sau posibilitate de eșec.
                         </p>
                     </div>
                 </div>
@@ -233,12 +280,16 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span class="step-badge">Faza 5</span>
-                        <h3>Blocarea auto-sabotajului</h3>
-                        <p>
-                            Întrebările defensive de tipul „cât va dura?” sau „cum se va întâmpla?” anulează instrucțiunea inițială. Procesul trebuie sigilat ferm în minte prin afirmarea silențioasă a frazei: <strong>„S-a împlinit”</strong>, urmată de eliberarea totală a dorinței.
+                        <h3 id="proto-step-title-5">Blocarea auto-sabotajului</h3>
+                        <p id="proto-step-desc-5">
+                            Întrebările defensive de tipul „cât va dura?” sau „cum se va întâmpla?” anulează instrucțiunea inițială. Procesul trebuie sigilat ferm în minte prin afirmarea silențioasă a frazei: „S-a împlinit”, urmată de detașarea totală.
                         </p>
                     </div>
                 </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;">
+                <button class="btn btn-secondary btn-detail" data-section="protocol" id="btn-detail-prot">Ghidul de Programare Subconștientă</button>
             </div>
         </div>
     </section>
@@ -248,31 +299,30 @@
         <div class="container">
             <div class="relatii-container">
                 <div class="relatii-content scroll-reveal">
-                    <span class="section-tag">Capitolul IV</span>
-                    <h2>Aplicabilitatea Supremă: Manifestarea Relațiilor Autentice</h2>
-                    <p>
-                        Mecanica mentală a stării Alpha transcende dorințele de succes material și devine un instrument de o profunzime excepțională în modelarea experiențelor umane — în mod deosebit în plan relațional. 
-                    </p>
-                    <p>
-                        Când utilizezi Metoda Silva pentru a manifesta o relație armonioasă, instrucțiunea pe care o transmiți subconștientului nu se bazează pe control, dependență sau posesivitate, ci pe <strong>egalitate, maturitate și respect reciproc</strong>.
+                    <span class="section-tag" id="rel-tag">Capitolul IV</span>
+                    <h2 id="rel-title">Aplicabilitatea Supremă: Manifestarea Relațiilor Autentice</h2>
+                    <p id="rel-desc">
+                        Mecanica mentală a stării Alpha transcende succesul material și devine un instrument de o profunzime excepțională în modelarea experiențelor umane — în mod deosebit în plan relațional. Când utilizezi Metoda Silva pentru a manifesta o relație armonioasă, instrucțiunea nu se bazează pe control sau codependență, ci pe egalitate și respect reciproc.
                     </p>
 
                     <div class="relatii-features">
                         <div class="feature-item">
                             <div class="feature-icon"><i class="fa-solid fa-hands"></i></div>
                             <div class="feature-text">
-                                <h4>Ancora Senzorială Conștientă</h4>
-                                <p>În starea Alpha, vizualizează și simte textura unei mâini care o sprijină pe a ta — caldă, fermă, dar fără să te strângă posesiv. Ascultă tonul unei voci care îți oferă un spațiu complet non-judecativ.</p>
+                                <h4 id="rel-feat-title-1">Ancora Senzorială Conștientă</h4>
+                                <p id="rel-feat-desc-1">În starea Alpha, vizualizează și simte textura unei mâini care o sprijină pe a ta — caldă, fermă, fără să te strângă posesiv. Ascultă tonul unei voci care îți oferă un spațiu complet non-judecativ.</p>
                             </div>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon"><i class="fa-solid fa-shield-heart"></i></div>
                             <div class="feature-text">
-                                <h4>Declanșatorul Vulnerabilității</h4>
-                                <p>Trăiește intens sentimentul de ușurare și bucuria profundă de a fi vulnerabil în perfectă siguranță. Subconștientul tău va ajusta filtrele de percepție pentru a atrage dinamici mature și conștiente.</p>
+                                <h4 id="rel-feat-title-2">Declanșatorul Vulnerabilității</h4>
+                                <p id="rel-feat-desc-2">Trăiește intens sentimentul de ușurare și bucuria profundă de a fi vulnerabil în perfectă siguranță. Subconștientul tău va activa percepția care atrage dinamici mature și conștiente.</p>
                             </div>
                         </div>
                     </div>
+
+                    <button class="btn btn-secondary btn-detail" data-section="relatii" id="btn-detail-rel" style="margin-top: 3rem;">Psihologia Atașamentului Securizat</button>
                 </div>
                 <div class="relatii-visual scroll-reveal">
                     <div class="connection-nodes">
@@ -292,9 +342,9 @@
     <section id="sacre" class="section sacre-section">
         <div class="container">
             <div class="sacre-box scroll-reveal">
-                <span class="section-tag">Capitolul V</span>
-                <h2>Cele 10 Secunde Sacre și Punctul Fără Întoarcere</h2>
-                <p class="sacre-text">
+                <span class="section-tag" id="sac-tag">Capitolul V</span>
+                <h2 id="sac-title">Cele 10 Secunde Sacre și Punctul Fără Întoarcere</h2>
+                <p class="sacre-text" id="sac-desc">
                     Filosofia manifestării culminează cu un act de prezență absolută. După finalizarea protocolului de vizualizare, secretul celor care obțin rezultate durabile este să rămână în starea Alpha pentru încă 10 secunde. Acesta este punctul fără întoarcere, în care imaginea, emoția și intenția fuzionează într-o singură instrucțiune bio-chimică.
                 </p>
 
@@ -308,11 +358,14 @@
                     </div>
                 </div>
 
-                <p class="sacre-neuro">
-                    În aceste secunde sacre, creierul profund își reorganizează conexiunile sinaptice. Sistemul Reticular Activat (SRA) își rescrie filtrele cognitive, atenția se ascute, iar chimia corpului se modifică pentru a rezona cu comanda transmisă. Când deschizi ochii, nu mai ești aceeași persoană: sistemul tău are o hartă nouă.
+                <p class="sacre-neuro" id="sac-neuro">
+                    În aceste secunde sacre, creierul profund își reorganizează conexiunile sinaptice. Sistemul Reticular Activat (SRA) își rescrie filtrele cognitive, atenția se ascute, iar chimia corpului se modifică pentru a rezona cu comanda transmisă.
                 </p>
 
-                <button id="btn-trigger-timer" class="btn btn-secondary">Inițiază Cele 10 Secunde Sacre</button>
+                <div class="sacre-actions" style="display: flex; justify-content: center; gap: 1.5rem;">
+                    <button id="btn-trigger-timer" class="btn btn-secondary">Inițiază Cele 10 Secunde Sacre</button>
+                    <button class="btn btn-secondary btn-detail" data-section="sacre" id="btn-detail-sac">Neurobiologia Plasticității</button>
+                </div>
             </div>
         </div>
     </section>
@@ -327,12 +380,14 @@
                 <cite>José Silva</cite>
             </div>
 
-            <p class="subconscious-truth">
+            <p class="subconscious-truth" id="footer-truth">
                 Este vital să înțelegem un principiu profund eliberator: subconștientul tău nu lucrează niciodată împotriva ta. Dacă realitatea ta prezentă nu reflectă dorințele tale, este pur și simplu pentru că subconștientul a executat cu fidelitate ultima instrucțiune dominantă pe care a primit-o, chiar dacă a fost una inconștientă.
             </p>
 
             <div class="footer-meta">
-                <p>&copy; 2026 Silva Alpha. Ghid creat sub egida psihologiei aplicate și a mecanicii mentale.</p>
+                <p id="footer-copyright">&copy; 2026 Silva Alpha. Ghid creat sub egida psihologiei aplicate și a mecanicii mentale.</p>
+                <!-- Invitation to meditation -->
+                <p class="footer-meditation-invite" id="footer-invite">Închide ochii, ridică privirea și lasă tăcerea să scrie realitatea.</p>
             </div>
         </div>
     </footer>
