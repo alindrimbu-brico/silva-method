@@ -1346,6 +1346,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     progressBar.style.strokeDashoffset = 534;
                     progressBar.style.stroke = 'var(--color-purple)';
                 }, 6000);
+            }
         }, 1000);
     });
 
@@ -1447,6 +1448,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    function stopActiveSample() {
+        if (!activeSampleName) return;
+
+        const activeBtn = document.querySelector(`.btn-play-sample[data-sample="${activeSampleName}"]`);
+        if (activeBtn) {
+            activeBtn.classList.remove('playing');
+            activeBtn.querySelector('i').className = 'fa-solid fa-volume-low';
+        }
+
+        if (sampleGainNode) {
+            try {
+                // Fade out to prevent clicks
+                sampleGainNode.gain.setValueAtTime(sampleGainNode.gain.value, audioCtx.currentTime);
+                sampleGainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.2);
+            } catch(e) {}
+        }
+
+        const l = sampleOscLeft;
+        const r = sampleOscRight;
+        setTimeout(() => {
+            try {
+                if (l) l.stop();
+                if (r) r.stop();
+            } catch(e) {}
+        }, 250);
+
+        activeSampleName = null;
+        sampleOscLeft = null;
+        sampleOscRight = null;
+        sampleGainNode = null;
     }
 
     // --- 11. INTERACTIVE GUIDED BREATHWORK PANEL ---
