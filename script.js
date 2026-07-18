@@ -1386,43 +1386,66 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     btnAudioToggle.addEventListener('click', () => {
-        // Initialize ambient sound components if they don't exist yet
-        if (!audioCtx || !gainNode) {
-            initAudio();
-        }
-
-        // Stop active sample if one is playing
-        if (activeSampleName) {
-            stopActiveSample();
-        }
-
-        if (!isPlaying) {
-            // Resume context if suspended
-            if (audioCtx.state === 'suspended') {
-                audioCtx.resume();
+        try {
+            // Initialize ambient sound components if they don't exist yet
+            if (!audioCtx || !gainNode) {
+                initAudio();
             }
 
-            // Smooth fade-in to prevent clicks
-            gainNode.gain.linearRampToValueAtTime(0.08, audioCtx.currentTime + 1.5); // low volume for background ambient
-            
-            isPlaying = true;
-            audioPanel.classList.add('audio-active');
-            audioIcon.className = 'fa-solid fa-volume-high';
-            audioLabel.innerText = translations[currentLang]['audio-label-on'];
-        } else {
-            // Smooth fade-out
-            gainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.8);
-            
-            setTimeout(() => {
-                if (!isPlaying) {
-                    audioCtx.suspend();
-                }
-            }, 800);
+            // Stop active sample if one is playing
+            if (activeSampleName) {
+                stopActiveSample();
+            }
 
-            isPlaying = false;
-            audioPanel.classList.remove('audio-active');
-            audioIcon.className = 'fa-solid fa-volume-xmark';
-            audioLabel.innerText = translations[currentLang]['audio-label'];
+            if (!isPlaying) {
+                // Resume context if suspended
+                if (audioCtx && audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+
+                // Smooth fade-in to prevent clicks (anchored to current value first)
+                if (gainNode) {
+                    gainNode.gain.setValueAtTime(gainNode.gain.value, audioCtx.currentTime);
+                    gainNode.gain.linearRampToValueAtTime(0.08, audioCtx.currentTime + 1.5); // low volume for background ambient
+                }
+                
+                isPlaying = true;
+                audioPanel.classList.add('audio-active');
+                audioIcon.className = 'fa-solid fa-volume-high';
+                audioLabel.innerText = translations[currentLang]['audio-label-on'];
+            } else {
+                // Smooth fade-out (anchored to current value first)
+                if (gainNode) {
+                    gainNode.gain.setValueAtTime(gainNode.gain.value, audioCtx.currentTime);
+                    gainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.8);
+                }
+                
+                setTimeout(() => {
+                    if (!isPlaying && audioCtx) {
+                        try {
+                            audioCtx.suspend();
+                        } catch(e) {}
+                    }
+                }, 800);
+
+                isPlaying = false;
+                audioPanel.classList.remove('audio-active');
+                audioIcon.className = 'fa-solid fa-volume-xmark';
+                audioLabel.innerText = translations[currentLang]['audio-label'];
+            }
+        } catch(e) {
+            console.error("Audio toggle fallback triggered:", e);
+            // Fallback UI updates so button state is never visually stuck
+            isPlaying = !isPlaying;
+            if (isPlaying) {
+                audioPanel.classList.add('audio-active');
+                audioIcon.className = 'fa-solid fa-volume-high';
+                audioLabel.innerText = translations[currentLang]['audio-label-on'];
+            } else {
+                audioPanel.classList.remove('audio-active');
+                audioIcon.className = 'fa-solid fa-volume-xmark';
+                audioLabel.innerText = translations[currentLang]['audio-label'];
+            }
         }
     });
 
