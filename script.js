@@ -1447,35 +1447,255 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    function stopActiveSample() {
-        if (!activeSampleName) return;
-
-        const activeBtn = document.querySelector(`.btn-play-sample[data-sample="${activeSampleName}"]`);
-        if (activeBtn) {
-            activeBtn.classList.remove('playing');
-            activeBtn.querySelector('i').className = 'fa-solid fa-volume-low';
-        }
-
-        if (sampleGainNode) {
-            try {
-                // Fade out to prevent clicks
-                sampleGainNode.gain.setValueAtTime(sampleGainNode.gain.value, audioCtx.currentTime);
-                sampleGainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.2);
-            } catch(e) {}
-        }
-
-        const l = sampleOscLeft;
-        const r = sampleOscRight;
-        setTimeout(() => {
-            try {
-                if (l) l.stop();
-                if (r) r.stop();
-            } catch(e) {}
-        }, 250);
-
-        activeSampleName = null;
-        sampleOscLeft = null;
-        sampleOscRight = null;
-        sampleGainNode = null;
     }
+
+    // --- 11. INTERACTIVE GUIDED BREATHWORK PANEL ---
+    const breathTabs = document.querySelectorAll('.breath-tab');
+    const breathCircle = document.getElementById('breath-circle');
+    const breathInstruction = document.getElementById('breath-instruction');
+    const breathTimer = document.getElementById('breath-timer');
+    const btnStartBreath = document.getElementById('btn-start-breath');
+    
+    const breathTechTitle = document.getElementById('breath-tech-title');
+    const breathTechDesc = document.getElementById('breath-tech-desc');
+    const breathTechPsych = document.getElementById('breath-tech-psych');
+
+    const breathworkConfig = {
+        alpha: {
+            cycles: [
+                { action: 'inhale', time: 4, scale: 1.6 },
+                { action: 'hold', time: 4, scale: 1.6 },
+                { action: 'exhale', time: 4, scale: 1.0 },
+                { action: 'hold', time: 4, scale: 1.0 }
+            ],
+            title: {
+                ro: "Coborârea Alpha (4-4-4-4)",
+                en: "Alpha Descent (4-4-4-4)",
+                pt: "Descida Alpha (4-4-4-4)",
+                es: "Descenso Alpha (4-4-4-4)",
+                it: "Discesa Alpha (4-4-4-4)",
+                cs: "Sestup Alpha (4-4-4-4)",
+                pl: "Schodzenie Alpha (4-4-4-4)",
+                ru: "Альфа-Спуск (4-4-4-4)",
+                zh: "阿尔法沉降 (4-4-4-4)"
+            },
+            desc: {
+                ro: "Echilibrează bioxidul de carbon și scade ritmul cardiac, pregătind creierul pentru accesarea stării Alpha.",
+                en: "Balances carbon dioxide and lowers heart rate, preparing the brain to access the Alpha state.",
+                pt: "Equilibra o dióxido de carbono e reduz o ritmo cardíaco, preparando o cérebro para o estado Alpha.",
+                es: "Equilibra el dióxido de carbono y reduce el ritmo cardíaco, preparando al cerebro para el estado Alpha.",
+                it: "Equilibra l'anidride carbonica e riduce il battito cardiaco, preparando il cervello allo stato Alpha.",
+                cs: "Vyvažuje oxid uhličitý a snižuje srdeční frekvenci, čímž připravuje mozek na stav Alpha.",
+                pl: "Równoważy poziom dwutlenku węgla i obniża tętno, przygotowując mózg na wejście w stan Alpha.",
+                ru: "Балансирует углекислый газ и снижает частоту сердечных сокращений, готовя мозг к альфа-состоянию.",
+                zh: "平衡二氧化碳并降低心率，使大脑准备好进入阿尔法状态。"
+            },
+            psych: {
+                ro: "<strong>Mecanism Psihiatric:</strong> Calmează amigdala cerebrală și reduce tonusul simpatic, suprimând starea de alertă (Beta).",
+                en: "<strong>Psychiatric Mechanism:</strong> Calms the amygdala and reduces sympathetic tone, suppressing the alert state (Beta).",
+                pt: "<strong>Mecanismo Psiquiátrico:</strong> Acalma a amígdala e reduz o tom simpático, suprimindo o estado de alerta (Beta).",
+                es: "<strong>Mecanismo Psiquiátrico:</strong> Calma la amígdala y reduce el tono simpático, suprimiendo el estado de alerta (Beta).",
+                it: "<strong>Meccanismo Psichiatrico:</strong> Calma l'amigdala e riduce il tono simpatico, sopprimendo lo stato di allerta (Beta).",
+                cs: "<strong>Psychiatrický Mechanismus:</strong> Zklidňuje amygdalu a snižuje sympatický tonus, čímž potlačuje stav bdělosti (Beta).",
+                pl: "<strong>Mechanizm Psychiatryczny:</strong> Wycisza ciało migdałowate i zmniejsza napięcie współczulne, tłumiąc stan czuwania (Beta).",
+                ru: "<strong>Психиатрический Механизм:</strong> Успокаивает миндалевидное тело и снижает тонус симпатической системы, подавляя бета-тревогу.",
+                zh: "<strong>精神病学机制：</strong>镇静杏仁核并降低交感神经张力，从而抑制警觉状态（贝塔波）。"
+            }
+        },
+        vagus: {
+            cycles: [
+                { action: 'inhale', time: 4, scale: 1.5 },
+                { action: 'hold', time: 7, scale: 1.5 },
+                { action: 'exhale', time: 8, scale: 1.0 }
+            ],
+            title: {
+                ro: "Decompresie Vagală (4-7-8)",
+                en: "Vagus Nerve Decompress (4-7-8)",
+                pt: "Descompressão Vagal (4-7-8)",
+                es: "Descompresión Vagal (4-7-8)",
+                it: "Decompressione Vagale (4-7-8)",
+                cs: "Vagální Dekomprese (4-7-8)",
+                pl: "Dekompresja Błędna (4-7-8)",
+                ru: "Вагусная Декомпрессия (4-7-8)",
+                zh: "迷走神经减压 (4-7-8)"
+            },
+            desc: {
+                ro: "Tehnică profundă pentru combaterea insomniei și a anxietății acute Beta, restabilind calmul.",
+                en: "Deep technique for combating insomnia and acute Beta anxiety, restoring calmness.",
+                pt: "Técnica profunda para combater a insónia e a ansiedade Beta aguda, restaurando a calma.",
+                es: "Técnica profunda para combatir el insomnio y la ansiedad Beta aguda, restaurando la calma.",
+                it: "Tecnica profonda per combattere l'insonnia e l'ansia Beta acuta, ripristinando la calma.",
+                cs: "Hluboká technika pro boj s nespavostí a akutní úzkostí Beta, obnovující klid.",
+                pl: "Głęboka technika walki z bezsennością i ostrym lękiem Beta, przywracająca spokój.",
+                ru: "Глубокая техника борьбы с бессонницей и острой бета-тревогой, восстанавливающая спокойствие.",
+                zh: "对抗失眠和急性贝塔焦虑的深度技术，恢复平静。"
+            },
+            psych: {
+                ro: "<strong>Mecanism Psihiatric:</strong> Expirul prelungit stimulează masiv nervul vag, declanșând eliberarea de acetilcolină și încetinirea imediată a cordului.",
+                en: "<strong>Psychiatric Mechanism:</strong> Prolonged exhalation heavily stimulates the vagus nerve, triggering acetylcholine release and immediate cardiac deceleration.",
+                pt: "<strong>Mecanismo Psiquiátrico:</strong> A exalação prolongada estimula fortemente o nervo vago, desencadeando a libertação de acetilcolina e desaceleração cardíaca imediata.",
+                es: "<strong>Mecanismo Psiquiátrico:</strong> La exhalación prolongada estimula fuertemente el nervio vago, desencadenando la liberación de acetilcolina e inmediata deceleración cardíaca.",
+                it: "<strong>Meccanismo Psichiatrico:</strong> L'espirazione prolungata stimola fortemente il nervo vago, innescando il rilascio di acetilcolina e l'immediato rallentamento cardiaco.",
+                cs: "<strong>Psychiatrický Mechanismus:</strong> Prodloužený výdech silně stimuluje bloudivý nerv, což spouští uvolňování acetylcholinu a okamžité zpomalení srdce.",
+                pl: "<strong>Mechanizm Psychiatryczny:</strong> Wydłużony wydech silnie stymuluje nerw błędny, wyzwalając acetylocholinę i powodując natychmiastowe spowolnienie pracy serca.",
+                ru: "<strong>Психиатрический Механизм:</strong> Удлиненный выдох мощно стимулирует блуждающий нерв, запуская выброс ацетилхолина и немедленно замедляя пульс.",
+                zh: "<strong>精神病学机制：</strong>延长的呼气会强烈刺激迷走神经，触发乙酰胆碱的释放并立即使心率变慢。"
+            }
+        },
+        coherence: {
+            cycles: [
+                { action: 'inhale', time: 5, scale: 1.6 },
+                { action: 'exhale', time: 5, scale: 1.0 }
+            ],
+            title: {
+                ro: "Ritmul de Coerență (5-5)",
+                en: "Coherence Rhythm (5-5)",
+                pt: "Ritmo de Coerência (5-5)",
+                es: "Ritmo de Coherencia (5-5)",
+                it: "Ritmo di Coerenza (5-5)",
+                cs: "Rytmus Koherence (5-5)",
+                pl: "Rytm Koherencji (5-5)",
+                ru: "Ритм Когерентности (5-5)",
+                zh: "共振相干呼吸 (5-5)"
+            },
+            desc: {
+                ro: "Sincronizează variabilitatea ritmului cardiac (HRV) cu activitatea undelor cerebrale.",
+                en: "Synchronizes heart rate variability (HRV) with brainwave activity.",
+                pt: "Sincroniza a variabilidade do ritmo cardíaco (HRV) com a atividade das ondas cerebrais.",
+                es: "Sincroniza la variabilidad del ritmo cardíaco (HRV) con la actividad de las ondas cerebrales.",
+                it: "Sincronizza la variabilità del battito cardiaco (HRV) con l'attività delle onde generali.",
+                cs: "Synchronizuje variabilitu srdeční frekvence (HRV) s aktivitou mozkových vln.",
+                pl: "Synchronizuje zmienność rytmu zatokowego (HRV) z aktywnością fal mózgowych.",
+                ru: "Синхронизирует вариабельность сердечного ритма (ВСР) с активностью мозговых волн.",
+                zh: "使心率变异性 (HRV) 与脑电波活动同步。"
+            },
+            psych: {
+                ro: "<strong>Mecanism Psihiatric:</strong> Resonarea la 0.1 Hz (6 respirații/minut) stabilizează tensiunea și elimină stresul emoțional, creând coerență cardiacă.",
+                en: "<strong>Psychiatric Mechanism:</strong> Resonating at 0.1 Hz (6 breaths/minute) stabilizes blood pressure and eliminates emotional stress, creating cardiac coherence.",
+                pt: "<strong>Mecanismo Psiquiátrico:</strong> A ressonância a 0.1 Hz (6 respirações/minuto) estabiliza a tensão e elimina o stress emocional, criando coerência cardíaca.",
+                es: "<strong>Mecanismo Psiquiátrico:</strong> La resonancia a 0.1 Hz (6 respiraciones/minuto) estabiliza la tensión y elimina el estrés emocional, creando coherencia cardíaca.",
+                it: "<strong>Meccanismo Psichiatrico:</strong> La risonanza a 0.1 Hz (6 respirazioni/minuto) stabilizza la pressione e azzera lo stress emotivo, creando coerenza cardiaca.",
+                cs: "<strong>Psychiatrický Mechanismus:</strong> Rezonance při 0.1 Hz (6 nádechů/minutu) stabilizuje tlak a odstraňuje emoční stres, čímž vytváří srdeční koherenci.",
+                pl: "<strong>Mechanizm Psychiatryczny:</strong> Rezonans przy 0,1 Hz (6 oddechów/minutę) stabilizuje ciśnienie i eliminuje stres emocjonalny, tworząc koherencję serca.",
+                ru: "<strong>Психиатрический Механизм:</strong> Резонанс на частоте 0.1 Гц (6 вдохов в минуту) стабилизирует кровяное давление и снижает эмоциональный стресс.",
+                zh: "<strong>精神病学机制：</strong>在 0.1 Hz（每分钟 6 次呼吸）下的共振可稳定血压并消除情绪压力，从而产生心脏相干性。"
+            }
+        }
+    };
+
+    const breathWords = {
+        inhale: { ro: "Inspiră", en: "Inhale", pt: "Inspire", es: "Inhale", it: "Inspira", cs: "Nádech", pl: "Wdech", ru: "Вдох", zh: "吸气" },
+        hold: { ro: "Menține", en: "Hold", pt: "Segure", es: "Retenga", it: "Trattieni", cs: "Zadržet", pl: "Wstrzymaj", ru: "Задержка", zh: "屏气" },
+        exhale: { ro: "Expiră", en: "Exhale", pt: "Expire", es: "Exhale", it: "Espira", cs: "Výdech", pl: "Wydech", ru: "Выдох", zh: "呼气" },
+        start: { ro: "Apasă Start", en: "Press Start", pt: "Iniciar", es: "Iniciar", it: "Inizia", cs: "Spustit", pl: "Start", ru: "Старт", zh: "开始" },
+        btnStart: { ro: "Start", en: "Start", pt: "Iniciar", es: "Iniciar", it: "Inizia", cs: "Spustit", pl: "Start", ru: "Старт", zh: "开始" },
+        btnStop: { ro: "Stop", en: "Stop", pt: "Parar", es: "Parar", it: "Ferma", cs: "Zastavit", pl: "Stop", ru: "Стоп", zh: "停止" }
+    };
+
+    let breathInterval = null;
+    let breathTimeout = null;
+    let isBreathing = false;
+    let selectedBreathingType = 'alpha';
+
+    function updateBreathPanelLanguage() {
+        const config = breathworkConfig[selectedBreathingType];
+        breathTechTitle.innerText = config.title[currentLang];
+        breathTechDesc.innerText = config.desc[currentLang];
+        breathTechPsych.innerHTML = config.psych[currentLang];
+        
+        if (!isBreathing) {
+            breathInstruction.innerText = breathWords.start[currentLang];
+            btnStartBreath.innerText = breathWords.btnStart[currentLang];
+        } else {
+            btnStartBreath.innerText = breathWords.btnStop[currentLang];
+        }
+
+        // Translate tab labels
+        document.getElementById('breath-tab-alpha').innerText = (currentLang === 'ro' ? 'Alpha' : 'Alpha') + ' 4-4-4-4';
+        document.getElementById('breath-tab-vagus').innerText = (currentLang === 'ro' ? 'Vagus' : 'Vagus') + ' 4-7-8';
+        document.getElementById('breath-tab-coherence').innerText = (currentLang === 'ro' ? 'Coerență' : 'Coherence') + ' 5-5';
+    }
+
+    // Update panel language when language switcher is toggled
+    langSelect.addEventListener('change', () => {
+        setTimeout(updateBreathPanelLanguage, 50);
+    });
+
+    // Handle breathing tabs click
+    breathTabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            if (isBreathing) {
+                stopBreathing();
+            }
+            breathTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            selectedBreathingType = tab.getAttribute('data-type');
+            updateBreathPanelLanguage();
+        });
+    });
+
+    function startBreathing() {
+        isBreathing = true;
+        btnStartBreath.innerText = breathWords.btnStop[currentLang];
+        btnStartBreath.style.background = 'var(--gradient-beta)';
+        
+        // Disable tabs while breathing to prevent breaking cycles
+        breathTabs.forEach(t => t.style.pointerEvents = 'none');
+
+        const config = breathworkConfig[selectedBreathingType];
+        let currentCycleIndex = 0;
+
+        function runCycleStep() {
+            if (!isBreathing) return;
+
+            const step = config.cycles[currentCycleIndex];
+            const action = step.action;
+            let timeRemaining = step.time;
+
+            breathInstruction.innerText = breathWords[action][currentLang];
+            breathTimer.innerText = timeRemaining + 's';
+            breathCircle.style.transform = `scale(${step.scale})`;
+
+            if (breathInterval) clearInterval(breathInterval);
+            breathInterval = setInterval(() => {
+                timeRemaining--;
+                breathTimer.innerText = timeRemaining + 's';
+
+                if (timeRemaining <= 0) {
+                    clearInterval(breathInterval);
+                    // Move to next step in the cycle
+                    currentCycleIndex = (currentCycleIndex + 1) % config.cycles.length;
+                    runCycleStep();
+                }
+            }, 1000);
+        }
+
+        runCycleStep();
+    }
+
+    function stopBreathing() {
+        isBreathing = false;
+        if (breathInterval) clearInterval(breathInterval);
+        if (breathTimeout) clearTimeout(breathTimeout);
+
+        btnStartBreath.innerText = breathWords.btnStart[currentLang];
+        btnStartBreath.style.background = '';
+        breathInstruction.innerText = breathWords.start[currentLang];
+        breathTimer.innerText = '';
+        breathCircle.style.transform = 'scale(1.0)';
+
+        // Re-enable tabs
+        breathTabs.forEach(t => t.style.pointerEvents = 'auto');
+    }
+
+    btnStartBreath.addEventListener('click', () => {
+        if (!isBreathing) {
+            startBreathing();
+        } else {
+            stopBreathing();
+        }
+    });
+
+    // Run initial setup for breathing text
+    updateBreathPanelLanguage();
 });

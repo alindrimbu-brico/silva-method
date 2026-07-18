@@ -97,11 +97,33 @@
                 <a href="#arhitectura" class="btn btn-secondary" id="hero-btn-secondary">Citește Eseul Filosofic</a>
             </div>
         </div>
-        <div class="hero-visual fade-in-up">
-            <div class="wave-container">
-                <div class="wave-circle alpha-wave"></div>
-                <div class="wave-circle beta-wave"></div>
-                <div class="wave-circle center-core"></div>
+        <div class="hero-visual hero-breathwork fade-in-up">
+            <div class="breath-panel">
+                <div class="breath-selector">
+                    <button class="breath-tab active" data-type="alpha" id="breath-tab-alpha">Alpha 4-4-4-4</button>
+                    <button class="breath-tab" data-type="vagus" id="breath-tab-vagus">Vagus 4-7-8</button>
+                    <button class="breath-tab" data-type="coherence" id="breath-tab-coherence">Coherence 5-5</button>
+                </div>
+                
+                <div class="breath-visualizer">
+                    <div class="breath-circle" id="breath-circle">
+                        <span id="breath-instruction">Apasă Start</span>
+                        <span id="breath-timer"></span>
+                    </div>
+                </div>
+
+                <div class="breath-controls">
+                    <button id="btn-start-breath" class="btn btn-primary">Start</button>
+                </div>
+
+                <div class="breath-info">
+                    <h4 id="breath-tech-title">Coborârea Alpha (4-4-4-4)</h4>
+                    <p id="breath-tech-desc" class="breath-desc">Echilibrează bioxidul de carbon și scade ritmul cardiac, pregătind creierul pentru accesarea stării Alpha.</p>
+                    <div class="psych-note">
+                        <i class="fa-solid fa-brain"></i>
+                        <span id="breath-tech-psych"><strong>Mecanism Psihiatric:</strong> Calmează amigdala cerebrală și reduce tonusul simpatic, suprimând starea de alertă (Beta).</span>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
