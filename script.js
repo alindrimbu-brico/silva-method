@@ -10,6 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
             "nav-mec-step2": "Respirația Funcțională",
             "nav-mec-step3": "Coborârea Interioară",
             "nav-prot": "Protocolul Creației",
+            "nav-prot-step1": "Vizualizarea Finalului",
+            "nav-prot-step2": "Ancorarea Senzorială",
+            "nav-prot-step3": "Declanșatorul Emoțional",
+            "nav-prot-step4": "Sigilarea prin Cuvânt",
+            "nav-prot-step5": "Blocarea Auto-Sabotajului",
             "nav-rel": "Relații Autentice",
             "nav-sac": "Cele 10 Secunde",
             "nav-btn-text": "Inițiază Coborârea",
@@ -105,6 +110,11 @@ document.addEventListener('DOMContentLoaded', () => {
             "nav-mec-step2": "Functional Breathing",
             "nav-mec-step3": "The Inner Descent",
             "nav-prot": "Creation Protocol",
+            "nav-prot-step1": "Visualizing the End",
+            "nav-prot-step2": "Sensory Anchoring",
+            "nav-prot-step3": "Emotional Trigger",
+            "nav-prot-step4": "Word Sealing",
+            "nav-prot-step5": "Self-Sabotage Blocking",
             "nav-rel": "Authentic Relations",
             "nav-sac": "The 10 Seconds",
             "nav-btn-text": "Initiate Descent",
@@ -1439,6 +1449,268 @@ document.addEventListener('DOMContentLoaded', () => {
             zh: `
                 <h3>内在下降与催眠恍惚状态</h3>
                 <p>通过倒数或走下楼梯的观想进行内在下降，会诱导一种轻度的催眠恍惚状态。此时左侧前额叶皮层的分析活动减少，产生时间拉伸感。身体会表现出明显的躯体指标：肌肉深层放松带来的沉重感和外周血管扩张带来的温暖感。在灵性上，这代表着感官收摄（Pratyahara），进入纯粹创造的内殿。</p>
+            `
+        },
+        "prot-step1": {
+            ro: `
+                <h3>Neuropsihologia Vizualizării Finalului: Simularea Mentală Motorie</h3>
+                <p>Atunci când vizualizezi rezultatul final (în loc de pașii necesari pentru a-l obține), folosești un mecanism neurologic numit simulare mentală motorie:</p>
+                <ul>
+                    <li><strong>Activarea Cortexului Vizual Primar:</strong> Creierul tău activează aceleași zone neuronale care ar procesa evenimentul dacă acesta s-ar întâmpla în realitate. Subconștientul nu face diferența între o imagine reală și una vizualizată coerent în Alpha.</li>
+                    <li><strong>Dezactivarea Anxietății Procesului:</strong> Când te concentrezi pe „cum” se va întâmpla (pași, obstacole), activezi cortexul prefrontal stâng Beta. Acest lucru aduce la suprafață frici de eșec și nesiguranță, anulând starea de receptivitate.</li>
+                    <li><strong>Stabilirea unui Șablon Neuronal (Target Template):</strong> Prin vizualizarea finalului, oferi subconștientului un punct de reper clar spre care să direcționeze resursele, fără a-l bloca în limitele logicii tale conștiente.</li>
+                </ul>
+
+                <h3>Dimensiunea Spirituală: Legea Suficienței și Planul Mental</h3>
+                <p>În fizica hermetică, totul este deja manifestat în Planul Mental Universal sub formă de potențial energetic. A vizualiza finalul înseamnă a aduce acel potențial direct în realitatea ta fizică. Concentrarea pe detalii logice sau pe „calea” materializării este o manifestare a lipsei de încredere, care limitează canalele infinite prin care Universul poate lucra pentru tine.</p>
+            `,
+            en: `
+                <h3>Neuropsychology of Visualizing the End: Mental Motor Simulation</h3>
+                <p>When you visualize the final result (instead of the steps needed to get there), you utilize a neurological mechanism called mental motor simulation:</p>
+                <ul>
+                    <li><strong>Primary Visual Cortex Activation:</strong> Your brain activates the same neuronal areas that would process the physical event. The subconscious cannot distinguish between a real event and one vividly visualized in Alpha.</li>
+                    <li><strong>Deactivating Process Anxiety:</strong> When you focus on the "how" (steps, obstacles), you activate the Beta prefrontal cortex. This brings forward fears of failure and doubt, canceling the receptive state.</li>
+                    <li><strong>Establishing a Neural Target Template:</strong> By visualizing the end state, you provide the subconscious with a clear reference point to direct resources toward, without limiting it to your conscious logic.</li>
+                </ul>
+
+                <h3>Spiritual Dimension: The Law of Sufficiency and the Mental Plane</h3>
+                <p>In Hermetic philosophy, everything is already manifested in the Universal Mental Plane as energetic potential. Visualizing the end means pulling that potential directly into your physical reality. Focusing on the logical path of manifestation is an expression of doubt, which restricts the infinite channels through which the Universe can deliver.</p>
+            `,
+            pt: `
+                <h3>Faza 1: Visualização do Fim</h3>
+                <p>A neuropsicologia mostra que visualizar o fim (o resultado) e não o caminho ativa o córtex visual sem acionar o pré-frontal crítico de Beta. Espiritualmente, isto sintoniza a mente com a realidade no plano mental universal, sem limitar os meios de materialização.</p>
+            `,
+            es: `
+                <h3>Fase 1: Visualización del Final</h3>
+                <p>La neuropsicología demuestra que visualizar el final (el resultado) y no el camino activa la corteza visual sin activar el prefrontal crítico de Beta. Espiritualmente, esto sintoniza la mente con la realidad en el plano mental universal, sin limitar los medios de materialización.</p>
+            `,
+            it: `
+                <h3>Fase 1: Visualizzazione del Risultato Finale</h3>
+                <p>La neuropsicologia dimostra che visualizzare il risultato finale anziché il processo attiva la corteccia visiva escludendo l'analisi critica. Spiritualmente, ciò sintonizza la coscienza sul piano mentale universale, lasciando liberi i canali di manifestazione.</p>
+            `,
+            cs: `
+                <h3>Fáze 1: Vizualizace Cíle</h3>
+                <p>Neuropsychologie ukazuje, že vizualizace konečného výsledku (nikoli cesty) aktivuje zrakovou kůru bez zapojení kritického prefrontálního laloku. Duchovně to ladí mysl na rovinu univerzálního stvoření.</p>
+            `,
+            pl: `
+                <h3>Faza 1: Wizualizacja Końca</h3>
+                <p>Neuropsychologia wykazuje, że wizualizacja efektu końcowego (a nie drogi do niego) aktywuje korę wzrokową bez angażowania kory przedczołowej Beta. Duchowo oznacza to ściągnięcie potencjału ze Zjednoczonego Pola.</p>
+            `,
+            ru: `
+                <h3>Фаза 1: Визуализация Конечного Результата</h3>
+                <p>Нейропсихология доказывает, что визуализация конечной цели (а не процесса) активирует зрительную кору без привлечения критического префронтального анализа. Духовно это притягивает потенциал из ментального плана.</p>
+            `,
+            zh: `
+                <h3>第一阶段：只观想终点，而非路径</h3>
+                <p>神经心理学表明，观想最终结果而非达成步骤会激活初级视觉皮层，而不会触发贝塔波段的前额叶批判分析。潜意识无法区分真实经历与在阿尔法状态下生动观想的景象。在灵性上，观想终点是将万物已在宇宙心智层面显化的能量直接锚定到物理世界，不限制宇宙以何种无限的方式为你呈现。</p>
+            `
+        },
+        "prot-step2": {
+            ro: `
+                <h3>Ancorarea Senzorială: Activarea Sistemului Reticular Activat (SRA)</h3>
+                <p>Pentru ca subconștientul să accepte noua realitate ca fiind adevărată, el are nevoie de o bogăție senzorială intensă:</p>
+                <ul>
+                    <li><strong>Stimularea Cortexului Somatosenzorial:</strong> Adăugarea de elemente precum textura unui obiect, căldura aerului sau parfumul camerei activează rețelele senzoriale profunde. Acestea transmit amigdalei mesaje de certitudine biologică.</li>
+                    <li><strong>Recalibrarea SRA (Reticular Activating System):</strong> SRA acționează ca un filtru de spam al creierului. Când îi transmiți o informație cu o amprentă senzorială bogată, el o cataloghează ca prioritate de supraviețuire. În viața de zi cu zi, SRA îți va direcționa atenția selectivă către oportunități și resurse pe care înainte nu le observai.</li>
+                </ul>
+
+                <h3>Perspectiva Spirituală: Densificarea Formei-Gând</h3>
+                <p>În fizica ezoterică, gândurile sunt fluide și eterice. Pentru a le manifesta în planul fizic dens, ele trebuie „densificate”. Ancorarea senzorială aduce simțurile corpului astral în aliniere cu cel fizic, turnând energia gândului în matrița realității tridimensionale.</p>
+            `,
+            en: `
+                <h3>Sensory Anchoring: Activating the Reticular Activating System (RAS)</h3>
+                <p>For the subconscious to accept the new reality as true, it requires rich sensory detail:</p>
+                <ul>
+                    <li><strong>Somatosensory Cortex Stimulation:</strong> Incorporating elements like the texture of an object, warmth of the air, or room fragrance activates deep sensory networks. These convey messages of biological certainty to the amygdala.</li>
+                    <li><strong>RAS (Reticular Activating System) Recalibration:</strong> The RAS acts as the brain's spam filter. When you feed it info with a rich sensory imprint, it catalogs it as a survival priority. In daily life, the RAS will direct your selective attention toward opportunities and resources you previously missed.</li>
+                </ul>
+
+                <h3>Spiritual Perspective: Densifying the Thought-Form</h3>
+                <p>In esoteric physics, thoughts are fluid and etheric. To manifest them in the dense physical plane, they must be "densified." Sensory anchoring aligns the senses of the astral body with the physical body, pouring thought energy into the mold of three-dimensional reality.</p>
+            `,
+            pt: `
+                <h3>Faza 2: Ancoragem Sensorial</h3>
+                <p>Ativar o córtex somatossensorial cria impressões físicas que reprogramam o Sistema Ativador Reticular (SAR), afinando a atenção para oportunidades reais. Espiritualmente, isso adensa a forma-pensamento etérica na matéria física.</p>
+            `,
+            es: `
+                <h3>Fase 2: Anclaje Sensorial</h3>
+                <p>Activar la corteza somatosensorial crea impresiones físicas que reprograman el Sistema Activador Reticular (SAR), afinando la atención para oportunidades reales. Espiritualmente, esto densifica la forma-pensamiento etérica en la materia física.</p>
+            `,
+            it: `
+                <h3>Fase 2: Ancoraggio Sensoriale</h3>
+                <p>Stimolare la corteccia somatosensoriale riprogramma il Sistema di Attivazione Reticolare (RAS), focalizzando l'attenzione selettiva sulle opportunità. Spiritualmente, densifica la forma-pensiero eterica nel piano materiale.</p>
+            `,
+            cs: `
+                <h3>Fáze 2: Smyslové Ukotvení</h3>
+                <p>Aktivace somatosenzorické kůry přeprogramuje Retikulární aktivační systém (RAS), což zaostří selektivní pozornost na nové příležitosti. Duchovně tento proces zahušťuje éterické myšlenkové formy do hmoty.</p>
+            `,
+            pl: `
+                <h3>Faza 2: Zakotwiczenie Sensoryczne</h3>
+                <p>Stymulacja kory somatosensorycznej przeprogramowuje Siatkowaty Układ Aktywujący (SRA), kierując selektywną uwagę na szanse. Duchowo zagęszcza to myślokształt z planu astralnego do fizycznego.</p>
+            `,
+            ru: `
+                <h3>Фаза 2: Сенсорное Якорение</h3>
+                <p>Стимуляция соматосенсорной коры перепрограммирует Ретикулярную Активирующую Систему (РАС), направляя внимание на возможности. Духовно это уплотняет мыслеформу из эфирного плана в физический.</p>
+            `,
+            zh: `
+                <h3>第二阶段：感官锚定，启动网状激活系统</h3>
+                <p>为了让潜意识将新现实接受为真，需要丰富的感官细节。添加触觉、环境温度或特定气味会激活躯体感觉皮层，向杏仁核传达生理确定性信号。这会重新校准网状激活系统（RAS），即大脑的“垃圾邮件过滤器”，使其在日常生活中引导你的选择性注意指向以前被忽视的机遇和资源。在灵性上，感官锚定将以太体与肉体的感官对齐，将流动的思想塑造成三维实相。</p>
+            `
+        },
+        "prot-step3": {
+            ro: `
+                <h3>Declanșatorul Emoțional: Neurochimia Limbică și Rezonanța Inimii</h3>
+                <p>Gândurile fără emoție sunt simple impulsuri electrice lipsite de putere magnetică de atracție:</p>
+                <ul>
+                    <li><strong>Ștampila Neurochimică a Sistemului Limbic:</strong> Emoțiile de înaltă frecvență (recunoștință, iubire, bucurie) activează amigdala și hipocampul, eliberând oxitocină și dopamină. Această infuzie neurochimică acționează ca un adeziv sinaptic (LTP - Long-Term Potentiation), fixând noul tipar mental.</li>
+                    <li><strong>Rezonanța Câmpului Inimii:</strong> Studiile de neuro-cardiologie arată că inima generează cel mai puternic câmp electromagnetic din corp (de 5000 de ori mai intens magnetic decât cel al creierului). Emoția coerentă de recunoștință emite un semnal magnetic stabil, aliniind structura cuantică a corpului tău cu realitatea dorită.</li>
+                </ul>
+
+                <h3>Semnificația Spirituală: Vibrația Creatoare și Kybalionul</h3>
+                <p>Emoția reprezintă „energia în mișcare” (E-motion). Ea acționează ca frecvența de rezonanță care trage din Univers manifestarea dorită, conform Principiului Vibrației. Când simți recunoștința înainte ca evenimentul să se producă fizic, emiți vibrația de posesie spirituală deplină, forțând realitatea materială să se reorganizeze.</p>
+            `,
+            en: `
+                <h3>Emotional Trigger: Limbic Neurochemistry and Heart Resonance</h3>
+                <p>Thoughts without emotion are mere electrical impulses lacking magnetic attraction power:</p>
+                <ul>
+                    <li><strong>Limbic Neurochemical Stamp:</strong> High-frequency emotions (gratitude, love, joy) activate the amygdala and hippocampus, releasing oxytocin and dopamine. This neurochemical infusion acts as a synaptic adhesive (LTP - Long-Term Potentiation), locking in the new mental pattern.</li>
+                    <li><strong>Heart Field Resonance:</strong> Neurocardiology studies show the heart generates the body's strongest electromagnetic field (5000 times magnetically stronger than the brain's). Coherent gratitude emits a stable magnetic signal, aligning your body's quantum blueprint with the target reality.</li>
+                </ul>
+
+                <h3>Spiritual Significance: The Creative Vibration and the Kybalion</h3>
+                <p>Emotion is "energy in motion" (E-motion). It acts as the resonant frequency that pulls the desired manifestation from the Universe, in line with the Principle of Vibration. Feeling gratitude before the physical event occurs emits the vibration of spiritual possession, forcing physical reality to reorganize.</p>
+            `,
+            pt: `
+                <h3>Faza 3: Gatilho Emocional</h3>
+                <p>As emoções liberam dopamina e oxitocina no sistema límbico, funcionando como adesivo sináptico (LTP). A gratidão gera coerência cardíaca com um forte campo eletromagnético. Espiritualmente, a emoção (E-motion) sintoniza a frequência vibratória.</p>
+            `,
+            es: `
+                <h3>Fase 3: Disparador Emocional</h3>
+                <p>Las emociones liberan dopamina y oxitocina en el sistema límbico, funcionando como adhesivo sináptico (LTP). La gratitud genera coherencia cardíaca con un fuerte campo electromagnético. Espiritualmente, la emoción (E-motion) sintoniza la frecuencia vibratoria.</p>
+            `,
+            it: `
+                <h3>Fase 3: Innesco Emozionale</h3>
+                <p>Le emozioni di gratitudine e gioia rilasciano dopamina e ossitocina, cementando le connessioni sinaptiche (LTP). Il campo magnetico del cuore sintonizza la struttura quantistica con la realtà desiderata. Spiritualmente, è la frequenza che attrae l'intenzione.</p>
+            `,
+            cs: `
+                <h3>Fáze 3: Emoční Spouštěč</h3>
+                <p>Emoce vápní synaptická spojení (LTP) uvolňováním dopaminu a oxytocinu. Srdeční koherence vysílá silný elektromagnetický signál. Duchovně je emoce (E-motion) rezonanční frekvencí stvoření.</p>
+            `,
+            pl: `
+                <h3>Faza 3: Wyzwalacz Emocjonalny</h3>
+                <p>Wysokie emocje uwalniają dopaminę i oksytocynę w układzie limbicznym, działając jak klej synaptyczny (LTP). Koherencja serca wysyła silny sygnał magnetyczny. Duchowo emocja to energia w ruchu (E-motion).</p>
+            `,
+            ru: `
+                <h3>Фаза 4: Эмоциональный Триггер</h3>
+                <p>Эмоции благодарности и радости высвобождают окситоцин и дофамин, закрепляя синаптические связи (LTP). Электромагнитное поле сердца сонастраивает квантовую структуру с целью. Духовно это энергия в движении (E-motion).</p>
+            `,
+            zh: `
+                <h3>第三阶段：情感触发，边缘系统神经化学与心脏共振</h3>
+                <p>没有情感的思想只是缺乏磁性吸引力的电脉冲。高频情感（感恩、爱、喜悦）激活杏仁核和海马体，释放催产素和多巴胺，作为突触粘合剂（LTP长时程增强）锁定新心智模式。神经心脏学表明，心脏电磁场强度是脑的5000倍，感恩会产生连贯的磁信号。在灵性上，情绪是“运动中的能量”（E-motion），在物理实相重组之前发出已拥有的高频振动。</p>
+            `
+        },
+        "prot-step4": {
+            ro: `
+                <h3>Sigilarea prin Cuvânt: Inhibarea Dorsolaterală și Blocarea logică</h3>
+                <p>Decretul final („Așa este”) nu este un simplu element lingvistic, ci are rolul de a stopa analizele secundare:</p>
+                <ul>
+                    <li><strong>Inhibarea Dorsolaterală Prefrontală:</strong> Atunci când folosești o formulă de autoritate mentală absolută, creierul tău încetează să mai caute alternative, îndoieli sau rute de eșec. Se inhibă activitatea în cortexul prefrontal dorsolateral care încearcă să chestioneze validitatea imaginii.</li>
+                    <li><strong>Oprirea Punctului de Predicție a Erorii:</strong> Decretul acționează ca o „comandă de execuție finală” în codul mental, închizând buclele de feedback negativ.</li>
+                </ul>
+
+                <h3>Dimensiunea Spirituală: Logosul și Puterea Decretului Mental</h3>
+                <p>Cuvântul este instrumentul primordial al creației (Logosul). În tradițiile spirituale, rostirea sau decretarea mentală funcționează ca un sigiliu energetic care ordonează haosul cuantic. Când spui „Așa este” (sau „Amin”), tu transformi forma-gând flexibilă într-un decret suveran neschimbător, permițându-i să se materializeze în planul dens al materiei fizice.</p>
+            `,
+            en: `
+                <h3>Word Sealing: Dorsolateral Inhibition and Logical Locking</h3>
+                <p>The final decree ("So it is") is not a mere linguistic element, but serves to stop secondary analytical processing:</p>
+                <ul>
+                    <li><strong>Dorsolateral Prefrontal Inhibition:</strong> When you use a formula of absolute mental authority, your brain ceases searching for alternatives, doubts, or routes of failure. It inhibits activity in the dorsolateral prefrontal cortex that tries to question the image's validity.</li>
+                    <li><strong>Halting Error-Prediction Feedback:</strong> The decree acts as a "final execution command" in your mental code, shutting down negative feedback loops.</li>
+                </ul>
+
+                <h3>Spiritual Dimension: The Logos and the Power of the Mental Decree</h3>
+                <p>The word is the primordial instrument of creation (the Logos). In spiritual traditions, the mental decree functions as an energetic seal that organizes quantum chaos. When you say "So it is" (or "Amen"), you transform the fluid thought-form into a sovereign, unalterable law, allowing it to solidify in the physical plane.</p>
+            `,
+            pt: `
+                <h3>Faza 4: Selagem pela Palavra</h3>
+                <p>O decreto mental ("Assim é") inibe o córtex pré-frontal dorsolateral de buscar falhas ou caminhos alternativos, fechando os loops de feedback de erro. Espiritualmente, ativa o princípio do Logos, ordenando o caos quântico.</p>
+            `,
+            es: `
+                <h3>Fase 4: Sellado por la Palabra</h3>
+                <p>El decreto mental ("Así es") inhibe la corteza prefrontal dorsolateral de buscar fallas o caminos alternativos, cerrando los bucles de retroalimentación de error. Espiritualmente, activa el principio del Logos, ordenando el caos cuántico.</p>
+            `,
+            it: `
+                <h3>Fase 4: Sigillatura con la Parola</h3>
+                <p>Il decreto mentale ("Così è") inibisce la corteccia prefrontale dorsolaterale, bloccando l'analisi di percorsi alternativi o dubbi. Spiritualmente, rappresenta il Logos che organizza il caos quantico in una legge immutabile.</p>
+            `,
+            cs: `
+                <h3>Fáze 4: Zapečetění Slovem</h3>
+                <p>Mentální dekret („Budiž tak“) tlumí dorsolaterální prefrontální kůru a zastavuje vyhledávání pochybností či chyb. Duchovně tento proces aktivuje Logos, čímž pečetí myšlenku do podoby vesmírného zákona.</p>
+            `,
+            pl: `
+                <h3>Faza 4: Zapieczętowanie Słowem</h3>
+                <p>Mentalny dekret („Tak jest”) hamuje grzbietowo-boczną korę przedczołową przed szukaniem wątpliwości. Duchowo aktywuje to zasadę Logosu, porządkując chaos kwantowy w nienaruszalną strukturę.</p>
+            `,
+            ru: `
+                <h3>Фаза 4: Запечатывание Словом</h3>
+                <p>Мысленный декрет («Да будет так») угнетает дорсолатеральную префронтальную кору, блокируя сомнения и поиск ошибок. Духовно это активирует принцип Логоса, запечатывая мыслеформу в плотный план.</p>
+            `,
+            zh: `
+                <h3>第四阶段：用言语印封，背外侧抑制与逻辑锁定</h3>
+                <p>最终法令（例如“就是如此”或“阿门”）不仅是语言元素，还能停止大脑的次级分析处理。绝对的心理权威公式会抑制负责寻找替代方案和质疑图像有效性的背外侧前额叶皮层，关闭错误预测的负反馈环。在灵性上，言语是创造的始基（Logos道/逻各斯），将流动的思想塑造成主权法则，使其凝聚为现实。</p>
+            `
+        },
+        "prot-step5": {
+            ro: `
+                <h3>Blocarea Auto-Sabotajului: Detașarea și Autonomia Subconștientă</h3>
+                <p>Încercarea disperată a minții logice de a controla procesul sabotează programarea subtilă:</p>
+                <ul>
+                    <li><strong>Suprimarea Activității de Monitorizare de Înaltă Frecvență:</strong> Când te întrebi „cum” sau „când” se va materializa scopul, activezi circuitele de alarmă prefrontale. Aceasta declanșează secreția de cortizol și adrenalină, care tensionează corpul și anulează starea Alpha.</li>
+                    <li><strong>Permiterea Autonomiei Subconștiente:</strong> Creierul procesează mult mai eficient informația complexă în fundal atunci când nu este monitorizat activ. Detașarea („S-a împlinit” urmată de eliberare) permite rețelelor subconștiente să lucreze fără bruiaj cognitiv.</li>
+                </ul>
+
+                <h3>Semnificația Spirituală: Legea Detașării Zen și Încrederea</h3>
+                <p>Pentru ca o sămânță să încolțească, trebuie să fie lăsată în întunericul pământului. Dacă o dezgropi în fiecare zi să vezi dacă a crescut (actul îndoielii logice), o distrugi. Detașarea totală este un act de credință absolută. Înseamnă să eliberezi dorința în oceanul conștiinței pure (câmpul cuantic), știind cu certitudine că manifestarea este deja o realitate în planul spiritual.</p>
+            `,
+            en: `
+                <h3>Self-Sabotage Blocking: Detachment and Subconscious Autonomy</h3>
+                <p>The logical mind's desperate attempt to control the process sabotages the subtle programming:</p>
+                <ul>
+                    <li><strong>Suppressing High-Frequency Monitoring Activity:</strong> When you ask "how" or "when" the goal will materialize, you activate prefrontal alarm circuits. This triggers cortisol and adrenaline, tensing the body and canceling the Alpha state.</li>
+                    <li><strong>Allowing Subconscious Autonomy:</strong> The brain processes complex background information much more efficiently when not actively monitored. Detachment ("It is done" followed by release) allows subconscious networks to execute without cognitive noise.</li>
+                </ul>
+
+                <h3>Spiritual Significance: The Zen Law of Detachment and Trust</h3>
+                <p>For a seed to grow, it must be left in the darkness of the earth. If you dig it up daily to see if it sprouted (the act of logical doubt), you destroy it. Total detachment is an act of absolute faith. It means releasing the desire into the ocean of pure consciousness (the quantum field), knowing with certainty that the manifestation is already a spiritual reality.</p>
+            `,
+            pt: `
+                <h3>Faza 5: Bloqueio do Auto-Sabotagem</h3>
+                <p>Fazer perguntas como "quando" ou "como" ativa circuitos de alarme pré-frontais que geram cortisol. A liberação ("Está feito") dá autonomia ao subconsciente. Espiritualmente, baseia-se na Lei do Desapego Zen: a semente deve repousar na terra escura.</p>
+            `,
+            es: `
+                <h3>Fase 5: Bloqueo del Auto-Sabotaje</h3>
+                <p>Hacer preguntas como "¿cuándo?" o "¿cómo?" activa circuitos de alarma prefrontales que generan cortisol. La liberación ("Hecho está") da autonomía al subconsciente. Espiritualmente, se basa en la Ley del Desapego Zen: la semilla debe reposar en la tierra oscura.</p>
+            `,
+            it: `
+                <h3>Fase 5: Blocco dell'Autosabotaggio</h3>
+                <p>Chiedersi "quando" o "come" attiva i circuiti di allarme prefrontali secernendo cortisolo. Il distacco ("È compiuto") concede autonomia operativa al subconscio. Spiritualmente, richiama la Legge del Distacco Zen.</p>
+            `,
+            cs: `
+                <h3>Fáze 5: Blokování Sebepoškozování</h3>
+                <p>Otázky typu „jak“ a „kdy“ spouštějí poplašné okruhy a vylučují kortizol. Odevzdání („Dokonáno jest“) dává podvědomí autonomii. Duchovně jde o Zenový zákon odpoutanosti: semeno musí zůstat v temné půdě.</p>
+            `,
+            pl: `
+                <h3>Faza 5: Blokowanie Autosabotażu</h3>
+                <p>Pytania typu „kiedy” i „jak” aktywują przedczołowe obwody alarmowe, uwalniając kortyzol. Odpuszczenie („Stało się”) pozwala podświadomości działać. Duchowo odnosi się to do buddyjskiej zasady nieprzywiązania Zen.</p>
+            `,
+            ru: `
+                <h3>Фаза 5: Блокировка Самосаботажа</h3>
+                <p>Вопросы «как» и «когда» активируют тревожные цепи префронтальной коры, выделяя кортизол. Отпускание («Свершилось») дает подсознанию автономность. Духовно это основано на законе непривязанности Дзен.</p>
+            `,
+            zh: `
+                <h3>第五阶段：阻断自我破坏，超然放手与潜意识自主</h3>
+                <p>逻辑心智试图控制过程的绝望尝试会破坏微妙的程序。询问“如何”或“何时”会激活前额叶的警报电路，触发皮质醇和肾上腺素释放，取消阿尔法状态。放手（默念“已成”并超然释怀）能让潜意识网络在无认知噪音的情况下高效自主工作。在灵性上，这对应禅宗的“放手定律”与绝对信任，种子必须埋在黑暗泥土里，频繁挖出查看只会使其枯萎。</p>
             `
         }
     };

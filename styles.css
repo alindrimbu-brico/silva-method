@@ -1284,11 +1284,19 @@ h1, h2, h3, h4 {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     transition: var(--transition-smooth);
+    /* Button resets */
+    text-align: left;
+    font-family: inherit;
+    color: inherit;
+    cursor: pointer;
+    width: 100%;
+    display: block;
 }
 
 .timeline-content:hover {
-    border-color: var(--border-hover);
+    border-color: var(--color-purple);
     transform: translateX(8px);
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.25);
 }
 
 .step-badge {
