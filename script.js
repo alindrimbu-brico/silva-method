@@ -1392,41 +1392,55 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.add('playing');
             btn.querySelector('i').className = 'fa-solid fa-pause';
 
-            sampleOscLeft = audioCtx.createOscillator();
-            sampleOscRight = audioCtx.createOscillator();
+            // Create Carrier Oscillator (generates the audible pitch)
+            sampleOscLeft = audioCtx.createOscillator(); 
             sampleOscLeft.type = 'sine';
+            
+            // Create LFO Oscillator (generates the brainwave pulse speed)
+            sampleOscRight = audioCtx.createOscillator(); 
             sampleOscRight.type = 'sine';
 
-            // Frequencies based on selection
-            let leftFreq = 200;
-            let rightFreq = 210; // default alpha 10Hz diff
+            let carrierFreq = 220;
+            let lfoFreq = 10; // Alpha 10 Hz
 
             if (sampleName === 'beta') {
-                leftFreq = 200;
-                rightFreq = 220; // 20Hz difference (Beta)
+                carrierFreq = 260; // Higher pitch for active mind
+                lfoFreq = 20;      // Beta 20 Hz (rapid vibration)
             } else if (sampleName === 'alpha') {
-                leftFreq = 200;
-                rightFreq = 210; // 10Hz difference (Alpha)
+                carrierFreq = 220; // Medium pitch for relaxed focus
+                lfoFreq = 10;      // Alpha 10 Hz (calm pulsation)
             } else if (sampleName === 'theta') {
-                leftFreq = 150;
-                rightFreq = 154; // 4Hz difference (Theta/Delta)
+                carrierFreq = 180; // Deep low pitch for deep sleep/meditation
+                lfoFreq = 4;       // Theta/Delta 4 Hz (slow breathing pulse)
             }
 
-            sampleOscLeft.frequency.value = leftFreq;
-            sampleOscRight.frequency.value = rightFreq;
+            sampleOscLeft.frequency.value = carrierFreq;
+            sampleOscRight.frequency.value = lfoFreq;
 
-            const sampleMerger = audioCtx.createChannelMerger(2);
-            sampleOscLeft.connect(sampleMerger, 0, 0);
-            sampleOscRight.connect(sampleMerger, 0, 1);
+            // LFO gain controls the depth of volume modulation (how much it drops)
+            const lfoGain = audioCtx.createGain();
+            lfoGain.gain.value = 0.45; // modulate volume by 45% up and down
 
+            // Carrier gain is the base volume of the carrier tone
+            const carrierGain = audioCtx.createGain();
+            carrierGain.gain.value = 0.55; // base level
+
+            // Route LFO -> LFO Gain -> Carrier Gain's parameter (Volume Modulation)
+            sampleOscRight.connect(lfoGain);
+            lfoGain.connect(carrierGain.gain);
+
+            // Connect Carrier -> Modulated Gain
+            sampleOscLeft.connect(carrierGain);
+
+            // Main sample gain for smooth volume control
             sampleGainNode = audioCtx.createGain();
             sampleGainNode.gain.setValueAtTime(0, audioCtx.currentTime);
             
-            sampleMerger.connect(sampleGainNode);
+            carrierGain.connect(sampleGainNode);
             sampleGainNode.connect(audioCtx.destination);
 
-            // Fade in sample to 0.12 volume
-            sampleGainNode.gain.linearRampToValueAtTime(0.12, audioCtx.currentTime + 0.3);
+            // Fade in sample smoothly
+            sampleGainNode.gain.linearRampToValueAtTime(0.18, audioCtx.currentTime + 0.3);
 
             sampleOscLeft.start(0);
             sampleOscRight.start(0);
