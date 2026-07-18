@@ -1088,6 +1088,190 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h3>振动、能量和赫密士原理</h3>
                 <p>该模拟器物理上展示了静态与动态的第三个赫密士原理：振动原理（“没有任何事物是静止的；万事万物都在运动；万事万物都在振动”）。在阿尔法波状态下，心灵与宇宙电磁波同步。</p>
             `
+        },
+        "tele-neuro": {
+            ro: `
+                <h3>Neurochimia Stării Beta: Axul de Stress HPA</h3>
+                <p>În starea Beta activă (peste 15 Hz), creierul solicită resurse metabolice mari. Glanda pituitară și glandele suprarenale activează axa <strong>HPA (Hipotalamus-Pituitar-Suprarenal)</strong>, eliberând:</p>
+                <ul>
+                    <li><strong>Cortizol:</strong> Hormonul principal al stresului, care crește nivelul glucozei în sânge și prioritizează funcțiile defensive pe termen scurt, inhibând sistemul imunitar și neuroplasticitatea.</li>
+                    <li><strong>Adrenalină și Noradrenalină:</strong> Accelerează ritmul cardiac, induc starea de alertă roșie („luptă sau fugi”) și forțează circuitele neuronale în rețele repetitive, blocând gândirea creativă laterală.</li>
+                </ul>
+
+                <h3>Neurochimia Stării Alpha: Regenerare și Echilibru Sinaptic</h3>
+                <p>La inițierea coborârii în frecvența Alpha (8 - 12 Hz), sistemul nervos parasimpatic preia controlul. Chimia cerebrală se schimbă radical:</p>
+                <ul>
+                    <li><strong>GABA (Acid Gamma-Aminobutiric):</strong> Neurotransmițătorul inhibitor principal al sistemului nervos. GABA acționează ca un sedativ natural, scăzând excitabilitatea neuronală, calmând „zgomotul” din neocortex și eliminând anxietatea somatică.</li>
+                    <li><strong>Serotonină și Acetilcolină:</strong> Hormonii asociați cu starea de bine, calmul profund și consolidarea memoriei. Acetilcolina în mod deosebit facilitează formarea de noi conexiuni sinaptice (neuroplasticitate), permițând rescrierea convingerilor subconștiente limitative.</li>
+                </ul>
+            `,
+            en: `
+                <h3>Neurochemistry of the Beta State: The HPA Stress Axis</h3>
+                <p>In the active Beta state (above 15 Hz), the brain demands heavy metabolic resources. The pituitary gland and adrenal glands activate the <strong>HPA (Hypothalamic-Pituitary-Adrenal) axis</strong>, releasing:</p>
+                <ul>
+                    <li><strong>Cortisol:</strong> The primary stress hormone, which increases blood glucose and prioritizes short-term defensive functions, while inhibiting the immune system and neuroplasticity.</li>
+                    <li><strong>Adrenaline and Noradrenaline:</strong> Speed up heart rate, induce high alert ("fight or flight"), and force neuronal circuits into repetitive loops, blocking creative lateral thinking.</li>
+                </ul>
+
+                <h3>Neurochemistry of the Alpha State: Regeneration and Synaptic Balance</h3>
+                <p>Upon entering the Alpha frequency (8 - 12 Hz), the parasympathetic nervous system takes over, radically changing brain chemistry:</p>
+                <ul>
+                    <li><strong>GABA (Gamma-Aminobutyric Acid):</strong> The primary inhibitory neurotransmitter of the nervous system. GABA acts as a natural sedative, reducing neuronal excitability, calming neocortical "noise," and eliminating somatic anxiety.</li>
+                    <li><strong>Serotonin and Acetylcholine:</strong> Associated with well-being, deep calm, and memory consolidation. Acetylcholine specifically facilitates new synaptic pathways (neuroplasticity), allowing the rewriting of limiting subconscious beliefs.</li>
+                </ul>
+            `,
+            pt: `
+                <h3>Neuroquímica da Mente: Beta vs. Alpha</h3>
+                <p>No estado Beta, o corpo produz <strong>Cortisol</strong> e <strong>Adrenalina</strong>, preparando o organismo para o estresse ("luta ou fuga"). No estado Alpha, o cérebro ativa o neurotransmissor <strong>GABA</strong> e <strong>Serotonina</strong>, induzindo regeneração celular, tranquilidade e receptividade sináptica.</p>
+            `,
+            es: `
+                <h3>Neuroquímica de la Mente: Beta vs. Alpha</h3>
+                <p>En el estado Beta, el cuerpo produce <strong>Cortisol</strong> y <strong>Adrenalina</strong>, preparando el organismo para el estrés ("lucha o huida"). En el estado Alpha, el cerebro activa el neurotransmisor <strong>GABA</strong> y la <strong>Serotonina</strong>, induciendo regeneración celular, tranquilidad y receptividad sináptica.</p>
+            `,
+            it: `
+                <h3>Neurochimica della Mente: Beta vs. Alpha</h3>
+                <p>Nello stato Beta, il corpo produce <strong>Cortisolo</strong> e <strong>Adrenalina</strong>, preparando l'organismo allo stress ("lotta o fuggi"). Nello stato Alpha, il cervello attiva il neurotrasmettitore <strong>GABA</strong> e la <strong>Serotonina</strong>, inducendo rigenerazione cellulare, calma e ricettività sinaptica.</p>
+            `,
+            cs: `
+                <h3>Neurochemie Mysli: Beta vs. Alpha</h3>
+                <p>Ve stavu Beta tělo produkuje <strong>Kortizol</strong> a <strong>Adrenalin</strong>, což připravuje organismus na stres ("bojuj nebo uteč"). V Alpha stavu mozek aktivuje neurotransmiter <strong>GABA</strong> a <strong>Serotonin</strong>, což vyvolává buněčnou regeneraci a hluboký klid.</p>
+            `,
+            pl: `
+                <h3>Neurochemia Umysłu: Beta vs. Alpha</h3>
+                <p>W stanie Beta organizm produkuje <strong>Kortyzol</strong> i <strong>Adrenalinę</strong>, przygotowując ciało do stresu ("walcz lub uciekaj"). W stanie Alpha mózg aktywuje neuroprzekaźnik <strong>GABA</strong> oraz <strong>Serotoninę</strong>, indukując regenerację komórkową i głęboki spokój.</p>
+            `,
+            ru: `
+                <h3>Нейрохимия Разума: Бета против Альфа</h3>
+                <p>В состоянии Бета организм вырабатывает <strong>Кортизол</strong> и <strong>Адреналин</strong>, подготавливая тело к стрессу ("бей или беги"). В состоянии Альфа мозг активирует нейромедиатор <strong>ГАМК (GABA)</strong> и <strong>Серотонин</strong>, вызывая клеточную регенерацию и глубокий покой.</p>
+            `,
+            zh: `
+                <h3>大脑神经化学：贝塔波与阿尔法波</h3>
+                <p>在贝塔状态下，身体会产生<strong>皮质醇</strong>和<strong>肾上腺素</strong>，进入压力应对模式。在阿尔法状态下，大脑会激活<strong>GABA</strong>（γ-氨基丁酸）和<strong>五羟色胺</strong>，从而减少神经元兴奋性，诱导深度平静与突触重塑。</p>
+            `
+        },
+        "tele-filter": {
+            ro: `
+                <h3>Filtrul Conștient în Beta: Factorul Critic de Cenzură</h3>
+                <p>Mintea conștientă acționează ca un „gardian” cognitiv. În starea Beta, acest filtru (cunoscut în psihanaliză drept Factorul Critic sau Cenzorul) este extrem de rigid:</p>
+                <ul>
+                    <li>Analizează critic orice informație nouă primită și o compară cu traumele sau programările din trecut.</li>
+                    <li>Respinge afirmațiile sau vizualizările pozitive (de exemplu, dacă vizualizezi abundența în timp ce ai datorii, filtrul conștient va striga: „Nu este adevărat!”, anulând sugestia).</li>
+                    <li>Sistemul Reticulat Activat (SRA) filtrează realitatea prin prisma fricilor și convingerilor limitative pre-existente.</li>
+                </ul>
+
+                <h3>Subconștientul Receptiv în Alpha: Sincronizarea Emisferică</h3>
+                <p>În starea Alpha, cenzura logică coboară garda. Sincronizarea electro-fiziologică a emisferelor cerebrale permite accesul direct la subconștient:</p>
+                <ul>
+                    <li>Informațiile, sugestiile și vizualizările trec fără a mai fi blocate de filtrul analitic. Mintea le acceptă ca adevăr absolut.</li>
+                    <li>SRA (Sistemul Reticulat Activat) este reprogramat direct cu noua comandă mentală, devenind un magnet biologic pentru observarea oportunităților externe corelate cu vizualizarea ta.</li>
+                    <li>Se activează gândirea laterală și capacitatea de auto-vindecare placebo controlată voluntar.</li>
+                </ul>
+            `,
+            en: `
+                <h3>Conscious Filter in Beta: The Critical Factor of Censorship</h3>
+                <p>The conscious mind acts as a cognitive guardian. In the Beta state, this filter (known in psychoanalysis as the Critical Factor) is highly rigid:</p>
+                <ul>
+                    <li>It critically analyzes any new incoming information and compares it against past traumas or programings.</li>
+                    <li>It rejects positive affirmations or visualizations (e.g., if you visualize abundance while having debts, the critical filter says "This is not true!", canceling the suggestion).</li>
+                    <li>The Reticular Activating System (RAS) filters reality solely through the lens of pre-existing fears and limiting beliefs.</li>
+                </ul>
+
+                <h3>Receptive Subconscious in Alpha: Hemispheric Synchronization</h3>
+                <p>In the Alpha state, logical censorship lets its guard down. The electrophysiological synchronization of both brain hemispheres opens a direct bridge to the subconscious mind:</p>
+                <ul>
+                    <li>Information, suggestions, and visualizations bypass the critical filter. The mind accepts them as absolute truth.</li>
+                    <li>The RAS (Reticular Activating System) is reprogrammed with the new mental command, turning into a biological magnet for opportunities aligned with your vision.</li>
+                    <li>Lateral creative thinking and voluntary placebo-controlled self-healing processes are fully activated.</li>
+                </ul>
+            `,
+            pt: `
+                <h3>Filtro Consciente: Crítico vs. Receptivo</h3>
+                <p>No estado Beta, o <strong>Filtro Crítico</strong> está ativo, rejeitando novas programações mentais se elas contradizem crenças antigas. No estado Alpha, esse filtro se dissolve, permitindo que o subconsciente aceite sugestões regenerativas como verdade absoluta.</p>
+            `,
+            es: `
+                <h3>Filtro Consciente: Crítico vs. Receptivo</h3>
+                <p>En el estado Beta, el <strong>Filtro Crítico</strong> está activo, rechazando nuevas programaciones mentales si contradicen creencias antiguas. En el estado Alpha, ese filtro se disuelve, permitiendo que el subconsciente acepte sugerencias regenerativas como verdad absoluta.</p>
+            `,
+            it: `
+                <h3>Filtro Cosciente: Critico vs. Ricettivo</h3>
+                <p>Nello stato Beta, il <strong>Filtro Critico</strong> è attivo, rifiutando nuove programmazioni mentais se contraddicono vecchie credenze. Nello stato Alpha, questo filtro si dissolve, permettendo al subconscio di accettare suggerimenti rigenerativi como verità assoluta.</p>
+            `,
+            cs: `
+                <h3>Vědomý Filtr: Kritický vs. Receptivní</h3>
+                <p>Ve stavu Beta je <strong>Kritický Filtr</strong> aktivní a odmítá nové sugesce, které odporují starým přesvědčením. V Alpha se tento filtr uvolňuje, což umožňuje podvědomí přijímat nové vizualizace jako absolutní pravdu.</p>
+            `,
+            pl: `
+                <h3>Świadomy Filtr: Krytyczny vs. Receptywny</h3>
+                <p>W stanie Beta <strong>Filtr Krytyczny</strong> jest aktywny i odrzuca nowe sugestie, które są sprzeczne z dawnymi przekonaniami. W stanie Alpha ten filtr rozluźnia się, umożliwiając podświadomości przyjmowanie nowych wizualizacji jako prawdy.</p>
+            `,
+            ru: `
+                <h3>Сознательный Фильтр: Критический против Восприимчивого</h3>
+                <p>В состоянии Бета <strong>Критический фильтр</strong> активен и отвергает новые установки, если они противоречат старым убеждениям. В Альфа-состоянии этот фильтр ослабевает, позволяя подсознанию принимать новые визуализации как абсолютную истину.</p>
+            `,
+            zh: `
+                <h3>意识过滤器：批判性与接收性</h3>
+                <p>在贝塔状态下，<strong>批判过滤器</strong>处于高度活跃状态，如果新的正面暗示与旧 of 潜意识信念冲突，它将予以拒绝。在阿尔法状态下，该过滤器降低防线，使潜意识可以直接接收和内化新的全息观想指令。</p>
+            `
+        },
+        "tele-resonance": {
+            ro: `
+                <h3>Planul Fizic în Beta: Iluzia Separării și a Limitelor</h3>
+                <p>Starea Beta ne limitează percepția exclusiv la lumea celor 5 simțuri fizice. În acest plan de rezonanță:</p>
+                <ul>
+                    <li><strong>Separare (Dualitate):</strong> Te percepi ca fiind separat de restul lumii, separat de ceilalți oameni și de lucrurile pe care dorești să le manifești. Totul necesită efort fizic intens și luptă.</li>
+                    <li><strong>Limita Spațiu-Timp:</strong> Mintea este captivă în timp liniar (regrete legate de trecut, frici legate de viitor) și în spațiu limitat fizic.</li>
+                </ul>
+
+                <h3>Rezonanța Spirituală în Alpha: Conectarea la Câmpul Unificat</h3>
+                <p>Coborârea în Alpha reprezintă o tranziție dimensională în care percepția fizică se extinde în rezonanță energetică:</p>
+                <ul>
+                    <li><strong>Unitate (Non-Dualitate):</strong> Se dizolvă granițele ego-ului fizic. Mintea ta rezonează la o frecvență care se conectează direct la <strong>câmpul cuantic (câmpul morfogenetic)</strong>. În acest plan, tu nu mai încerci să „atragi” lucruri, ci recunoști că ești deja conectat energetic cu ele.</li>
+                    <li><strong>Eternul Prezent:</strong> Timpul se dilată. Vizualizarea din Alpha se instalează direct în „Acum”, emițând o semnătură electromagnetică stabilă care aliniază realitatea fizică cu intenția ta.</li>
+                </ul>
+            `,
+            en: `
+                <h3>The Physical Plane in Beta: The Illusion of Separation and Limits</h3>
+                <p>The Beta state limits our perception strictly to the world of the 5 physical senses. In this plane of resonance:</p>
+                <ul>
+                    <li><strong>Separation (Duality):</strong> You perceive yourself as separated from the rest of the world, separated from other people and the things you wish to manifest. Everything requires intense physical effort and struggle.</li>
+                    <li><strong>Space-Time Limit:</strong> The mind is trapped in linear time (past regrets, future fears) and physically limited space.</li>
+                </ul>
+
+                <h3>Spiritual Resonance in Alpha: Connecting to the Unified Field</h3>
+                <p>Descending into Alpha represents a dimensional transition where physical perception expands into energetic resonance:</p>
+                <ul>
+                    <li><strong>Unity (Non-Duality):</strong> The boundaries of the physical ego dissolve. Your mind resonates at a frequency that connects directly to the <strong>quantum field (morphogenetic field)</strong>. In this plane, you no longer try to "attract" things, but recognize that you are already energetically unified with them.</li>
+                    <li><strong>The Eternal Present:</strong> Time dilates. Visualizations made in Alpha install themselves directly in the "Now," emitting a stable electromagnetic signature that aligns physical reality with your intention.</li>
+                </ul>
+            `,
+            pt: `
+                <h3>Plano de Ressonância: Dualidade vs. Unidade</h3>
+                <p>No plano Beta (Físico), experimentamos a dualidade, sentindo-nos separados do ambiente e dos nossos desejos. No plano Alpha (Energético/Quântico), dissolvem-se as barreiras do ego, permitindo que a mente se conecte ao Campo Unificado de energia pura.</p>
+            `,
+            es: `
+                <h3>Plano de Resonancia: Dualidad vs. Unidad</h3>
+                <p>En el plano Beta (Físico), experimentamos la dualidad, sintiéndonos separados de nuestro entorno y de nuestros deseos. En el plano Alpha (Energético/Cuántico), se disuelven las barreras del ego, permitiendo que la mente se conecte al Campo Unificado de energía pura.</p>
+            `,
+            it: `
+                <h3>Piano di Risonanza: Dualità vs. Unità</h3>
+                <p>Nel piano Beta (Fisico), sperimentiamo la dualità, sentendoci separati dall'ambiente e dai nostri desideri. Nel piano Alpha (Energetico/Quantistico), si dissolvono le barriere dell'ego, permettendo alla mente di connettersi al Campo Unificato di pura energia.</p>
+            `,
+            cs: `
+                <h3>Rovina Rezonance: Dualita vs. Jednota</h3>
+                <p>V rovině Beta (Fyzická) prožíváme dualitu a pocit oddělení od okolního světa a svých přání. V rovině Alpha (Energetická/Kvantová) se bariéry ega rozpouštějí, což umožňuje mysli napojit se na Sjednocené Pole čisté energie.</p>
+            `,
+            pl: `
+                <h3>Plan Rezonansu: Dualność vs. Jedność</h3>
+                <p>W stanie Beta (Fizycznym) doświadczamy dualności i poczucia oddzielenia od świata i naszych pragnień. W stanie Alpha (Energetycznym/Kwantowym) bariery ego rozpuszczają się, umożliwiając umysłowi połączenie się ze Zjednoczonym Polem czystej energii.</p>
+            `,
+            ru: `
+                <h3>План Резонанса: Дуальность против Единства</h3>
+                <p>В Бета-состоянии (Физическом) мы переживаем дуальность и чувство отделенности от мира и наших желаний. В Альфа-состоянии (Энергетическом/Квантовом) барьеры эго растворяются, позволяя разуму соединиться с Единым Полем чистой энергии.</p>
+            `,
+            zh: `
+                <h3>共振维度：双重物理性与统一场</h3>
+                <p>在贝塔（物理）层面上，我们体验到分离与双重性，感觉自己与外在世界及渴望的人事物是割裂的。在阿尔法（能量/量子）层面上，小我的物理边界溶解，心灵与宇宙统一能量场直接相连，实现共同共振。</p>
+            `
         }
     };
 
@@ -1290,15 +1474,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.btn-detail').forEach(button => {
         button.addEventListener('click', (e) => {
-            const sectionKey = e.target.getAttribute('data-section');
-            
+            const btn = e.currentTarget;
+            const sectionKey = btn.getAttribute('data-section');
+            if (!sectionKey || !detailedContent[sectionKey]) return;
+
             // Get content based on current section and language
             const contentHTML = detailedContent[sectionKey][currentLang];
-            const sectionTitle = translations[currentLang][`nav-${sectionKey.substring(0,3)}`] || e.target.innerText;
             
+            // Build dynamic modal title and tag
+            let sectionTitle = btn.innerText;
+            let tagText = 'DETALII';
+            
+            const shortKey = sectionKey.substring(0, 3);
+            if (translations[currentLang][`nav-${sectionKey}`]) {
+                sectionTitle = translations[currentLang][`nav-${sectionKey}`];
+                tagText = sectionTitle;
+            } else if (translations[currentLang][`nav-${shortKey}`]) {
+                sectionTitle = translations[currentLang][`nav-${shortKey}`];
+                tagText = sectionTitle;
+            } else {
+                // Parse child labels for cleaner title
+                const valEl = btn.querySelector('.tele-val');
+                const lblEl = btn.querySelector('.tele-label');
+                if (valEl && lblEl) {
+                    sectionTitle = lblEl.innerText + ': ' + valEl.innerText;
+                    tagText = lblEl.innerText;
+                }
+            }
+
             modalTitle.innerText = sectionTitle;
             modalBodyContent.innerHTML = contentHTML;
-            modalTag.innerText = translations[currentLang][`nav-${sectionKey.substring(0,3)}`].toUpperCase();
+            modalTag.innerText = tagText.toUpperCase();
             
             // Open modal and lock scroll
             detailModal.classList.add('open');

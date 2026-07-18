@@ -1183,12 +1183,23 @@ h1, h2, h3, h4 {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    text-align: left;
+    font-family: inherit;
+    cursor: pointer;
+    width: 100%;
+    outline: none;
     transition: var(--transition-smooth);
 }
 
 .telemetry-card:hover {
-    border-color: rgba(255, 255, 255, 0.08);
-    background: rgba(255, 255, 255, 0.02);
+    border-color: var(--color-purple);
+    background: rgba(139, 92, 246, 0.04);
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.12);
+    transform: translateY(-4px);
+}
+
+.telemetry-card:active {
+    transform: translateY(-1px);
 }
 
 .tele-label {
