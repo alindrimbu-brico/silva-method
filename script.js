@@ -2362,6 +2362,40 @@ document.addEventListener('DOMContentLoaded', () => {
         let isAlpha = false;
         
         let wavePhase = 0;
+
+        let simOscLeft = null;
+        let simOscRight = null;
+        let simGainNode = null;
+        let isSimulatingAudio = false;
+
+        function initSimAudio() {
+            if (!audioCtx) initAudio();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            
+            if (!simGainNode) {
+                simOscLeft = audioCtx.createOscillator();
+                simOscRight = audioCtx.createOscillator();
+                
+                simOscLeft.type = 'sine';
+                simOscRight.type = 'sine';
+                
+                simOscLeft.frequency.value = 200; // Carrier
+                simOscRight.frequency.value = 200 + currentFreq; // Variable difference
+                
+                const merger = audioCtx.createChannelMerger(2);
+                simOscLeft.connect(merger, 0, 0);
+                simOscRight.connect(merger, 0, 1);
+                
+                simGainNode = audioCtx.createGain();
+                simGainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+                
+                merger.connect(simGainNode);
+                simGainNode.connect(audioCtx.destination);
+                
+                simOscLeft.start(0);
+                simOscRight.start(0);
+            }
+        }
         
         function resizeCanvas() {
             waveCanvas.width = waveCanvas.parentElement.clientWidth;
@@ -2413,6 +2447,40 @@ document.addEventListener('DOMContentLoaded', () => {
             // Play transition sound sweep
             playUISound(isAlpha ? 'open-modal' : 'close-modal');
 
+            // Handle Simulator specific Audio
+            if (isAlpha) {
+                isSimulatingAudio = true;
+                initSimAudio();
+                
+                // Mute global ambient sound if it is playing
+                if (isPlaying && gainNode) {
+                    gainNode.gain.setTargetAtTime(0, audioCtx.currentTime, 0.3);
+                }
+                
+                // Fade in simulator sound smoothly
+                if (simGainNode) {
+                    simGainNode.gain.setTargetAtTime(0.12, audioCtx.currentTime, 0.4);
+                }
+            } else {
+                // When returning to Beta, keep the sound playing as it slides up,
+                // then fade it out and restore the global ambient sound.
+                setTimeout(() => {
+                    if (!isAlpha) { // verify user hasn't toggled again
+                        if (simGainNode) {
+                            simGainNode.gain.setTargetAtTime(0, audioCtx.currentTime, 0.6);
+                        }
+                        isSimulatingAudio = false;
+                        
+                        // Restore global ambient sound if it was playing
+                        setTimeout(() => {
+                            if (!isSimulatingAudio && isPlaying && gainNode) {
+                                gainNode.gain.setTargetAtTime(0.08, audioCtx.currentTime, 0.5);
+                            }
+                        }, 600);
+                    }
+                }, 1800); // Wait for transition slide to finish
+            }
+
             // Set button text translated
             btnDescend.innerText = isAlpha ? 
                 (currentLang === 'ro' ? 'Revino în Beta (Veghe)' : 'Return to Beta') : 
@@ -2435,6 +2503,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // Interpolate frequency smoothly
             currentFreq = currentFreq + (targetFreq - currentFreq) * 0.035;
             simFreqCounter.innerText = Math.round(currentFreq) + ' Hz';
+            
+            // Sychronize frequency of simulator audio oscillator in real-time
+            if (simOscRight && isSimulatingAudio) {
+                simOscRight.frequency.setTargetAtTime(200 + currentFreq, audioCtx.currentTime, 0.05);
+            }
             
             const freqRatio = (currentFreq - 10) / 14; // 0 (Alpha) to 1 (Beta)
             
