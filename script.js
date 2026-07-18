@@ -1093,6 +1093,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let gainNode = null;
     let isPlaying = false;
 
+    // Sample player state
+    let activeSampleName = null;
+    let sampleOscLeft = null;
+    let sampleOscRight = null;
+    let sampleGainNode = null;
+
     function initAudio() {
         // Create audio context
         audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -1132,6 +1138,11 @@ document.addEventListener('DOMContentLoaded', () => {
     btnAudioToggle.addEventListener('click', () => {
         if (!audioCtx) {
             initAudio();
+        }
+
+        // Stop active sample if one is playing
+        if (activeSampleName) {
+            stopActiveSample();
         }
 
         if (!isPlaying) {
@@ -1335,7 +1346,122 @@ document.addEventListener('DOMContentLoaded', () => {
                     progressBar.style.strokeDashoffset = 534;
                     progressBar.style.stroke = 'var(--color-purple)';
                 }, 6000);
-            }
         }, 1000);
     });
+
+    // --- 10. FREQUENCY SAMPLE PLAYER LOGIC ---
+    const btnPlaySamples = document.querySelectorAll('.btn-play-sample');
+
+    btnPlaySamples.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const sampleName = btn.getAttribute('data-sample');
+
+            // Initialize Audio Context if not done yet
+            if (!audioCtx) {
+                initAudio();
+            }
+            
+            // Resume context if suspended
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+
+            // If the clicked sample is currently playing, stop it
+            if (activeSampleName === sampleName) {
+                stopActiveSample();
+                
+                // Restore main ambient if it was playing
+                if (isPlaying && gainNode) {
+                    gainNode.gain.setTargetAtTime(0.08, audioCtx.currentTime, 0.3);
+                }
+                return;
+            }
+
+            // If another sample is playing, stop it first
+            if (activeSampleName) {
+                stopActiveSample();
+            }
+
+            // If main ambient is playing, mute it temporarily
+            if (isPlaying && gainNode) {
+                gainNode.gain.setTargetAtTime(0, audioCtx.currentTime, 0.1);
+            }
+
+            // Start playing new sample
+            activeSampleName = sampleName;
+            btn.classList.add('playing');
+            btn.querySelector('i').className = 'fa-solid fa-pause';
+
+            sampleOscLeft = audioCtx.createOscillator();
+            sampleOscRight = audioCtx.createOscillator();
+            sampleOscLeft.type = 'sine';
+            sampleOscRight.type = 'sine';
+
+            // Frequencies based on selection
+            let leftFreq = 200;
+            let rightFreq = 210; // default alpha 10Hz diff
+
+            if (sampleName === 'beta') {
+                leftFreq = 200;
+                rightFreq = 220; // 20Hz difference (Beta)
+            } else if (sampleName === 'alpha') {
+                leftFreq = 200;
+                rightFreq = 210; // 10Hz difference (Alpha)
+            } else if (sampleName === 'theta') {
+                leftFreq = 150;
+                rightFreq = 154; // 4Hz difference (Theta/Delta)
+            }
+
+            sampleOscLeft.frequency.value = leftFreq;
+            sampleOscRight.frequency.value = rightFreq;
+
+            const sampleMerger = audioCtx.createChannelMerger(2);
+            sampleOscLeft.connect(sampleMerger, 0, 0);
+            sampleOscRight.connect(sampleMerger, 0, 1);
+
+            sampleGainNode = audioCtx.createGain();
+            sampleGainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+            
+            sampleMerger.connect(sampleGainNode);
+            sampleGainNode.connect(audioCtx.destination);
+
+            // Fade in sample to 0.12 volume
+            sampleGainNode.gain.linearRampToValueAtTime(0.12, audioCtx.currentTime + 0.3);
+
+            sampleOscLeft.start(0);
+            sampleOscRight.start(0);
+        });
+    });
+
+    function stopActiveSample() {
+        if (!activeSampleName) return;
+
+        const activeBtn = document.querySelector(`.btn-play-sample[data-sample="${activeSampleName}"]`);
+        if (activeBtn) {
+            activeBtn.classList.remove('playing');
+            activeBtn.querySelector('i').className = 'fa-solid fa-volume-low';
+        }
+
+        if (sampleGainNode) {
+            try {
+                // Fade out to prevent clicks
+                sampleGainNode.gain.setValueAtTime(sampleGainNode.gain.value, audioCtx.currentTime);
+                sampleGainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.2);
+            } catch(e) {}
+        }
+
+        const l = sampleOscLeft;
+        const r = sampleOscRight;
+        setTimeout(() => {
+            try {
+                if (l) l.stop();
+                if (r) r.stop();
+            } catch(e) {}
+        }, 250);
+
+        activeSampleName = null;
+        sampleOscLeft = null;
+        sampleOscRight = null;
+        sampleGainNode = null;
+    }
 });
